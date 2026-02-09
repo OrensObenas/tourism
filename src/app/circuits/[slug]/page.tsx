@@ -1,7 +1,6 @@
 'use client';
 
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
 import { 
   Clock, 
@@ -14,7 +13,8 @@ import {
   Backpack,
   Info,
   MessageCircle,
-  ArrowRight
+  ArrowRight,
+  Compass
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -23,14 +23,13 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { AnimatedSection } from '@/components/common/AnimatedSection';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { getCircuitBySlug } from '@/lib/data/circuits';
-import { use } from 'react';
 
 interface CircuitDetailPageProps {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
 export default function CircuitDetailPage({ params }: CircuitDetailPageProps) {
-  const { slug } = use(params);
+  const { slug } = params;
   const { locale, t } = useLanguage();
   const circuit = getCircuitBySlug(slug);
 
@@ -54,34 +53,31 @@ export default function CircuitDetailPage({ params }: CircuitDetailPageProps) {
     adventure: locale === 'en' ? 'Adventure' : 'Aventure',
   };
 
+  const typeColors: Record<string, string> = {
+    cultural: 'from-primary-600 to-primary-800',
+    dayTrip: 'from-sage-400 to-sage-600',
+    organized: 'from-sand-400 to-sand-600',
+    adventure: 'from-amber-500 to-amber-700',
+  };
+
   return (
     <div className="min-h-screen bg-sand-50">
-      {/* Hero */}
-      <section className="relative h-[50vh] lg:h-[60vh]">
-        <Image
-          src={circuit.heroImage}
-          alt={title}
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-12">
-          <div className="max-w-7xl mx-auto">
-            <AnimatedSection>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {tags.map((tag, index) => (
-                  <Badge key={index} className="bg-white/20 text-white border-white/30">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-              <h1 className="text-3xl lg:text-5xl font-heading font-bold text-white mb-4">
-                {title}
-              </h1>
-            </AnimatedSection>
-          </div>
+      {/* Hero - gradient with icon instead of image */}
+      <section className={`relative py-16 lg:py-24 bg-gradient-to-br ${typeColors[circuit.type] || 'from-primary-600 to-primary-800'}`}>
+        <Compass className="absolute right-12 top-12 h-32 w-32 text-white/10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <AnimatedSection>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {tags.map((tag, index) => (
+                <Badge key={index} className="bg-white/20 text-white border-white/30">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+            <h1 className="text-3xl lg:text-5xl font-heading font-bold text-white mb-4">
+              {title}
+            </h1>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -196,26 +192,6 @@ export default function CircuitDetailPage({ params }: CircuitDetailPageProps) {
                       ))}
                     </ul>
                   </Card>
-                </div>
-              </AnimatedSection>
-
-              {/* Gallery */}
-              <AnimatedSection>
-                <h2 className="text-2xl font-heading font-bold text-gray-900 mb-4">
-                  {t.circuitDetail.gallery}
-                </h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {circuit.gallery.map((image, index) => (
-                    <div key={index} className="relative aspect-square rounded-2xl overflow-hidden">
-                      <Image
-                        src={image}
-                        alt={`${title} - ${index + 1}`}
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-300"
-                        sizes="(max-width: 768px) 50vw, 25vw"
-                      />
-                    </div>
-                  ))}
                 </div>
               </AnimatedSection>
 

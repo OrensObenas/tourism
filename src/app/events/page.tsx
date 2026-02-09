@@ -9,7 +9,8 @@ import { events, Event } from '@/lib/data/events';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { X } from 'lucide-react';
+import { Checkbox } from '@/components/ui/checkbox';
+import { X, AlertCircle } from 'lucide-react';
 
 export default function EventsPage() {
   const { locale, t } = useLanguage();
@@ -17,7 +18,8 @@ export default function EventsPage() {
   const [selectedType, setSelectedType] = useState('all');
   const [showInterestModal, setShowInterestModal] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', receiveNews: false });
+  const [formError, setFormError] = useState('');
 
   const filteredEvents = useMemo(() => {
     let result = [...events];
@@ -36,13 +38,31 @@ export default function EventsPage() {
   const handleInterested = (event: Event) => {
     setSelectedEvent(event);
     setShowInterestModal(true);
+    setFormError('');
   };
 
   const handleSubmitInterest = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Interest submitted:', { event: selectedEvent?.id, ...formData });
+    setFormError('');
+
+    if (!formData.email && !formData.phone) {
+      setFormError(
+        locale === 'en'
+          ? 'Please provide at least an email or a phone number.'
+          : 'Veuillez fournir au moins un email ou un numéro de téléphone.'
+      );
+      return;
+    }
+
+    console.log('Interest submitted:', {
+      event: selectedEvent?.id,
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      receiveNews: formData.receiveNews,
+    });
     setShowInterestModal(false);
-    setFormData({ name: '', email: '', phone: '' });
+    setFormData({ name: '', email: '', phone: '', receiveNews: false });
     alert(locale === 'en' ? 'Thank you! We will contact you soon.' : 'Merci ! Nous vous contacterons bientôt.');
   };
 
@@ -150,6 +170,14 @@ export default function EventsPage() {
             <p className="text-sm text-gray-600 mb-4">
               {locale === 'en' ? selectedEvent.titleEn : selectedEvent.title}
             </p>
+
+            {formError && (
+              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2">
+                <AlertCircle className="h-4 w-4 text-red-600 shrink-0" />
+                <p className="text-sm text-red-700">{formError}</p>
+              </div>
+            )}
+
             <form onSubmit={handleSubmitInterest} className="space-y-4">
               <Input
                 placeholder={t.contactPage.form.fullName}
@@ -157,19 +185,39 @@ export default function EventsPage() {
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
               />
-              <Input
-                type="email"
-                placeholder={t.contactPage.form.email}
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                required
-              />
-              <Input
-                type="tel"
-                placeholder={t.contactPage.form.phone}
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              />
+              <div>
+                <Input
+                  type="email"
+                  placeholder={`${t.contactPage.form.email} (${locale === 'en' ? 'or phone below' : 'ou téléphone ci-dessous'})`}
+                  value={formData.email}
+                  onChange={(e) => { setFormData({ ...formData, email: e.target.value }); setFormError(''); }}
+                />
+              </div>
+              <div>
+                <Input
+                  type="tel"
+                  placeholder={`${t.contactPage.form.phone} (${locale === 'en' ? 'or email above' : 'ou email ci-dessus'})`}
+                  value={formData.phone}
+                  onChange={(e) => { setFormData({ ...formData, phone: e.target.value }); setFormError(''); }}
+                />
+              </div>
+              <p className="text-xs text-gray-500">
+                {locale === 'en'
+                  ? '* At least one of email or phone is required.'
+                  : '* Au moins un email ou téléphone est requis.'}
+              </p>
+              <div className="flex items-start gap-3">
+                <Checkbox
+                  id="receiveNews"
+                  checked={formData.receiveNews}
+                  onCheckedChange={(checked) => setFormData({ ...formData, receiveNews: checked as boolean })}
+                />
+                <label htmlFor="receiveNews" className="text-sm text-gray-600">
+                  {locale === 'en'
+                    ? "I'd like to receive Tourism'Tour news"
+                    : "Je souhaite recevoir les actualités de Tourism'Tour"}
+                </label>
+              </div>
               <Button type="submit" className="w-full">
                 {t.contactPage.form.submit}
               </Button>

@@ -102,12 +102,62 @@ export const dictionaries = {
       group: 'Groupe',
       international: 'International',
     },
+    // Hero badges
+    heroBadges: {
+      travelers: 'voyageurs accompagnés',
+      rating: 'de satisfaction',
+      since: 'Depuis',
+    },
+    // Immersive Experiences
+    immersive: {
+      title: 'Vivez l\'expérience',
+      subtitle: 'Plongez au cœur du Bénin à travers nos aventures uniques',
+      cultural: {
+        title: 'Immersion Culturelle',
+        description: 'Temples vaudou, palais royaux et traditions ancestrales',
+      },
+      nature: {
+        title: 'Safari & Nature',
+        description: 'Parc Pendjari, faune sauvage et paysages à couper le souffle',
+      },
+      gastronomy: {
+        title: 'Gastronomie Locale',
+        description: 'Saveurs authentiques et cuisine traditionnelle béninoise',
+      },
+      community: {
+        title: 'Rencontres Humaines',
+        description: 'Partagez le quotidien des communautés locales',
+      },
+      explore: 'Explorer',
+    },
+    // Stats
+    stats: {
+      travelers: 'Voyageurs',
+      editions: 'Éditions',
+      circuits: 'Circuits',
+      satisfaction: 'Satisfaction',
+    },
+    // Testimonials Home
+    testimonialsHome: {
+      title: 'Ils ont vécu l\'aventure',
+      subtitle: 'Les témoignages de nos voyageurs parlent d\'eux-mêmes',
+      viewAll: 'Voir tous les témoignages',
+    },
+    // Editions Preview
+    editionsPreview: {
+      title: 'Nos Éditions Précédentes',
+      subtitle: 'Chaque année, de nouvelles aventures inoubliables',
+      participants: 'participants',
+      viewAll: 'Découvrir toutes nos expériences',
+    },
     // CTA
     cta: {
       title: 'Prêt à vivre l\'aventure ?',
       subtitle: 'Contactez-nous pour planifier votre voyage sur mesure',
       contact: 'Nous contacter',
       whatsapp: 'WhatsApp',
+      quote: '"Le Bénin nous a changé à jamais. Merci Tourism\'Tour."',
+      quoteAuthor: '— Marie Dupont, voyageuse 2025',
     },
     // Circuits Page
     circuitsPage: {
@@ -426,12 +476,62 @@ export const dictionaries = {
       group: 'Group',
       international: 'International',
     },
+    // Hero badges
+    heroBadges: {
+      travelers: 'travelers guided',
+      rating: 'satisfaction',
+      since: 'Since',
+    },
+    // Immersive Experiences
+    immersive: {
+      title: 'Live the experience',
+      subtitle: 'Dive into the heart of Benin through our unique adventures',
+      cultural: {
+        title: 'Cultural Immersion',
+        description: 'Voodoo temples, royal palaces and ancestral traditions',
+      },
+      nature: {
+        title: 'Safari & Nature',
+        description: 'Pendjari Park, wildlife and breathtaking landscapes',
+      },
+      gastronomy: {
+        title: 'Local Gastronomy',
+        description: 'Authentic flavors and traditional Beninese cuisine',
+      },
+      community: {
+        title: 'Human Encounters',
+        description: 'Share the daily life of local communities',
+      },
+      explore: 'Explore',
+    },
+    // Stats
+    stats: {
+      travelers: 'Travelers',
+      editions: 'Editions',
+      circuits: 'Circuits',
+      satisfaction: 'Satisfaction',
+    },
+    // Testimonials Home
+    testimonialsHome: {
+      title: 'They lived the adventure',
+      subtitle: 'Our travelers\' testimonials speak for themselves',
+      viewAll: 'View all testimonials',
+    },
+    // Editions Preview
+    editionsPreview: {
+      title: 'Our Previous Editions',
+      subtitle: 'Every year, new unforgettable adventures',
+      participants: 'participants',
+      viewAll: 'Discover all our experiences',
+    },
     // CTA
     cta: {
       title: 'Ready for the adventure?',
       subtitle: 'Contact us to plan your custom trip',
       contact: 'Contact us',
       whatsapp: 'WhatsApp',
+      quote: '"Benin changed us forever. Thank you Tourism\'Tour."',
+      quoteAuthor: '— Marie Dupont, traveler 2025',
     },
     // Circuits Page
     circuitsPage: {

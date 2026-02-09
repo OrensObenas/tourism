@@ -10,16 +10,15 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { blogPosts, getBlogPostBySlug } from '@/lib/data/blogPosts';
-import { use } from 'react';
 
 interface BlogPostPageProps {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const resolvedParams = use(params);
+  const { slug } = params;
   const { locale, t } = useLanguage();
-  const post = getBlogPostBySlug(resolvedParams.slug);
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();

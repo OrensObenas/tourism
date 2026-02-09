@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { z } from 'zod';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -18,39 +17,33 @@ import {
   MapPin, 
   MessageCircle, 
   Send, 
-  Instagram, 
-  Facebook, 
-  Twitter, 
-  Linkedin,
   Clock,
   CheckCircle,
   AlertCircle
 } from 'lucide-react';
 
-const contactSchema = z.object({
-  fullName: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Please enter a valid email'),
-  phone: z.string().optional(),
-  preferredLanguage: z.enum(['fr', 'en']),
-  topic: z.enum(['general', 'reservation', 'group', 'partnership', 'press', 'other']),
-  circuit: z.string().optional(),
-  message: z.string().min(10, 'Message must be at least 10 characters'),
-  consent: z.boolean().refine(val => val === true, 'You must accept the privacy policy'),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
+type ContactFormData = {
+  fullName: string;
+  email: string;
+  phone: string;
+  topic: string;
+  circuit: string;
+  message: string;
+  consent: boolean;
+  receiveNews: boolean;
+};
 
 export default function ContactPage() {
   const { locale, t } = useLanguage();
-  const [formData, setFormData] = useState<Partial<ContactFormData>>({
+  const [formData, setFormData] = useState<ContactFormData>({
     fullName: '',
     email: '',
     phone: '',
-    preferredLanguage: locale === 'en' ? 'en' : 'fr',
-    topic: undefined,
+    topic: '',
     circuit: '',
     message: '',
     consent: false,
+    receiveNews: false,
   });
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -61,36 +54,54 @@ export default function ContactPage() {
     setIsSubmitting(true);
     setErrors({});
 
+    const newErrors: Partial<Record<keyof ContactFormData, string>> = {};
+
+    if (!formData.fullName || formData.fullName.length < 2) {
+      newErrors.fullName = locale === 'en' ? 'Name is required' : 'Le nom est requis';
+    }
+
+    if (!formData.email && !formData.phone) {
+      const msg = locale === 'en'
+        ? 'Please provide at least an email or a phone number.'
+        : 'Veuillez fournir au moins un email ou un numéro de téléphone.';
+      newErrors.email = msg;
+      newErrors.phone = msg;
+    }
+
+    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = locale === 'en' ? 'Invalid email' : 'Email invalide';
+    }
+
+    if (!formData.message || formData.message.length < 10) {
+      newErrors.message = locale === 'en' ? 'Message must be at least 10 characters' : 'Le message doit contenir au moins 10 caractères';
+    }
+
+    if (!formData.consent) {
+      newErrors.consent = locale === 'en' ? 'You must accept the privacy policy' : 'Vous devez accepter la politique de confidentialité';
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      const validatedData = contactSchema.parse(formData);
-      console.log('Form submitted:', validatedData);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
+      console.log('Contact form submitted:', formData);
+      await new Promise(resolve => setTimeout(resolve, 1000));
       setSubmitStatus('success');
       setFormData({
         fullName: '',
         email: '',
         phone: '',
-        preferredLanguage: locale === 'en' ? 'en' : 'fr',
-        topic: undefined,
+        topic: '',
         circuit: '',
         message: '',
         consent: false,
+        receiveNews: false,
       });
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        const fieldErrors: Partial<Record<keyof ContactFormData, string>> = {};
-        error.issues.forEach((issue) => {
-          if (issue.path[0]) {
-            fieldErrors[issue.path[0] as keyof ContactFormData] = issue.message;
-          }
-        });
-        setErrors(fieldErrors);
-      } else {
-        setSubmitStatus('error');
-      }
+    } catch {
+      setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
@@ -101,8 +112,9 @@ export default function ContactPage() {
       icon: MessageCircle,
       title: 'WhatsApp',
       value: '+229 XX XX XX XX',
-      link: 'https://wa.me/229XXXXXXXX',
-      description: locale === 'en' ? 'Quick response' : 'Réponse rapide',
+      link: 'https://wa.me/22900000000',
+      description: locale === 'en' ? 'Quick response – preferred' : 'Réponse rapide – privilégié',
+      primary: true,
     },
     {
       icon: Mail,
@@ -110,28 +122,16 @@ export default function ContactPage() {
       value: 'contact@tourismtour.com',
       link: 'mailto:contact@tourismtour.com',
       description: locale === 'en' ? 'Within 24h' : 'Sous 24h',
+      primary: false,
     },
     {
       icon: Phone,
       title: locale === 'en' ? 'Phone' : 'Téléphone',
       value: '+229 XX XX XX XX',
-      link: 'tel:+229XXXXXXXX',
+      link: 'tel:+22900000000',
       description: locale === 'en' ? 'Mon-Fri, 9am-6pm' : 'Lun-Ven, 9h-18h',
+      primary: false,
     },
-    {
-      icon: MapPin,
-      title: locale === 'en' ? 'Office' : 'Bureau',
-      value: 'Cotonou, Bénin',
-      link: '#',
-      description: locale === 'en' ? 'By appointment' : 'Sur rendez-vous',
-    },
-  ];
-
-  const socials = [
-    { icon: Instagram, link: '#', label: 'Instagram' },
-    { icon: Facebook, link: '#', label: 'Facebook' },
-    { icon: Twitter, link: '#', label: 'Twitter' },
-    { icon: Linkedin, link: '#', label: 'LinkedIn' },
   ];
 
   return (
@@ -185,30 +185,31 @@ export default function ContactPage() {
                     </div>
                   )}
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        {t.contactPage.form.fullName} *
+                      </label>
+                      <Input
+                        value={formData.fullName}
+                        onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                        placeholder={t.contactPage.form.fullNamePlaceholder}
+                        className={errors.fullName ? 'border-red-500' : ''}
+                      />
+                      {errors.fullName && (
+                        <p className="mt-1 text-sm text-red-500">{errors.fullName}</p>
+                      )}
+                    </div>
+
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">
-                          {t.contactPage.form.fullName} *
-                        </label>
-                        <Input
-                          value={formData.fullName}
-                          onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                          placeholder={t.contactPage.form.fullNamePlaceholder}
-                          className={errors.fullName ? 'border-red-500' : ''}
-                        />
-                        {errors.fullName && (
-                          <p className="mt-1 text-sm text-red-500">{errors.fullName}</p>
-                        )}
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
-                          {t.contactPage.form.email} *
+                          {t.contactPage.form.email}
                         </label>
                         <Input
                           type="email"
                           value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          onChange={(e) => { setFormData({ ...formData, email: e.target.value }); setErrors({ ...errors, email: undefined, phone: undefined }); }}
                           placeholder={t.contactPage.form.emailPlaceholder}
                           className={errors.email ? 'border-red-500' : ''}
                         />
@@ -216,9 +217,6 @@ export default function ContactPage() {
                           <p className="mt-1 text-sm text-red-500">{errors.email}</p>
                         )}
                       </div>
-                    </div>
-
-                    <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">
                           {t.contactPage.form.phone}
@@ -226,53 +224,37 @@ export default function ContactPage() {
                         <Input
                           type="tel"
                           value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          onChange={(e) => { setFormData({ ...formData, phone: e.target.value }); setErrors({ ...errors, email: undefined, phone: undefined }); }}
                           placeholder={t.contactPage.form.phonePlaceholder}
+                          className={errors.phone ? 'border-red-500' : ''}
                         />
                       </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
-                          {t.contactPage.form.preferredLanguage} *
-                        </label>
-                        <Select
-                          value={formData.preferredLanguage}
-                          onValueChange={(value: 'fr' | 'en') => setFormData({ ...formData, preferredLanguage: value })}
-                        >
-                          <SelectTrigger>
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="fr">Français</SelectItem>
-                            <SelectItem value="en">English</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
                     </div>
+                    <p className="text-xs text-gray-500 -mt-2">
+                      {locale === 'en'
+                        ? '* At least one of email or phone is required.'
+                        : '* Au moins un email ou téléphone est requis.'}
+                    </p>
 
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">
-                          {t.contactPage.form.topic} *
+                          {t.contactPage.form.topic}
                         </label>
                         <Select
                           value={formData.topic}
-                          onValueChange={(value) => setFormData({ ...formData, topic: value as ContactFormData['topic'] })}
+                          onValueChange={(value) => setFormData({ ...formData, topic: value })}
                         >
-                          <SelectTrigger className={errors.topic ? 'border-red-500' : ''}>
+                          <SelectTrigger>
                             <SelectValue placeholder={t.contactPage.form.selectTopic} />
                           </SelectTrigger>
                           <SelectContent>
                             <SelectItem value="general">{t.contactPage.form.topics.general}</SelectItem>
                             <SelectItem value="reservation">{t.contactPage.form.topics.reservation}</SelectItem>
                             <SelectItem value="group">{t.contactPage.form.topics.group}</SelectItem>
-                            <SelectItem value="partnership">{t.contactPage.form.topics.partnership}</SelectItem>
-                            <SelectItem value="press">{t.contactPage.form.topics.press}</SelectItem>
                             <SelectItem value="other">{t.contactPage.form.topics.other}</SelectItem>
                           </SelectContent>
                         </Select>
-                        {errors.topic && (
-                          <p className="mt-1 text-sm text-red-500">{errors.topic}</p>
-                        )}
                       </div>
                       
                       {formData.topic === 'reservation' && (
@@ -307,7 +289,7 @@ export default function ContactPage() {
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder={t.contactPage.form.messagePlaceholder}
-                        rows={5}
+                        rows={4}
                         className={errors.message ? 'border-red-500' : ''}
                       />
                       {errors.message && (
@@ -315,23 +297,38 @@ export default function ContactPage() {
                       )}
                     </div>
 
-                    <div className="flex items-start gap-3">
-                      <Checkbox
-                        id="consent"
-                        checked={formData.consent}
-                        onCheckedChange={(checked) => setFormData({ ...formData, consent: checked as boolean })}
-                        className={errors.consent ? 'border-red-500' : ''}
-                      />
-                      <label htmlFor="consent" className="text-sm text-gray-600">
-                        {t.contactPage.form.consent}{' '}
-                        <Link href="/privacy" className="text-primary-600 hover:underline">
-                          {t.contactPage.form.privacyLink}
-                        </Link>
-                      </label>
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-3">
+                        <Checkbox
+                          id="consent"
+                          checked={formData.consent}
+                          onCheckedChange={(checked) => setFormData({ ...formData, consent: checked as boolean })}
+                          className={errors.consent ? 'border-red-500' : ''}
+                        />
+                        <label htmlFor="consent" className="text-sm text-gray-600">
+                          {t.contactPage.form.consent}{' '}
+                          <Link href="/privacy" className="text-primary-600 hover:underline">
+                            {t.contactPage.form.privacyLink}
+                          </Link>
+                        </label>
+                      </div>
+                      {errors.consent && (
+                        <p className="text-sm text-red-500">{errors.consent}</p>
+                      )}
+
+                      <div className="flex items-start gap-3">
+                        <Checkbox
+                          id="receiveNews"
+                          checked={formData.receiveNews}
+                          onCheckedChange={(checked) => setFormData({ ...formData, receiveNews: checked as boolean })}
+                        />
+                        <label htmlFor="receiveNews" className="text-sm text-gray-600">
+                          {locale === 'en'
+                            ? "I'd like to receive Tourism'Tour news"
+                            : "Je souhaite recevoir les actualités de Tourism'Tour"}
+                        </label>
+                      </div>
                     </div>
-                    {errors.consent && (
-                      <p className="text-sm text-red-500 -mt-4">{errors.consent}</p>
-                    )}
 
                     <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                       {isSubmitting ? (
@@ -353,12 +350,37 @@ export default function ContactPage() {
 
             {/* Contact Info Sidebar */}
             <div className="space-y-6">
+              {/* WhatsApp CTA - Primary */}
+              <AnimatedSection delay={0.1}>
+                <a
+                  href="https://wa.me/22900000000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Card className="p-6 bg-green-50 border-green-200 hover:border-green-400 transition-colors" hover>
+                    <div className="flex items-center gap-4">
+                      <div className="p-3 bg-green-500 rounded-xl">
+                        <MessageCircle className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-heading font-semibold text-gray-900">WhatsApp</h4>
+                        <p className="text-green-700 font-medium">+229 XX XX XX XX</p>
+                        <p className="text-sm text-gray-500">
+                          {locale === 'en' ? 'Fastest way to reach us' : 'Le moyen le plus rapide'}
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+                </a>
+              </AnimatedSection>
+
               <AnimatedSection delay={0.2}>
                 <h3 className="text-lg font-heading font-semibold text-gray-900 mb-4">
                   {t.contactPage.otherWays}
                 </h3>
-                <div className="space-y-4">
-                  {contactMethods.map((method, index) => (
+                <div className="space-y-3">
+                  {contactMethods.filter(m => !m.primary).map((method, index) => (
                     <a
                       key={index}
                       href={method.link}
@@ -373,8 +395,8 @@ export default function ContactPage() {
                           </div>
                           <div>
                             <h4 className="font-medium text-gray-900">{method.title}</h4>
-                            <p className="text-primary-600">{method.value}</p>
-                            <p className="text-sm text-gray-500 flex items-center gap-1 mt-1">
+                            <p className="text-primary-600 text-sm">{method.value}</p>
+                            <p className="text-xs text-gray-500 flex items-center gap-1 mt-1">
                               <Clock className="h-3 w-3" />
                               {method.description}
                             </p>
@@ -383,31 +405,24 @@ export default function ContactPage() {
                       </Card>
                     </a>
                   ))}
+                  <Card className="p-4" hover={false}>
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-primary-100 rounded-lg">
+                        <MapPin className="h-5 w-5 text-primary-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-gray-900">
+                          {locale === 'en' ? 'Office' : 'Bureau'}
+                        </h4>
+                        <p className="text-sm text-gray-600">Cotonou, Bénin</p>
+                      </div>
+                    </div>
+                  </Card>
                 </div>
               </AnimatedSection>
 
               <AnimatedSection delay={0.3}>
-                <h3 className="text-lg font-heading font-semibold text-gray-900 mb-4">
-                  {t.contactPage.followUs}
-                </h3>
-                <div className="flex gap-3">
-                  {socials.map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-white rounded-lg border border-sand-200 hover:border-primary-300 hover:bg-primary-50 transition-colors"
-                      aria-label={social.label}
-                    >
-                      <social.icon className="h-5 w-5 text-gray-600" />
-                    </a>
-                  ))}
-                </div>
-              </AnimatedSection>
-
-              <AnimatedSection delay={0.4}>
-                <Card className="p-6 bg-primary-50 border-primary-200" hover={false}>
+                <Card className="p-5 bg-primary-50 border-primary-200" hover={false}>
                   <h3 className="font-heading font-semibold text-gray-900 mb-2">
                     {t.contactPage.responseTime.title}
                   </h3>

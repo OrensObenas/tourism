@@ -1,12 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
-import { ChevronDown, Users, Play } from 'lucide-react';
+import { ChevronDown, Users, Play, Quote, Video, User } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { SectionHeader } from '@/components/common/SectionHeader';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { getEditions } from '@/lib/data/editions';
@@ -15,6 +12,15 @@ export default function ExperiencesPage() {
   const { locale, t } = useLanguage();
   const editions = getEditions();
   const [expandedEdition, setExpandedEdition] = useState<string | null>(editions[0]?.id);
+
+  const profileLabels: Record<string, string> = {
+    student: locale === 'en' ? 'Student' : 'Étudiant',
+    family: locale === 'en' ? 'Family' : 'Famille',
+    couple: locale === 'en' ? 'Couple' : 'Couple',
+    solo: 'Solo',
+    group: locale === 'en' ? 'Group' : 'Groupe',
+    international: 'International',
+  };
 
   return (
     <div className="min-h-screen bg-sand-50">
@@ -61,7 +67,7 @@ export default function ExperiencesPage() {
                           <div className="flex items-center gap-4 mt-1 text-sm text-gray-500">
                             <span className="flex items-center gap-1">
                               <Users className="h-4 w-4" />
-                              {edition.participants} voyageurs
+                              {edition.participants} {locale === 'en' ? 'travelers' : 'voyageurs'}
                             </span>
                           </div>
                         </div>
@@ -91,42 +97,66 @@ export default function ExperiencesPage() {
                           </ul>
                         </div>
 
-                        {/* Video Recap */}
-                        {edition.videoUrl && (
+                        {/* Recap Videos */}
+                        <div>
+                          <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                            <Video className="h-5 w-5 text-primary-600" />
+                            {locale === 'en' ? 'Recap Videos' : 'Vidéos récap'}
+                          </h3>
+                          {edition.recapVideos.length > 0 ? (
+                            <div className="grid sm:grid-cols-2 gap-4">
+                              {edition.recapVideos.map((video, i) => (
+                                <div key={i}>
+                                  <p className="text-sm font-medium text-gray-700 mb-2">
+                                    {locale === 'en' ? video.titleEn : video.title}
+                                  </p>
+                                  <div className="relative aspect-video rounded-xl overflow-hidden bg-gray-900">
+                                    <iframe
+                                      src={video.url}
+                                      title={locale === 'en' ? video.titleEn : video.title}
+                                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                      allowFullScreen
+                                      className="absolute inset-0 w-full h-full"
+                                    />
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          ) : (
+                            <div className="bg-sand-100 rounded-xl p-6 text-center">
+                              <Play className="h-8 w-8 text-gray-400 mx-auto mb-2" />
+                              <p className="text-gray-500 text-sm">
+                                {locale === 'en' ? 'Video coming soon' : 'Vidéo à venir'}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Testimonials for this edition */}
+                        {edition.testimonials.length > 0 && (
                           <div>
                             <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                              <Play className="h-5 w-5 text-primary-600" />
-                              {t.experiencesPage.videoRecap}
+                              <Quote className="h-5 w-5 text-primary-600" />
+                              {locale === 'en' ? 'Traveler Reviews' : 'Avis des voyageurs'}
                             </h3>
-                            <div className="relative aspect-video rounded-xl overflow-hidden bg-gray-900">
-                              <iframe
-                                src={edition.videoUrl}
-                                title={`${title} - Video`}
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                                className="absolute inset-0 w-full h-full"
-                              />
-                            </div>
-                          </div>
-                        )}
-
-                        {/* Gallery */}
-                        {edition.gallery.length > 0 && (
-                          <div>
-                            <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                              {t.experiencesPage.viewGallery}
-                            </h3>
-                            <div className="grid grid-cols-3 gap-3">
-                              {edition.gallery.map((image, i) => (
-                                <div key={i} className="relative aspect-video rounded-xl overflow-hidden">
-                                  <Image
-                                    src={image}
-                                    alt={`${title} - ${i + 1}`}
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 33vw, 20vw"
-                                  />
-                                </div>
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                              {edition.testimonials.map((testimonial, i) => (
+                                <Card key={i} className="p-4" hover={false}>
+                                  <div className="flex items-center gap-3 mb-3">
+                                    <div className="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center">
+                                      <User className="h-5 w-5 text-primary-600" />
+                                    </div>
+                                    <div>
+                                      <p className="font-medium text-gray-900 text-sm">{testimonial.name}</p>
+                                      <Badge variant="secondary" className="text-xs">
+                                        {profileLabels[testimonial.profileType] || testimonial.profileType}
+                                      </Badge>
+                                    </div>
+                                  </div>
+                                  <blockquote className="text-sm text-gray-600 italic">
+                                    &ldquo;{locale === 'en' ? testimonial.quoteEn : testimonial.quote}&rdquo;
+                                  </blockquote>
+                                </Card>
                               ))}
                             </div>
                           </div>

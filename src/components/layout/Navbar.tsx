@@ -18,8 +18,6 @@ export function Navbar() {
     { href: '/circuits', label: t.nav.circuits },
     { href: '/experiences', label: t.nav.experiences },
     { href: '/events', label: t.nav.events },
-    { href: '/testimonials', label: t.nav.testimonials },
-    { href: '/blog', label: t.nav.blog },
     { href: '/about', label: t.nav.about },
     { href: '/contact', label: t.nav.contact },
   ];

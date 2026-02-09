@@ -11,7 +11,6 @@ export function Footer() {
     { href: '/circuits', label: t.nav.circuits },
     { href: '/experiences', label: t.nav.experiences },
     { href: '/events', label: t.nav.events },
-    { href: '/blog', label: t.nav.blog },
     { href: '/about', label: t.nav.about },
     { href: '/faq', label: t.nav.faq },
   ];

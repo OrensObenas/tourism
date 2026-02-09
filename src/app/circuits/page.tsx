@@ -4,11 +4,10 @@ import { useState, useMemo } from 'react';
 import { Search, SlidersHorizontal } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { SectionHeader } from '@/components/common/SectionHeader';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
 import { CircuitCard } from '@/components/circuits/CircuitCard';
 import { useLanguage } from '@/components/providers/LanguageProvider';
-import { circuits, Circuit } from '@/lib/data/circuits';
+import { circuits } from '@/lib/data/circuits';
 
 export default function CircuitsPage() {
   const { locale, t } = useLanguage();
