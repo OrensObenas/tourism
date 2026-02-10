@@ -41,7 +41,9 @@ export default function EventsPage() {
     setFormError('');
   };
 
-  const handleSubmitInterest = (e: React.FormEvent) => {
+  const [isSubmittingInterest, setIsSubmittingInterest] = useState(false);
+
+  const handleSubmitInterest = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError('');
 
@@ -54,16 +56,35 @@ export default function EventsPage() {
       return;
     }
 
-    console.log('Interest submitted:', {
-      event: selectedEvent?.id,
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      receiveNews: formData.receiveNews,
-    });
-    setShowInterestModal(false);
-    setFormData({ name: '', email: '', phone: '', receiveNews: false });
-    alert(locale === 'en' ? 'Thank you! We will contact you soon.' : 'Merci ! Nous vous contacterons bientôt.');
+    setIsSubmittingInterest(true);
+
+    try {
+      const eventTitle = selectedEvent ? (locale === 'en' ? selectedEvent.titleEn : selectedEvent.title) : '';
+      const eventDate = selectedEvent?.date || '';
+
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'event-interest',
+          name: formData.name,
+          email: formData.email || undefined,
+          phone: formData.phone || undefined,
+          eventTitle,
+          eventDate,
+        }),
+      });
+
+      if (!response.ok) throw new Error('Failed to send');
+
+      setShowInterestModal(false);
+      setFormData({ name: '', email: '', phone: '', receiveNews: false });
+      alert(locale === 'en' ? 'Thank you! We will contact you soon.' : 'Merci ! Nous vous contacterons bientôt.');
+    } catch {
+      setFormError(locale === 'en' ? 'An error occurred. Please try again.' : 'Une erreur est survenue. Veuillez réessayer.');
+    } finally {
+      setIsSubmittingInterest(false);
+    }
   };
 
   const months = [
@@ -84,7 +105,7 @@ export default function EventsPage() {
   return (
     <div className="min-h-screen bg-sand-50">
       {/* Header */}
-      <section className="bg-primary-900 text-white py-16 lg:py-20">
+      <section className="bg-primary-900 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-4">
@@ -218,8 +239,10 @@ export default function EventsPage() {
                     : "Je souhaite recevoir les actualités de Tourism'Tour"}
                 </label>
               </div>
-              <Button type="submit" className="w-full">
-                {t.contactPage.form.submit}
+              <Button type="submit" className="w-full" disabled={isSubmittingInterest}>
+                {isSubmittingInterest
+                  ? (locale === 'en' ? 'Sending...' : 'Envoi en cours...')
+                  : t.contactPage.form.submit}
               </Button>
             </form>
           </Card>

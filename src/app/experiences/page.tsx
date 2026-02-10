@@ -25,7 +25,7 @@ export default function ExperiencesPage() {
   return (
     <div className="min-h-screen bg-sand-50">
       {/* Header */}
-      <section className="bg-primary-900 text-white py-16 lg:py-20">
+      <section className="bg-primary-900 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-4">

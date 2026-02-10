@@ -7,7 +7,7 @@ import { AnimatedSection } from '@/components/common/AnimatedSection';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { blogPosts } from '@/lib/data/blogPosts';
-import { Search } from 'lucide-react';
+import { Search, CheckCircle } from 'lucide-react';
 
 export default function BlogPage() {
   const { locale, t } = useLanguage();
@@ -53,7 +53,7 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-sand-50">
       {/* Header */}
-      <section className="bg-primary-900 text-white py-16 lg:py-20">
+      <section className="bg-primary-900 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-4">
@@ -119,31 +119,81 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-16 bg-primary-50">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedSection>
-            <h2 className="text-2xl lg:text-3xl font-heading font-bold text-gray-900 mb-4">
-              {t.blogPage.newsletter.title}
-            </h2>
-            <p className="text-gray-600 mb-6">
-              {t.blogPage.newsletter.description}
-            </p>
-            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+      <NewsletterSection t={t} locale={locale} />
+    </div>
+  );
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function NewsletterSection({ t, locale }: { t: any; locale: string }) {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setStatus('sending');
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'newsletter', email }),
+      });
+
+      if (!response.ok) throw new Error('Failed to send');
+      setStatus('success');
+      setEmail('');
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  return (
+    <section className="py-16 bg-primary-50">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <AnimatedSection>
+          <h2 className="text-2xl lg:text-3xl font-heading font-bold text-gray-900 mb-4">
+            {t.blogPage.newsletter.title}
+          </h2>
+          <p className="text-gray-600 mb-6">
+            {t.blogPage.newsletter.description}
+          </p>
+          {status === 'success' ? (
+            <div className="flex items-center justify-center gap-2 text-green-600 py-3">
+              <CheckCircle className="h-5 w-5" />
+              <span className="font-medium">
+                {locale === 'en' ? 'Thanks for subscribing!' : 'Merci pour votre inscription !'}
+              </span>
+            </div>
+          ) : (
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <Input
                 type="email"
                 placeholder={t.blogPage.newsletter.placeholder}
                 className="flex-1"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
               <button
                 type="submit"
-                className="px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium"
+                disabled={status === 'sending'}
+                className="px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium disabled:opacity-50"
               >
-                {t.blogPage.newsletter.button}
+                {status === 'sending'
+                  ? (locale === 'en' ? 'Sending...' : 'Envoi...')
+                  : t.blogPage.newsletter.button}
               </button>
             </form>
-          </AnimatedSection>
-        </div>
-      </section>
-    </div>
+          )}
+          {status === 'error' && (
+            <p className="text-sm text-red-600 mt-3">
+              {locale === 'en' ? 'An error occurred. Please try again.' : 'Une erreur est survenue. Veuillez réessayer.'}
+            </p>
+          )}
+        </AnimatedSection>
+      </div>
+    </section>
   );
 }
