@@ -31,6 +31,59 @@ h1, h2, h3, h4, h5, h6 {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Subtle brand background to reduce "all white" feeling */
+  .app-bg {
+    background-image:
+      radial-gradient(900px 500px at 15% -10%, rgba(167, 139, 250, 0.20), transparent 60%),
+      radial-gradient(800px 450px at 90% 10%, rgba(201, 173, 133, 0.28), transparent 55%),
+      linear-gradient(to bottom, #fdfcfb, #f9f5f0);
+  }
+
+  /* Warm earthy gradient section */
+  .section-warm {
+    background: linear-gradient(135deg, #fdfcfb 0%, #f9f5f0 40%, #f3ebe0 100%);
+  }
+
+  /* Subtle purple tint section */
+  .section-purple-tint {
+    background: linear-gradient(180deg, #f5f3ff 0%, #ede9fe 50%, #f5f3ff 100%);
+  }
+
+  /* Sage-tinted section */
+  .section-sage-tint {
+    background: linear-gradient(135deg, #f6f7f6 0%, #e3e7e3 60%, #f6f7f6 100%);
+  }
+
+  /* Diagonal gradient mixing brand colors subtly */
+  .section-brand-mix {
+    background:
+      radial-gradient(600px 300px at 10% 80%, rgba(163, 178, 163, 0.12), transparent 60%),
+      radial-gradient(500px 400px at 90% 20%, rgba(196, 181, 253, 0.10), transparent 50%),
+      linear-gradient(to bottom, #ffffff, #fdfcfb);
+  }
+
+  /* Warm amber accent section */
+  .section-amber-tint {
+    background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 30%, #fffbeb 100%);
+  }
+
+  /* Dotted pattern overlay */
+  .pattern-dots {
+    background-image: radial-gradient(circle, rgba(109, 40, 217, 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Diagonal lines pattern */
+  .pattern-lines {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 10px,
+      rgba(109, 40, 217, 0.02) 10px,
+      rgba(109, 40, 217, 0.02) 11px
+    );
+  }
 }
 
 /* Custom scrollbar */

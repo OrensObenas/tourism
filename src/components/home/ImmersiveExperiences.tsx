@@ -48,7 +48,7 @@ export function ImmersiveExperiences() {
   ];
 
   return (
-    <section className="py-14 lg:py-20 bg-white">
+    <section className="py-14 lg:py-20 section-warm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <SectionHeader

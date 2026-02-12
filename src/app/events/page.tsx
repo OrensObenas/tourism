@@ -103,7 +103,7 @@ export default function EventsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-sand-50">
+    <div className="min-h-screen">
       {/* Header */}
       <section className="bg-primary-900 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -119,7 +119,7 @@ export default function EventsPage() {
       </section>
 
       {/* Filters */}
-      <section className="py-6 bg-white border-b border-sand-200">
+      <section className="py-6 bg-sand-50 border-b border-sand-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-4">
             <Select value={selectedMonth} onValueChange={setSelectedMonth}>
@@ -153,7 +153,7 @@ export default function EventsPage() {
       </section>
 
       {/* Events Grid */}
-      <section className="py-12 lg:py-16">
+      <section className="py-12 lg:py-16 section-warm pattern-dots">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filteredEvents.length > 0 ? (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">

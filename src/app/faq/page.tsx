@@ -41,7 +41,7 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="min-h-screen bg-sand-50">
+    <div className="min-h-screen">
       {/* Header */}
       <section className="bg-primary-900 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,7 +60,7 @@ export default function FAQPage() {
       </section>
 
       {/* Search */}
-      <section className="py-8 bg-white border-b border-sand-200">
+      <section className="py-8 bg-sand-50 border-b border-sand-200">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -75,7 +75,7 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Content */}
-      <section className="py-12 lg:py-16">
+      <section className="py-12 lg:py-16 section-brand-mix pattern-dots">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           {searchQuery ? (
             <AnimatedSection>
@@ -141,7 +141,7 @@ export default function FAQPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-primary-50">
+      <section className="py-16 section-amber-tint">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <MessageCircle className="h-12 w-12 text-primary-600 mx-auto mb-4" />

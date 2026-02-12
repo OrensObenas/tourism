@@ -49,7 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className="scroll-smooth">
-      <body className="antialiased bg-sand-50 text-gray-900 min-h-screen flex flex-col">
+      <body className="antialiased app-bg bg-sand-50 text-gray-900 min-h-screen flex flex-col">
         <LanguageProvider>
           <Navbar />
           <main className="flex-1">

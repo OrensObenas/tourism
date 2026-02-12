@@ -191,7 +191,7 @@ Adresse : Cotonou, Bénin`
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       {/* Header */}
       <section className="bg-primary-900 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -207,10 +207,10 @@ Adresse : Cotonou, Bénin`
       </section>
 
       {/* Content */}
-      <section className="py-12 lg:py-16">
+      <section className="py-12 lg:py-16 section-brand-mix">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <div className="prose prose-lg max-w-none">
+            <div className="prose prose-lg max-w-none bg-white/80 backdrop-blur-sm rounded-2xl p-8 lg:p-12 shadow-soft border border-sand-200">
               {content.sections.map((section, index) => (
                 <div key={index} className="mb-8">
                   <h2 className="text-xl font-heading font-semibold text-gray-900 mb-4">

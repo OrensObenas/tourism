@@ -92,7 +92,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent">
       {/* Hero */}
       <section className="relative h-[50vh] lg:h-[60vh]">
         <Image
@@ -118,7 +118,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-16 lg:py-20">
+      <section className="py-16 lg:py-20 section-brand-mix pattern-dots">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
@@ -167,7 +167,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-16 lg:py-20 bg-sand-50">
+      <section className="py-16 lg:py-20 section-purple-tint">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-12">
@@ -197,7 +197,7 @@ export default function AboutPage() {
       </section>
 
       {/* Field Experience */}
-      <section className="py-16 lg:py-20">
+      <section className="py-16 lg:py-20 section-sage-tint">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection className="order-2 lg:order-1">
@@ -256,7 +256,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="py-16 lg:py-20 bg-sand-50">
+      <section className="py-16 lg:py-20 section-warm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-12">

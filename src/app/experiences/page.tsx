@@ -23,7 +23,7 @@ export default function ExperiencesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-sand-50">
+    <div className="min-h-screen">
       {/* Header */}
       <section className="bg-primary-900 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,7 +39,7 @@ export default function ExperiencesPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-12 lg:py-16">
+      <section className="py-12 lg:py-16 section-purple-tint pattern-dots">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-6">
             {editions.map((edition, index) => {

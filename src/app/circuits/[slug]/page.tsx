@@ -61,7 +61,7 @@ export default function CircuitDetailPage({ params }: CircuitDetailPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-sand-50">
+    <div className="min-h-screen">
       {/* Hero - gradient with icon instead of image */}
       <section className={`relative pt-28 lg:pt-36 pb-16 lg:pb-24 bg-gradient-to-br ${typeColors[circuit.type] || 'from-primary-600 to-primary-800'}`}>
         <Compass className="absolute right-12 top-12 h-32 w-32 text-white/10" />
@@ -120,7 +120,7 @@ export default function CircuitDetailPage({ params }: CircuitDetailPageProps) {
       </section>
 
       {/* Main Content */}
-      <section className="py-12 lg:py-16">
+      <section className="py-12 lg:py-16 section-brand-mix pattern-dots">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Left Content */}

@@ -4,20 +4,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { 
   MapPin, 
-  Compass, 
   Calendar, 
   Shield, 
   Heart, 
   Star,
   ArrowRight,
   MessageCircle,
-  Palmtree,
   Users,
   Sparkles,
   Quote
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
 import { CircuitCard } from '@/components/circuits/CircuitCard';
@@ -155,7 +152,7 @@ export default function HomePage() {
       <CounterStats />
 
       {/* ========== WHY US ========== */}
-      <section className="py-14 lg:py-20 bg-white">
+      <section className="py-14 lg:py-20 section-brand-mix pattern-dots">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <SectionHeader 
@@ -210,7 +207,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== FEATURED CIRCUITS ========== */}
-      <section className="py-14 lg:py-20 bg-sand-50">
+      <section className="py-14 lg:py-20 section-purple-tint">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <SectionHeader 
@@ -244,7 +241,7 @@ export default function HomePage() {
       <TestimonialCarousel />
 
       {/* ========== UPCOMING EVENTS ========== */}
-      <section className="py-14 lg:py-20 bg-white">
+      <section className="py-14 lg:py-20 section-sage-tint">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <SectionHeader 

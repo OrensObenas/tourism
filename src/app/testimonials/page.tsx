@@ -32,7 +32,7 @@ export default function TestimonialsPage() {
   const avgRating = testimonials.reduce((acc, t) => acc + t.rating, 0) / testimonials.length;
 
   return (
-    <div className="min-h-screen bg-sand-50">
+    <div className="min-h-screen">
       {/* Header */}
       <section className="bg-primary-900 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,7 +67,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Filters */}
-      <section className="py-6 bg-white border-b border-sand-200">
+      <section className="py-6 bg-sand-50 border-b border-sand-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-4">
             <Select value={selectedAudience} onValueChange={setSelectedAudience}>
@@ -100,7 +100,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Featured Quote */}
-      <section className="py-12 bg-primary-50">
+      <section className="py-12 section-sage-tint">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <Quote className="h-12 w-12 text-primary-300 mx-auto mb-6" />
@@ -118,7 +118,7 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Testimonials Grid */}
-      <section className="py-12 lg:py-16">
+      <section className="py-12 lg:py-16 section-brand-mix pattern-dots">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filteredTestimonials.length > 0 ? (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">

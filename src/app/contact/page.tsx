@@ -151,7 +151,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-sand-50">
+    <div className="min-h-screen">
       {/* Header */}
       <section className="bg-primary-900 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -166,7 +166,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-12 lg:py-16">
+      <section className="py-12 lg:py-16 section-brand-mix pattern-dots">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Contact Form */}

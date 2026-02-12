@@ -54,7 +54,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       {/* Hero Image */}
       <section className="relative h-[50vh] lg:h-[60vh]">
         <Image
@@ -93,7 +93,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       </section>
 
       {/* Article Meta & Content */}
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 section-brand-mix">
         <AnimatedSection>
           {/* Meta Info */}
           <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 border-b border-sand-200 pb-6 mb-8">
