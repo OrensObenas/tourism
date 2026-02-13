@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { Clock, MapPin, Compass } from 'lucide-react';
+import Image from 'next/image';
+import { Clock, MapPin } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -22,18 +23,17 @@ export function CircuitCard({ circuit }: CircuitCardProps) {
     ? `1 ${t.featuredCircuits.day}` 
     : `${circuit.durationDays} ${t.featuredCircuits.days}`;
 
-  const typeColors: Record<string, string> = {
-    cultural: 'from-primary-600 to-primary-800',
-    dayTrip: 'from-sage-400 to-sage-600',
-    organized: 'from-sand-400 to-sand-600',
-    adventure: 'from-amber-500 to-amber-700',
-  };
-
   return (
     <Card className="flex flex-col h-full">
-      <div className={`relative h-32 bg-gradient-to-br ${typeColors[circuit.type] || 'from-primary-600 to-primary-800'} flex items-center justify-center rounded-t-2xl`}>
-        <Compass className="h-10 w-10 text-white/30" />
-        <div className="absolute top-3 left-3 flex flex-wrap gap-1">
+      <div className="relative h-48 overflow-hidden rounded-t-2xl">
+        <Image
+          src={circuit.heroImage}
+          alt={title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+        <div className="absolute top-3 left-3 flex flex-wrap gap-1 z-10">
           {tags.slice(0, 2).map((tag, index) => (
             <Badge key={index} variant="default" className="bg-white/90 text-primary-800 text-xs">
               {tag}

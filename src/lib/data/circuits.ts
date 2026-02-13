@@ -53,7 +53,7 @@ export const circuits: Circuit[] = [
     region: 'south',
     startingCity: 'Cotonou',
     groupSize: { min: 2, max: 15 },
-    heroImage: 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1200',
+    heroImage: '/images/Ouidah.jpeg',
     gallery: [
       'https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800',
       'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800',
@@ -129,7 +129,7 @@ export const circuits: Circuit[] = [
     region: 'south',
     startingCity: 'Cotonou',
     groupSize: { min: 2, max: 10 },
-    heroImage: 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=1200',
+    heroImage: '/images/Ganvie.jpeg',
     gallery: [
       'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800',
       'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800',
@@ -202,7 +202,7 @@ export const circuits: Circuit[] = [
     region: 'center',
     startingCity: 'Cotonou',
     groupSize: { min: 2, max: 12 },
-    heroImage: 'https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=1200',
+    heroImage: '/images/Abomey.jpeg',
     gallery: [
       'https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=800',
       'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800',

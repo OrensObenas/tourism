@@ -96,7 +96,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative h-[50vh] lg:h-[60vh]">
         <Image
-          src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1920&h=800&fit=crop"
+          src="/images/Guide_1.jpeg"
           alt={locale === 'en' ? 'Tourism Tour Team' : 'Équipe Tourism Tour'}
           fill
           className="object-cover"
@@ -204,7 +204,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative h-48 rounded-xl overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1580746738099-78d6833b3a85?w=400&h=300&fit=crop"
+                    src="/images/Guide_1.jpeg"
                     alt="Experience 1"
                     fill
                     className="object-cover"
@@ -212,7 +212,7 @@ export default function AboutPage() {
                 </div>
                 <div className="relative h-48 rounded-xl overflow-hidden mt-8">
                   <Image
-                    src="https://images.unsplash.com/photo-1518877593221-1f28583780b4?w=400&h=300&fit=crop"
+                    src="/images/Guide_2.jpeg"
                     alt="Experience 2"
                     fill
                     className="object-cover"
@@ -220,7 +220,7 @@ export default function AboutPage() {
                 </div>
                 <div className="relative h-48 rounded-xl overflow-hidden -mt-4">
                   <Image
-                    src="https://images.unsplash.com/photo-1580746738081-78d6833b3a85?w=400&h=300&fit=crop"
+                    src="/images/Guide_3.jpeg"
                     alt="Experience 3"
                     fill
                     className="object-cover"
@@ -228,7 +228,7 @@ export default function AboutPage() {
                 </div>
                 <div className="relative h-48 rounded-xl overflow-hidden mt-4">
                   <Image
-                    src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&h=300&fit=crop"
+                    src="/images/Guide_4.jpeg"
                     alt="Experience 4"
                     fill
                     className="object-cover"
