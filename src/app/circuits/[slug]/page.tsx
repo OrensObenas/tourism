@@ -21,6 +21,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
+import { ImageGallery } from '@/components/common/ImageGallery';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { getCircuitBySlug } from '@/lib/data/circuits';
 
@@ -134,6 +135,16 @@ export default function CircuitDetailPage({ params }: CircuitDetailPageProps) {
                   {description}
                 </p>
               </AnimatedSection>
+
+              {/* Gallery */}
+              {circuit.gallery.length > 0 && (
+                <AnimatedSection>
+                  <ImageGallery
+                    images={circuit.gallery}
+                    title={locale === 'en' ? 'Photo Gallery' : 'Galerie photos'}
+                  />
+                </AnimatedSection>
+              )}
 
               {/* Itinerary */}
               <AnimatedSection>

@@ -5,6 +5,7 @@ import { ChevronDown, Users, Play, Quote, Video, User } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
+import { ImageGallery } from '@/components/common/ImageGallery';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { getEditions } from '@/lib/data/editions';
 
@@ -96,6 +97,16 @@ export default function ExperiencesPage() {
                             ))}
                           </ul>
                         </div>
+
+                        {/* Gallery */}
+                        {edition.gallery.length > 0 && (
+                          <div>
+                            <ImageGallery
+                              images={edition.gallery}
+                              title={locale === 'en' ? 'Photo Gallery' : 'Galerie photos'}
+                            />
+                          </div>
+                        )}
 
                         {/* Recap Videos */}
                         <div>

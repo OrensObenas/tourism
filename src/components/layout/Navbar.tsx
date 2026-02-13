@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Globe, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -59,29 +60,18 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 lg:h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2.5 group">
-            <div className={cn(
-              'w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 font-heading font-bold text-lg',
-              isTransparent
-                ? 'bg-white/20 text-white backdrop-blur-sm'
-                : 'bg-primary-700 text-white'
-            )}>
-              T
-            </div>
-            <div className="flex flex-col">
-              <span className={cn(
-                'text-lg font-heading font-bold leading-tight transition-colors duration-300',
-                isTransparent ? 'text-white' : 'text-primary-900'
-              )}>
-                Tourism&apos;Tour
-              </span>
-              <span className={cn(
-                'text-[10px] font-medium tracking-widest uppercase leading-tight transition-colors duration-300',
-                isTransparent ? 'text-white/70' : 'text-primary-400'
-              )}>
-                Bénin
-              </span>
-            </div>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/images/Tourism_logo.png"
+              alt="Tourism'Tour Bénin"
+              width={160}
+              height={50}
+              className={cn(
+                'h-12 w-auto object-contain transition-all duration-300',
+                isTransparent ? 'brightness-0 invert' : ''
+              )}
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation — center */}

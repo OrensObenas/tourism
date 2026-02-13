@@ -22,14 +22,14 @@ export function ImmersiveExperiences() {
     {
       title: t.immersive.cultural.title,
       description: t.immersive.cultural.description,
-      image: 'https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=800',
+      image: '/images/Culture.jpeg',
       href: '/circuits?type=cultural',
       span: 'md:col-span-2 md:row-span-2',
     },
     {
       title: t.immersive.nature.title,
       description: t.immersive.nature.description,
-      image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800',
+      image: '/images/Nature_lac.jpeg',
       href: '/circuits?type=adventure',
     },
     {
@@ -41,7 +41,7 @@ export function ImmersiveExperiences() {
     {
       title: t.immersive.community.title,
       description: t.immersive.community.description,
-      image: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800',
+      image: '/images/Rencontre.jpeg',
       href: '/experiences',
       span: 'md:col-span-2',
     },

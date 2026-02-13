@@ -38,7 +38,7 @@ export default function HomePage() {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1920"
+            src="/images/Amazone.jpg"
             alt="Bénin landscape"
             fill
             className="object-cover scale-105"
