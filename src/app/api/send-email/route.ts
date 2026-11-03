@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { z } from 'zod';
+import { getCircuitBySlug } from '@/lib/data/circuits';
 
 // Types pour les différents formulaires
 type ContactPayload = {
@@ -10,6 +12,7 @@ type ContactPayload = {
   topic?: string;
   circuit?: string;
   message: string;
+  receiveNews?: boolean;
 };
 
 type EventInterestPayload = {
@@ -26,7 +29,73 @@ type NewsletterPayload = {
   email: string;
 };
 
-type EmailPayload = ContactPayload | EventInterestPayload | NewsletterPayload;
+// Validation des données reçues (ne jamais faire confiance au navigateur)
+const optionalText = (max: number) =>
+  z.string().trim().max(max).optional().transform((v) => v || undefined);
+
+const payloadSchema = z.discriminatedUnion('type', [
+  z.object({
+    type: z.literal('contact'),
+    fullName: z.string().trim().min(2).max(100),
+    email: z.email().max(200).optional(),
+    phone: optionalText(30),
+    topic: optionalText(50),
+    circuit: optionalText(100),
+    message: z.string().trim().min(10).max(5000),
+    receiveNews: z.boolean().optional(),
+    website: z.string().optional(),
+  }),
+  z.object({
+    type: z.literal('event-interest'),
+    name: z.string().trim().max(100).default(''),
+    email: z.email().max(200).optional(),
+    phone: optionalText(30),
+    eventTitle: z.string().trim().min(1).max(200),
+    eventDate: z.string().trim().max(50).default(''),
+    website: z.string().optional(),
+  }),
+  z.object({
+    type: z.literal('newsletter'),
+    email: z.email().max(200),
+    website: z.string().optional(),
+  }),
+]);
+
+// Échappe le HTML pour empêcher l'injection de code dans les emails reçus
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function escapeFields<T extends Record<string, unknown>>(data: T): T {
+  return Object.fromEntries(
+    Object.entries(data).map(([k, v]) => [k, typeof v === 'string' ? escapeHtml(v) : v])
+  ) as T;
+}
+
+// Limite simple : 5 envois par IP toutes les 10 minutes (en mémoire, par instance)
+const RATE_LIMIT = 5;
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+const hits = new Map<string, number[]>();
+
+function isRateLimited(ip: string) {
+  const now = Date.now();
+  const recent = (hits.get(ip) || []).filter((t) => now - t < RATE_WINDOW_MS);
+  recent.push(now);
+  hits.set(ip, recent);
+  return recent.length > RATE_LIMIT;
+}
+
+const TOPIC_LABELS: Record<string, string> = {
+  general: 'Question générale',
+  reservation: 'Demande de réservation',
+  group: 'Voyage de groupe',
+  other: 'Autre',
+};
 
 // Créer le transporteur SMTP
 function createTransporter() {
@@ -94,6 +163,11 @@ function buildContactEmail(data: ContactPayload): { subject: string; html: strin
           <div class="field">
             <div class="label">Circuit concerné</div>
             <div class="value">${data.circuit}</div>
+          </div>` : ''}
+          ${data.receiveNews ? `
+          <div class="field">
+            <div class="label">Newsletter</div>
+            <div class="value">✅ Souhaite recevoir les actualités</div>
           </div>` : ''}
           <div class="field">
             <div class="label">Message</div>
@@ -218,16 +292,28 @@ function buildNewsletterEmail(data: NewsletterPayload): { subject: string; html:
 
 export async function POST(req: NextRequest) {
   try {
-    const body: EmailPayload = await req.json();
-
-    // Validation basique
-    if (!body.type) {
-      return NextResponse.json({ error: 'Type de formulaire manquant' }, { status: 400 });
+    const ip = req.headers.get('x-forwarded-for')?.split(',')[0].trim() || 'unknown';
+    if (isRateLimited(ip)) {
+      return NextResponse.json({ error: 'Trop de requêtes, réessayez plus tard' }, { status: 429 });
     }
 
-    const transporter = createTransporter();
-    const contactEmail = process.env.CONTACT_EMAIL || 'orensobenas66@gmail.com';
-    const senderEmail = process.env.SMTP_USER || 'gilbertobenas@gmail.com';
+    const parsed = payloadSchema.safeParse(await req.json());
+    if (!parsed.success) {
+      return NextResponse.json({ error: 'Données invalides' }, { status: 400 });
+    }
+    const body = parsed.data;
+
+    // Honeypot rempli => robot : on fait semblant que tout s'est bien passé
+    if (body.website) {
+      return NextResponse.json({ success: true });
+    }
+
+    const contactEmail = process.env.CONTACT_EMAIL;
+    const senderEmail = process.env.SMTP_USER;
+    if (!contactEmail || !senderEmail || !process.env.SMTP_PASS) {
+      console.error('Configuration SMTP manquante : voir .env.example');
+      return NextResponse.json({ error: 'Service email non configuré' }, { status: 500 });
+    }
 
     let subject: string;
     let html: string;
@@ -235,40 +321,41 @@ export async function POST(req: NextRequest) {
 
     switch (body.type) {
       case 'contact': {
-        if (!body.fullName || !body.message) {
-          return NextResponse.json({ error: 'Nom et message requis' }, { status: 400 });
+        if (!body.email && !body.phone) {
+          return NextResponse.json({ error: 'Email ou téléphone requis' }, { status: 400 });
         }
-        const email = buildContactEmail(body);
-        subject = email.subject;
+        const circuit = body.circuit ? getCircuitBySlug(body.circuit) : undefined;
+        const email = buildContactEmail(
+          escapeFields({
+            ...body,
+            topic: body.topic ? TOPIC_LABELS[body.topic] || body.topic : undefined,
+            circuit: circuit ? circuit.title : body.circuit,
+          })
+        );
+        subject = `[Tourism'Tour] Nouveau message de ${body.fullName}${body.topic ? ` - ${TOPIC_LABELS[body.topic] || body.topic}` : ''}`;
         html = email.html;
-        replyTo = body.email || undefined;
+        replyTo = body.email;
         break;
       }
       case 'event-interest': {
         if (!body.email && !body.phone) {
           return NextResponse.json({ error: 'Email ou téléphone requis' }, { status: 400 });
         }
-        const email = buildEventInterestEmail(body);
-        subject = email.subject;
+        const email = buildEventInterestEmail(escapeFields(body));
+        subject = `[Tourism'Tour] Intérêt pour : ${body.eventTitle}`;
         html = email.html;
-        replyTo = body.email || undefined;
+        replyTo = body.email;
         break;
       }
       case 'newsletter': {
-        if (!body.email) {
-          return NextResponse.json({ error: 'Email requis' }, { status: 400 });
-        }
-        const email = buildNewsletterEmail(body);
+        const email = buildNewsletterEmail(escapeFields(body));
         subject = email.subject;
         html = email.html;
         break;
       }
-      default:
-        return NextResponse.json({ error: 'Type de formulaire inconnu' }, { status: 400 });
     }
 
-    // Envoyer l'email
-    await transporter.sendMail({
+    await createTransporter().sendMail({
       from: `"Tourism'Tour" <${senderEmail}>`,
       to: contactEmail,
       replyTo,

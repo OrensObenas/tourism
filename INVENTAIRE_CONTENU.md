@@ -30,6 +30,8 @@
 
 ## 1. Informations générales de l'entreprise
 
+> ✅ **Email, téléphone, WhatsApp, adresse, réseaux sociaux et année de création se modifient désormais à un seul endroit : `src/lib/site.ts`.** Les variables d'envoi d'email sont décrites dans `.env.example`.
+
 | Élément | Valeur actuelle (FICTIVE) | Fichier(s) concerné(s) |
 |---------|--------------------------|----------------------|
 | Nom de l'entreprise | `Tourism'Tour` | Partout |

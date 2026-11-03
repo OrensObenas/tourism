@@ -26,6 +26,7 @@ import { EditionsPreview } from '@/components/home/EditionsPreview';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { getFeaturedCircuits } from '@/lib/data/circuits';
 import { getUpcomingEvents } from '@/lib/data/events';
+import { siteConfig, whatsappLink } from '@/lib/site';
 
 export default function HomePage() {
   const { t } = useLanguage();
@@ -129,7 +130,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="text-2xl font-heading font-bold text-gray-900">{t.heroBadges.since}</div>
-                    <div className="text-xs text-gray-500">2023</div>
+                    <div className="text-xs text-gray-500">{siteConfig.foundedYear}</div>
                   </div>
                 </div>
               </div>
@@ -278,8 +279,8 @@ export default function HomePage() {
       <section className="relative py-20 lg:py-28 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1920"
-            alt="Benin sunset"
+            src="/images/Header.jpg"
+            alt="Porte du Non-Retour, Ouidah"
             fill
             className="object-cover"
             sizes="100vw"
@@ -316,7 +317,7 @@ export default function HomePage() {
                 </Link>
               </Button>
               <Button asChild variant="whatsapp" size="xl" className="shadow-lg shadow-black/20">
-                <a href="https://wa.me/22900000000" target="_blank" rel="noopener noreferrer">
+                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-5 w-5" />
                   {t.cta.whatsapp}
                 </a>

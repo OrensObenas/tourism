@@ -1,6 +1,7 @@
 'use client';
 
 import { AnimatedSection } from '@/components/common/AnimatedSection';
+import { siteConfig } from '@/lib/site';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 
 export default function TermsPage() {
@@ -92,9 +93,9 @@ Tourism'Tour is not responsible for denied entry due to insufficient documentati
         title: '12. Contact Information',
         content: `For any questions about these terms, please contact us:
 
-Email: contact@tourismtour.com
-WhatsApp: +229 XX XX XX XX
-Address: Cotonou, Benin`
+Email: ${siteConfig.email}
+WhatsApp: ${siteConfig.phoneDisplay}
+Address: ${siteConfig.address}`
       },
     ],
   } : {
@@ -183,9 +184,9 @@ Tourism'Tour n'est pas responsable des refus d'entrée dus à une documentation 
         title: '12. Informations de Contact',
         content: `Pour toute question concernant ces conditions, veuillez nous contacter :
 
-Email : contact@tourismtour.com
-WhatsApp : +229 XX XX XX XX
-Adresse : Cotonou, Bénin`
+Email : ${siteConfig.email}
+WhatsApp : ${siteConfig.phoneDisplay}
+Adresse : ${siteConfig.address}`
       },
     ],
   };

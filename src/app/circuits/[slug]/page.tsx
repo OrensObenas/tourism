@@ -24,6 +24,7 @@ import { AnimatedSection } from '@/components/common/AnimatedSection';
 import { ImageGallery } from '@/components/common/ImageGallery';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { getCircuitBySlug } from '@/lib/data/circuits';
+import { whatsappLink } from '@/lib/site';
 
 interface CircuitDetailPageProps {
   params: { slug: string };
@@ -255,7 +256,7 @@ export default function CircuitDetailPage({ params }: CircuitDetailPageProps) {
                   
                   <div className="space-y-3">
                     <Button asChild className="w-full" size="lg">
-                      <Link href={`/contact?topic=circuitInfo&circuit=${circuit.slug}`}>
+                      <Link href={`/contact?topic=general&circuit=${circuit.slug}`}>
                         {t.circuitDetail.requestInfo}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
@@ -266,7 +267,13 @@ export default function CircuitDetailPage({ params }: CircuitDetailPageProps) {
                       </Link>
                     </Button>
                     <Button asChild variant="whatsapp" className="w-full" size="lg">
-                      <a href="https://wa.me/22900000000" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={whatsappLink(
+                          locale === 'en'
+                            ? `Hello, I'm interested in the circuit "${title}".`
+                            : `Bonjour, je suis intéressé(e) par le circuit « ${title} ».`
+                        )}
+                        target="_blank" rel="noopener noreferrer">
                         <MessageCircle className="mr-2 h-4 w-4" />
                         WhatsApp
                       </a>

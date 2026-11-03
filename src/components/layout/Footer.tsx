@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { MapPin, Mail, Phone, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 import { useLanguage } from '@/components/providers/LanguageProvider';
+import { siteConfig, emailLink, phoneLink } from '@/lib/site';
 
 export function Footer() {
   const { t } = useLanguage();
@@ -21,11 +22,11 @@ export function Footer() {
   ];
 
   const socialLinks = [
-    { href: 'https://facebook.com', icon: Facebook, label: 'Facebook' },
-    { href: 'https://instagram.com', icon: Instagram, label: 'Instagram' },
-    { href: 'https://twitter.com', icon: Twitter, label: 'Twitter' },
-    { href: 'https://youtube.com', icon: Youtube, label: 'YouTube' },
-  ];
+    { href: siteConfig.socials.facebook, icon: Facebook, label: 'Facebook' },
+    { href: siteConfig.socials.instagram, icon: Instagram, label: 'Instagram' },
+    { href: siteConfig.socials.twitter, icon: Twitter, label: 'Twitter' },
+    { href: siteConfig.socials.youtube, icon: Youtube, label: 'YouTube' },
+  ].filter((social) => social.href);
 
   return (
     <footer className="bg-primary-900 text-white">
@@ -81,17 +82,21 @@ export function Footer() {
               {t.footer.contact}
             </h3>
             <ul className="space-y-3">
-              <li className="flex items-center space-x-3 text-sm text-primary-200">
-                <Mail className="h-5 w-5 text-primary-400" />
-                <span>contact@tourismtour.com</span>
+              <li>
+                <a href={emailLink} className="flex items-center space-x-3 text-sm text-primary-200 hover:text-white transition-colors">
+                  <Mail className="h-5 w-5 text-primary-400" />
+                  <span>{siteConfig.email}</span>
+                </a>
               </li>
-              <li className="flex items-center space-x-3 text-sm text-primary-200">
-                <Phone className="h-5 w-5 text-primary-400" />
-                <span>+229 XX XX XX XX</span>
+              <li>
+                <a href={phoneLink} className="flex items-center space-x-3 text-sm text-primary-200 hover:text-white transition-colors">
+                  <Phone className="h-5 w-5 text-primary-400" />
+                  <span>{siteConfig.phoneDisplay}</span>
+                </a>
               </li>
               <li className="flex items-start space-x-3 text-sm text-primary-200">
                 <MapPin className="h-5 w-5 text-primary-400 mt-0.5" />
-                <span>Cotonou, Bénin</span>
+                <span>{siteConfig.address}</span>
               </li>
             </ul>
           </div>

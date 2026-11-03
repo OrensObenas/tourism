@@ -1,6 +1,7 @@
 'use client';
 
 import { AnimatedSection } from '@/components/common/AnimatedSection';
+import { siteConfig } from '@/lib/site';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 
 export default function PrivacyPage() {
@@ -51,7 +52,7 @@ export default function PrivacyPage() {
 - Object to processing of your information
 - Withdraw consent at any time
 
-To exercise these rights, please contact us at contact@tourismtour.com.`
+To exercise these rights, please contact us at ${siteConfig.email}.`
       },
       {
         title: '6. Cookies',
@@ -65,9 +66,9 @@ To exercise these rights, please contact us at contact@tourismtour.com.`
         title: '8. Contact Us',
         content: `If you have any questions about this privacy policy, please contact us at:
 
-Email: contact@tourismtour.com
-WhatsApp: +229 XX XX XX XX
-Address: Cotonou, Benin`
+Email: ${siteConfig.email}
+WhatsApp: ${siteConfig.phoneDisplay}
+Address: ${siteConfig.address}`
       },
     ],
   } : {
@@ -115,7 +116,7 @@ Address: Cotonou, Benin`
 - Vous opposer au traitement de vos informations
 - Retirer votre consentement à tout moment
 
-Pour exercer ces droits, veuillez nous contacter à contact@tourismtour.com.`
+Pour exercer ces droits, veuillez nous contacter à ${siteConfig.email}.`
       },
       {
         title: '6. Cookies',
@@ -129,9 +130,9 @@ Pour exercer ces droits, veuillez nous contacter à contact@tourismtour.com.`
         title: '8. Nous Contacter',
         content: `Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter à :
 
-Email : contact@tourismtour.com
-WhatsApp : +229 XX XX XX XX
-Adresse : Cotonou, Bénin`
+Email : ${siteConfig.email}
+WhatsApp : ${siteConfig.phoneDisplay}
+Adresse : ${siteConfig.address}`
       },
     ],
   };

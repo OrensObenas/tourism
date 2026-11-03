@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
 import { Button } from '@/components/ui/button';
@@ -11,6 +11,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Card } from '@/components/ui/card';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { circuits } from '@/lib/data/circuits';
+import { siteConfig, whatsappLink, emailLink, phoneLink } from '@/lib/site';
 import { 
   Mail, 
   Phone, 
@@ -48,6 +49,21 @@ export default function ContactPage() {
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  // Champ piège invisible : rempli uniquement par les robots spammeurs
+  const [honeypot, setHoneypot] = useState('');
+
+  // Pré-remplissage depuis l'URL (ex : /contact?topic=reservation&circuit=cite-lacustre-ganvie)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const topic = params.get('topic');
+    const circuit = params.get('circuit');
+    const validTopics = ['general', 'reservation', 'group', 'other'];
+    setFormData((prev) => ({
+      ...prev,
+      topic: topic && validTopics.includes(topic) ? topic : prev.topic,
+      circuit: circuit && circuits.some((c) => c.slug === circuit) ? circuit : prev.circuit,
+    }));
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -98,6 +114,8 @@ export default function ContactPage() {
           topic: formData.topic || undefined,
           circuit: formData.circuit || undefined,
           message: formData.message,
+          receiveNews: formData.receiveNews,
+          website: honeypot,
         }),
       });
 
@@ -127,24 +145,24 @@ export default function ContactPage() {
     {
       icon: MessageCircle,
       title: 'WhatsApp',
-      value: '+229 XX XX XX XX',
-      link: 'https://wa.me/22900000000',
+      value: siteConfig.phoneDisplay,
+      link: whatsappLink(),
       description: locale === 'en' ? 'Quick response – preferred' : 'Réponse rapide – privilégié',
       primary: true,
     },
     {
       icon: Mail,
       title: 'Email',
-      value: 'contact@tourismtour.com',
-      link: 'mailto:contact@tourismtour.com',
+      value: siteConfig.email,
+      link: emailLink,
       description: locale === 'en' ? 'Within 24h' : 'Sous 24h',
       primary: false,
     },
     {
       icon: Phone,
       title: locale === 'en' ? 'Phone' : 'Téléphone',
-      value: '+229 XX XX XX XX',
-      link: 'tel:+22900000000',
+      value: siteConfig.phoneDisplay,
+      link: phoneLink,
       description: locale === 'en' ? 'Mon-Fri, 9am-6pm' : 'Lun-Ven, 9h-18h',
       primary: false,
     },
@@ -202,6 +220,16 @@ export default function ContactPage() {
                   )}
 
                   <form onSubmit={handleSubmit} className="space-y-5">
+                    <input
+                      type="text"
+                      name="website"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      className="hidden"
+                    />
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         {t.contactPage.form.fullName} *
@@ -273,7 +301,7 @@ export default function ContactPage() {
                         </Select>
                       </div>
                       
-                      {formData.topic === 'reservation' && (
+                      {(formData.topic === 'reservation' || formData.circuit) && (
                         <div>
                           <label className="block text-sm font-medium text-gray-700 mb-1">
                             {t.contactPage.form.circuit}
@@ -369,7 +397,7 @@ export default function ContactPage() {
               {/* WhatsApp CTA - Primary */}
               <AnimatedSection delay={0.1}>
                 <a
-                  href="https://wa.me/22900000000"
+                  href={whatsappLink()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block"
@@ -381,7 +409,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h4 className="font-heading font-semibold text-gray-900">WhatsApp</h4>
-                        <p className="text-green-700 font-medium">+229 XX XX XX XX</p>
+                        <p className="text-green-700 font-medium">{siteConfig.phoneDisplay}</p>
                         <p className="text-sm text-gray-500">
                           {locale === 'en' ? 'Fastest way to reach us' : 'Le moyen le plus rapide'}
                         </p>

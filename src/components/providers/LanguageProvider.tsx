@@ -24,6 +24,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  // Garde l'attribut lang de la page synchronisé (accessibilité, lecteurs d'écran)
+  useEffect(() => {
+    document.documentElement.lang = locale;
+  }, [locale]);
+
   const setLocale = (newLocale: Locale) => {
     setLocaleState(newLocale);
     setT(getDictionary(newLocale));

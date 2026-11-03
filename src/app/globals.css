@@ -2,13 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --font-inter: 'Inter', system-ui, sans-serif;
-  --font-poppins: 'Poppins', system-ui, sans-serif;
 }
 
 body {
