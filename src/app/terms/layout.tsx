@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Conditions générales",
-  description: "Conditions générales de vente et de réservation des circuits Tourism'Tour.",
+  title: "Terms of service",
+  description: "Terms of sale and booking for Tourism'Tour trips.",
   alternates: { canonical: '/terms' },
 };
 

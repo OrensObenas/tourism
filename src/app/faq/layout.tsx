@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Questions fréquentes",
-  description: "Visa, santé, sécurité, budget, meilleure période : toutes les réponses pour préparer votre voyage au Bénin.",
+  title: "FAQ - Travelling to Benin",
+  description: "Visa, health, safety, budget, best time to go: answers to help you prepare your trip to Benin.",
   alternates: { canonical: '/faq' },
 };
 

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Événements",
-  description: "Festival des Vodun de Ouidah, carnavals, sorties safari : les prochains événements organisés par Tourism'Tour au Bénin.",
+  title: "Events in Benin",
+  description: "Ouidah Voodoo festival, carnivals, safari outings: events organised by Tourism'Tour in Benin.",
   alternates: { canonical: '/events' },
 };
 

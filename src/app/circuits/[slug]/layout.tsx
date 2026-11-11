@@ -12,12 +12,12 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const circuit = getCircuitBySlug(params.slug);
   if (!circuit) return {};
   return {
-    title: { absolute: `${circuit.title} | Tourism'Tour` },
-    description: circuit.shortSummary,
+    title: { absolute: `${circuit.titleEn} | Tourism'Tour` },
+    description: circuit.shortSummaryEn,
     alternates: { canonical: `/circuits/${circuit.slug}` },
     openGraph: {
-      title: circuit.title,
-      description: circuit.shortSummary,
+      title: circuit.titleEn,
+      description: circuit.shortSummaryEn,
       images: [{ url: circuit.heroImage }],
     },
   };

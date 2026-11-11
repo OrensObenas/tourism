@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Blog voyage Bénin",
-  description: "Conseils pratiques, histoire, culture et bons plans pour préparer votre voyage au Bénin.",
+  title: "Benin travel blog",
+  description: "Practical tips, history and culture to help you prepare your trip to Benin.",
   alternates: { canonical: '/blog' },
 };
 

@@ -21,49 +21,51 @@ const jsonLd = {
   "@type": "TravelAgency",
   name: siteConfig.name,
   url: siteConfig.url,
-  logo: `${siteConfig.url}/images/Tourism_logo.png`,
-  image: `${siteConfig.url}/images/Header.jpg`,
+  logo: `${siteConfig.url}/images/logo.png`,
+  image: `${siteConfig.url}/images/og-image.png`,
   email: siteConfig.email,
   telephone: `+${siteConfig.phoneE164}`,
   address: { "@type": "PostalAddress", addressLocality: "Cotonou", addressCountry: "BJ" },
-  areaServed: { "@type": "Country", name: "Bénin" },
+  areaServed: { "@type": "Country", name: "Benin" },
   foundingDate: String(siteConfig.foundedYear),
   sameAs: Object.values(siteConfig.socials).filter(Boolean),
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  applicationName: "Tourism'Tour",
   title: {
-    default: "Tourism'Tour - Découvrez le Bénin Authentique",
+    default: "Tourism'Tour | Benin travel agency: local guides & tailor-made trips",
     template: "%s | Tourism'Tour",
   },
-  description: "Vivez des expériences culturelles uniques au Bénin avec Tourism'Tour. Circuits culturels, safaris, festivals vaudou et bien plus. Votre passeport pour le Bénin authentique.",
-  keywords: ["tourisme Bénin", "voyage Bénin", "circuit culturel", "safari Pendjari", "vaudou", "Ganvié", "Abomey", "Tourism Tour"],
+  description: "Plan your trip to Benin with a local agency based in Cotonou. Cultural circuits, Ouidah, Ganvié, Abomey, Pendjari safari, local guides and tailor-made itineraries for international travellers.",
+  keywords: ["Benin travel", "travel to Benin", "Benin tours", "Benin travel agency", "Benin tour guide", "Cotonou", "Ouidah", "Ganvié", "Abomey", "Pendjari safari", "voodoo festival Benin", "voyage Bénin", "Tourism Tour"],
   authors: [{ name: "Tourism'Tour" }],
   creator: "Tourism'Tour",
   openGraph: {
     type: "website",
-    locale: "fr_FR",
-    alternateLocale: "en_US",
+    locale: "en_US",
+    alternateLocale: "fr_FR",
     url: "/",
     siteName: "Tourism'Tour",
-    title: "Tourism'Tour - Découvrez le Bénin Authentique",
-    description: "Vivez des expériences culturelles uniques au Bénin avec Tourism'Tour.",
+    title: "Tourism'Tour | Benin travel agency: local guides & tailor-made trips",
+    description: "Plan your trip to Benin with local guides and a team that supports you before and during your journey.",
     images: [
       {
-        url: "/images/Header.jpg",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Tourism'Tour - Bénin",
+        alt: "Tourism'Tour logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tourism'Tour - Découvrez le Bénin Authentique",
-    description: "Vivez des expériences culturelles uniques au Bénin.",
-    images: ["/images/Header.jpg"],
+    title: "Tourism'Tour | Benin travel agency",
+    description: "Plan your trip to Benin with local guides and tailor-made itineraries.",
+    images: ["/images/og-image.png"],
   },
+  alternates: { canonical: "/" },
   robots: {
     index: true,
     follow: true,
@@ -76,7 +78,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`scroll-smooth ${inter.variable} ${poppins.variable}`}>
+    <html lang="en" className={`scroll-smooth ${inter.variable} ${poppins.variable}`}>
       <body className="antialiased app-bg bg-sand-50 text-gray-900 min-h-screen flex flex-col">
         <script
           type="application/ld+json"

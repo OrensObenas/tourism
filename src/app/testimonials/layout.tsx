@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Avis voyageurs",
-  description: "Ce que nos voyageurs disent de leurs circuits au Bénin avec Tourism'Tour.",
+  title: "Traveller reviews",
+  description: "What travellers say about their trips to Benin with Tourism'Tour.",
   alternates: { canonical: '/testimonials' },
 };
 

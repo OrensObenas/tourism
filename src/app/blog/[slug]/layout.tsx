@@ -12,13 +12,13 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const post = getBlogPostBySlug(params.slug);
   if (!post) return {};
   return {
-    title: { absolute: `${post.title} | Tourism'Tour` },
-    description: post.excerpt,
+    title: { absolute: `${post.titleEn} | Tourism'Tour` },
+    description: post.excerptEn,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       type: 'article',
-      title: post.title,
-      description: post.excerpt,
+      title: post.titleEn,
+      description: post.excerptEn,
       images: [{ url: post.coverImage }],
     },
   };

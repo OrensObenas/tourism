@@ -5,7 +5,7 @@ import { siteConfig } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
-    '', '/circuits', '/experiences', '/events', '/about', '/contact',
+    '', '/why-us', '/plan-your-trip', '/circuits', '/experiences', '/events', '/about', '/contact',
     '/blog', '/faq', '/testimonials', '/privacy', '/terms',
   ];
 

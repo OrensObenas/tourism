@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Planifiez votre voyage au Bénin : contactez Tourism'Tour par WhatsApp, email ou téléphone. Réponse sous 24h.",
+  description: "Plan your trip to Benin: contact Tourism'Tour by form, WhatsApp, email or phone. Tell us your dates and interests.",
   alternates: { canonical: '/contact' },
 };
 
