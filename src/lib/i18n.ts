@@ -11,19 +11,22 @@ export const dictionaries = {
       about: 'À propos',
       contact: 'Contact',
       faq: 'FAQ',
-      planTrip: 'Planifier mon voyage',
+      planTrip: 'Démarrer mon projet',
       requestInfo: 'Demander infos',
+      whyUs: 'Pourquoi nous',
+      planYourTrip: 'Préparer son voyage',
     },
     // Hero
     hero: {
-      title: 'Découvrez le Bénin Authentique',
-      subtitle: 'Vivez des expériences culturelles uniques avec des experts locaux passionnés',
-      discoverCircuits: 'Découvrir les circuits',
-      contactUs: 'Nous contacter',
+      title: 'Découvrez le Bénin avec des experts locaux à vos côtés',
+      subtitle: 'Tourism\'Tour est une agence de voyage basée au Bénin. Nous aidons les voyageurs internationaux à préparer et vivre un voyage ancré dans la culture, l\'histoire et la nature locales, de la première question au dernier jour.',
+      discoverCircuits: 'Découvrir nos circuits',
+      contactUs: 'Parler à notre équipe',
+      planTrip: 'Préparer son voyage',
       badges: {
-        fieldExperience: 'Expérience terrain',
-        culturalTourism: 'Tourisme culturel',
-        adventure: 'Aventure',
+        fieldExperience: 'Guides locaux',
+        culturalTourism: 'Culture & histoire',
+        adventure: 'Voyages sur mesure',
       },
     },
     // Trip Types
@@ -46,24 +49,25 @@ export const dictionaries = {
     },
     // Why Us
     whyUs: {
-      title: 'Pourquoi Tourism\'Tour ?',
-      subtitle: 'Ce qui nous rend uniques',
+      title: 'Pourquoi voyager avec Tourism\'Tour ?',
+      subtitle: 'Une équipe locale qui s\'occupe des détails pour que vous profitiez du Bénin',
+      learnMore: 'Découvrir notre approche',
       features: {
         fieldKnowledge: {
-          title: 'Connaissance du terrain',
-          description: 'Notre équipe connaît chaque recoin du Bénin',
+          title: 'Guides locaux',
+          description: 'Des guides qui connaissent les lieux, l\'histoire et les habitants, et qui les partagent avec vous.',
         },
         culturalExpertise: {
-          title: 'Expertise culturelle locale',
-          description: 'Des guides passionnés par leur patrimoine',
+          title: 'Circuits sur mesure',
+          description: 'Dites-nous ce que vous voulez voir et votre façon de voyager. Nous construisons l\'itinéraire autour de vous.',
         },
         humanSupport: {
-          title: 'Accompagnement humain et sécurité',
-          description: 'Votre bien-être est notre priorité',
+          title: 'Accompagnement avant et pendant le voyage',
+          description: 'Des réponses avant la réservation, un interlocuteur pendant le séjour.',
         },
         authentic: {
-          title: 'Expériences authentiques',
-          description: 'Vivez le Bénin comme un local',
+          title: 'Rencontres authentiques',
+          description: 'Culture, patrimoine et vie quotidienne, loin des cartes postales habituelles.',
         },
       },
     },
@@ -152,12 +156,10 @@ export const dictionaries = {
     },
     // CTA
     cta: {
-      title: 'Prêt à vivre l\'aventure ?',
-      subtitle: 'Contactez-nous pour planifier votre voyage sur mesure',
+      title: 'Prêt à préparer votre voyage au Bénin ?',
+      subtitle: 'Indiquez-nous vos dates, vos centres d\'intérêt et votre style de voyage. Notre équipe vous répond avec des idées.',
       contact: 'Nous contacter',
       whatsapp: 'WhatsApp',
-      quote: '"Le Bénin nous a changé à jamais. Merci Tourism\'Tour."',
-      quoteAuthor: '— Marie Dupont, voyageuse 2025',
     },
     // Circuits Page
     circuitsPage: {
@@ -253,7 +255,7 @@ export const dictionaries = {
     aboutPage: {
       hero: {
         title: 'Notre Histoire',
-        subtitle: 'Passionnés par le Bénin depuis plus de 8 ans',
+        subtitle: 'Une agence basée au Bénin pour les voyageurs du monde entier',
       },
       mission: {
         label: 'Notre Mission',
@@ -267,10 +269,10 @@ export const dictionaries = {
         title: 'Ce qui guide nos pas',
       },
       experience: {
-        label: 'Notre Expérience',
-        title: 'Plus de 8 ans sur le terrain',
-        paragraph1: 'Depuis notre création, nous avons accompagné des milliers de voyageurs de tous horizons dans la découverte du Bénin. Cette expérience nous a permis de tisser des liens profonds avec les communautés locales et de développer une expertise unique.',
-        paragraph2: 'Nos guides sont tous originaires du Bénin et partagent leur amour pour leur pays avec une authenticité qui fait toute la différence.',
+        label: 'Notre Approche',
+        title: 'Connaissance locale, besoins du voyageur',
+        paragraph1: 'Nous sommes basés à Cotonou et travaillons avec des personnes qui connaissent le Bénin de l\'intérieur. Notre rôle : relier les voyageurs au pays, à son histoire, ses traditions et ses paysages.',
+        paragraph2: 'Chaque voyageur est différent : nous construisons les voyages selon vos centres d\'intérêt, votre rythme et vos questions.',
       },
       team: {
         label: 'Notre Équipe',
@@ -348,6 +350,146 @@ export const dictionaries = {
       },
     },
     // Footer
+    howItWorks: {
+      title: 'Comment ça marche',
+      subtitle: 'De votre premier message à votre retour',
+      steps: [
+        {
+          title: 'Parlez-nous de votre voyage',
+          description: 'Indiquez vos dates, centres d\'intérêt et style de voyage par formulaire ou WhatsApp.',
+        },
+        {
+          title: 'Nous concevons votre itinéraire',
+          description: 'Nous proposons un circuit ou en construisons un sur mesure, et répondons à vos questions.',
+        },
+        {
+          title: 'Nous vous aidons à vous préparer',
+          description: 'Conseils pratiques : formalités d\'entrée, santé, bagages, arrivée à Cotonou.',
+        },
+        {
+          title: 'Vous voyagez avec une équipe locale',
+          description: 'Votre guide et notre équipe sont vos interlocuteurs pendant le séjour.',
+        },
+      ],
+    },
+    planTeaser: {
+      title: 'Vous préparez un voyage au Bénin ?',
+      subtitle: 'Tout ce que se demande un premier visiteur, au même endroit.',
+      items: [
+        'Visa et entrée',
+        'Santé et vaccins',
+        'Meilleure période',
+        'Arriver à Cotonou',
+        'Argent et paiement',
+        'Sécurité',
+      ],
+      button: 'Lire le guide pratique',
+    },
+    whyPage: {
+      title: 'Pourquoi voyager au Bénin avec Tourism\'Tour',
+      subtitle: 'Vous apportez la curiosité. Nous apportons la connaissance locale, l\'organisation et une équipe à qui parler.',
+      benefitsTitle: 'Ce que nous faisons pour les voyageurs internationaux',
+      benefits: [
+        {
+          title: 'Guides locaux',
+          description: 'Votre voyage est conduit par des guides béninois qui connaissent les sites, l\'histoire et les communautés que vous rencontrerez. Ils vous expliquent le contexte de ce que vous voyez.',
+        },
+        {
+          title: 'Accompagnement avant le départ',
+          description: 'Visa, santé, bagages, période idéale : nous vous aidons à vous préparer pour que rien ne reste dans le flou.',
+        },
+        {
+          title: 'Accompagnement pendant le voyage',
+          description: 'Vous n\'êtes pas seul(e). Notre équipe est votre interlocuteur au Bénin si vous avez besoin d\'un conseil ou d\'aide.',
+        },
+        {
+          title: 'Circuits sur mesure',
+          description: 'Choisissez un de nos circuits ou demandez-nous de l\'adapter : durée, rythme, centres d\'intérêt, taille du groupe.',
+        },
+        {
+          title: 'Logistique prise en charge',
+          description: 'Selon le circuit, nous organisons transport, visites et dispositions locales pour que vous exploriez plutôt que d\'organiser. Chaque fiche circuit indique ce qui est inclus.',
+        },
+        {
+          title: 'Un voyage respectueux et porteur de sens',
+          description: 'Nous cherchons des visites qui respectent la culture locale et profitent à ceux qui vous accueillent.',
+        },
+      ],
+      stepsTitle: 'Une façon simple de commencer',
+      tbcLabel: 'À confirmer par Tourism\'Tour',
+      tbc: 'Les langues parlées par l\'équipe, les licences ou certifications et les années d\'activité seront ajoutées ici une fois confirmées par l\'agence.',
+      ctaTitle: 'Parlons de votre voyage',
+      ctaText: 'Sans engagement : dites-nous ce que vous avez en tête, nous vous répondrons avec des suggestions.',
+      ctaPrimary: 'Nous contacter',
+      ctaSecondary: 'Préparer son voyage',
+    },
+    planPage: {
+      title: 'Préparer son voyage au Bénin',
+      subtitle: 'Informations pratiques pour les visiteurs internationaux. Les règles d\'entrée, exigences sanitaires et prix peuvent changer : vérifiez toujours auprès des sources officielles avant de partir.',
+      tbcLabel: 'À confirmer par Tourism\'Tour',
+      sections: {
+        visa: {
+          title: 'Visa et entrée',
+          paragraphs: [
+            'Les conditions d\'entrée dépendent de votre nationalité et peuvent évoluer. Consultez les informations officielles du gouvernement béninois ou l\'ambassade ou le consulat du Bénin le plus proche, bien avant le départ.',
+            'Vérifiez que votre passeport est valide pour la durée exigée par les autorités et gardez des copies numériques et papier de vos documents.',
+          ],
+          tbc: 'Possibilité pour l\'agence de fournir une invitation ou d\'aider pour le visa, et liens officiels à recommander.',
+        },
+        health: {
+          title: 'Santé',
+          paragraphs: [
+            'Consultez un médecin ou un centre de médecine des voyages plusieurs semaines avant le départ pour faire le point sur les vaccins et traitements préventifs. Le paludisme est présent au Bénin : renseignez-vous sur la prévention.',
+            'Un justificatif de vaccination contre la fièvre jaune est couramment demandé dans cette région. Vérifiez l\'exigence en vigueur pour votre itinéraire auprès des sources officielles.',
+            'Souscrivez une assurance voyage couvrant les soins médicaux et, idéalement, le rapatriement.',
+          ],
+          tbc: 'Exigences vaccinales officielles à citer, et recommandations de l\'agence (assurance, centres de santé proches de chaque circuit).',
+        },
+        season: {
+          title: 'Meilleure période pour voyager',
+          paragraphs: [
+            'Le climat diffère entre le sud et le nord du pays, et les saisons sèches et pluvieuses influencent le confort et l\'état des routes. La meilleure période dépend de votre destination et de vos envies.',
+            'Indiquez-nous vos dates possibles : nous vous conseillerons pour le circuit choisi.',
+          ],
+          tbc: 'Mois recommandés par l\'agence selon la région et le circuit, et dates des festivals ou événements autour desquels planifier.',
+        },
+        arrival: {
+          title: 'Arriver à Cotonou',
+          paragraphs: [
+            'La plupart des visiteurs internationaux arrivent à Cotonou, capitale économique, où commencent la plupart de nos circuits.',
+            'Communiquez-nous les détails de votre vol pour que nous préparions votre première journée.',
+          ],
+          tbc: 'Accueil à l\'aéroport : proposé ou non, à quelles conditions, comment reconnaître le chauffeur ? Points de rendez-vous et suggestions d\'hôtels à Cotonou.',
+        },
+        money: {
+          title: 'Argent et paiement',
+          paragraphs: [
+            'La monnaie locale est le franc CFA d\'Afrique de l\'Ouest (XOF). Vérifiez le taux de change en vigueur auprès de votre banque ou d\'un convertisseur fiable avant de partir.',
+            'L\'acceptation des cartes et les distributeurs peuvent être limités hors des grandes villes : prévoyez un peu d\'espèces.',
+          ],
+          tbc: 'Modalités de paiement à l\'agence (moyens, acompte, devise), conditions d\'annulation et de remboursement, usages en matière de pourboires.',
+        },
+        safety: {
+          title: 'Sécurité',
+          paragraphs: [
+            'Consultez les conseils aux voyageurs de votre propre gouvernement pour le Bénin et pour les régions que vous comptez visiter : ils peuvent différer selon les régions et évoluer.',
+            'Sur nos circuits, vous êtes accompagné(e) par une équipe locale. Suivez les conseils de votre guide, protégez vos affaires comme partout, et respectez les coutumes et les lieux sacrés.',
+          ],
+          tbc: 'Procédures de sécurité de l\'agence (contact d\'urgence, assistance, véhicules et chauffeurs) et recommandations propres à chaque région.',
+        },
+        included: {
+          title: 'Ce qui est inclus',
+          paragraphs: [
+            'Ce qui est inclus varie d\'un circuit à l\'autre. Chaque fiche circuit précise ce qui est compris ou non. Pour un voyage sur mesure, nous le confirmons par écrit avant la réservation.',
+          ],
+          tbc: 'Prestations standard (transport, hébergement, repas, guide, entrées) et prix ou fourchettes de prix, si l\'agence souhaite les publier.',
+        },
+      },
+      ctaTitle: 'Encore des questions ?',
+      ctaText: 'Posez-les à notre équipe : nous vous aidons à préparer votre voyage.',
+      ctaPrimary: 'Nous contacter',
+      ctaSecondary: 'Lire la FAQ',
+    },
     footer: {
       quickLinks: 'Liens rapides',
       contact: 'Contact',
@@ -356,7 +498,7 @@ export const dictionaries = {
       privacy: 'Politique de confidentialité',
       terms: 'Conditions générales',
       copyright: '© 2026 Tourism\'Tour. Tous droits réservés.',
-      tagline: 'Votre passeport pour le Bénin authentique',
+      tagline: 'Votre partenaire local pour voyager au Bénin',
     },
     // Common
     common: {
@@ -385,19 +527,22 @@ export const dictionaries = {
       about: 'About',
       contact: 'Contact',
       faq: 'FAQ',
-      planTrip: 'Plan my trip',
+      planTrip: 'Start planning',
       requestInfo: 'Request info',
+      whyUs: 'Why us',
+      planYourTrip: 'Plan your trip',
     },
     // Hero
     hero: {
-      title: 'Discover Authentic Benin',
-      subtitle: 'Experience unique cultural adventures with passionate local experts',
-      discoverCircuits: 'Discover circuits',
-      contactUs: 'Contact us',
+      title: 'Discover Benin with local experts by your side',
+      subtitle: 'Tourism\'Tour is a Benin-based travel agency. We help international travellers plan and enjoy a trip rooted in local culture, history and nature, from the first question to the last day.',
+      discoverCircuits: 'Explore our circuits',
+      contactUs: 'Talk to our team',
+      planTrip: 'Plan your trip',
       badges: {
-        fieldExperience: 'Field experience',
-        culturalTourism: 'Cultural tourism',
-        adventure: 'Adventure',
+        fieldExperience: 'Local guides',
+        culturalTourism: 'Culture & history',
+        adventure: 'Tailor-made trips',
       },
     },
     // Trip Types
@@ -420,24 +565,25 @@ export const dictionaries = {
     },
     // Why Us
     whyUs: {
-      title: 'Why Tourism\'Tour?',
-      subtitle: 'What makes us unique',
+      title: 'Why travel with Tourism\'Tour?',
+      subtitle: 'A local team that takes care of the details, so you can enjoy Benin',
+      learnMore: 'See what we offer',
       features: {
         fieldKnowledge: {
-          title: 'Field knowledge',
-          description: 'Our team knows every corner of Benin',
+          title: 'Local guides',
+          description: 'Guides who know the places, the history and the people, and who share them with you.',
         },
         culturalExpertise: {
-          title: 'Local cultural expertise',
-          description: 'Guides passionate about their heritage',
+          title: 'Tailor-made circuits',
+          description: 'Tell us what you want to see and how you like to travel. We shape the itinerary around you.',
         },
         humanSupport: {
-          title: 'Human support and safety',
-          description: 'Your well-being is our priority',
+          title: 'Support before and during your trip',
+          description: 'Questions before you book, a point of contact while you travel.',
         },
         authentic: {
-          title: 'Authentic experiences',
-          description: 'Experience Benin like a local',
+          title: 'Authentic encounters',
+          description: 'Culture, heritage and daily life, beyond the usual tourist postcards.',
         },
       },
     },
@@ -526,12 +672,10 @@ export const dictionaries = {
     },
     // CTA
     cta: {
-      title: 'Ready for the adventure?',
-      subtitle: 'Contact us to plan your custom trip',
+      title: 'Ready to plan your trip to Benin?',
+      subtitle: 'Tell us your dates, interests and travel style. Our team will get back to you with ideas.',
       contact: 'Contact us',
       whatsapp: 'WhatsApp',
-      quote: '"Benin changed us forever. Thank you Tourism\'Tour."',
-      quoteAuthor: '— Marie Dupont, traveler 2025',
     },
     // Circuits Page
     circuitsPage: {
@@ -627,7 +771,7 @@ export const dictionaries = {
     aboutPage: {
       hero: {
         title: 'Our Story',
-        subtitle: 'Passionate about Benin for over 8 years',
+        subtitle: 'A Benin-based agency for travellers from around the world',
       },
       mission: {
         label: 'Our Mission',
@@ -641,10 +785,10 @@ export const dictionaries = {
         title: 'What guides our steps',
       },
       experience: {
-        label: 'Our Experience',
-        title: 'Over 8 years in the field',
-        paragraph1: 'Since our creation, we have accompanied thousands of travelers from all walks of life in discovering Benin. This experience has allowed us to forge deep bonds with local communities and develop unique expertise.',
-        paragraph2: 'Our guides are all from Benin and share their love for their country with an authenticity that makes all the difference.',
+        label: 'Our Approach',
+        title: 'Local knowledge, travellers\' needs',
+        paragraph1: 'We are based in Cotonou and work with people who know Benin first-hand. Our role is to connect travellers with the country: its history, its traditions and its landscapes.',
+        paragraph2: 'Because every traveller is different, we build trips around your interests, your pace and your questions.',
       },
       team: {
         label: 'Our Team',
@@ -722,6 +866,146 @@ export const dictionaries = {
       },
     },
     // Footer
+    howItWorks: {
+      title: 'How it works',
+      subtitle: 'From your first message to your return home',
+      steps: [
+        {
+          title: 'Tell us about your trip',
+          description: 'Share your dates, interests and travel style by form or WhatsApp.',
+        },
+        {
+          title: 'We design your itinerary',
+          description: 'We suggest a circuit or build a tailor-made one, and answer your questions.',
+        },
+        {
+          title: 'We help you prepare',
+          description: 'Practical guidance on entry formalities, health, packing and arrival in Cotonou.',
+        },
+        {
+          title: 'You travel with a local team',
+          description: 'Your guide and our team are your points of contact during the trip.',
+        },
+      ],
+    },
+    planTeaser: {
+      title: 'Planning a trip to Benin?',
+      subtitle: 'Everything a first-time visitor wonders about, in one place.',
+      items: [
+        'Visa and entry',
+        'Health and vaccinations',
+        'Best time to go',
+        'Arriving in Cotonou',
+        'Money and payment',
+        'Safety',
+      ],
+      button: 'Read the practical guide',
+    },
+    whyPage: {
+      title: 'Why travel to Benin with Tourism\'Tour',
+      subtitle: 'You bring the curiosity. We bring local knowledge, organisation and a team you can talk to.',
+      benefitsTitle: 'What we do for international travellers',
+      benefits: [
+        {
+          title: 'Local guides',
+          description: 'Your trip is led by guides from Benin who know the sites, the history and the communities you will meet. They explain the context behind what you see.',
+        },
+        {
+          title: 'Support before you travel',
+          description: 'Visa questions, health, what to pack, when to go: we help you prepare so that nothing about the trip feels uncertain.',
+        },
+        {
+          title: 'Support during your trip',
+          description: 'You are not on your own. Our team is your point of contact in Benin if you need advice or help along the way.',
+        },
+        {
+          title: 'Tailor-made circuits',
+          description: 'Choose one of our circuits or ask us to adapt it: duration, pace, interests, group size. We build the trip around you.',
+        },
+        {
+          title: 'Logistics handled',
+          description: 'Depending on the circuit, we organise transport, visits and local arrangements, so you spend your time exploring rather than planning. Each circuit page lists what is included.',
+        },
+        {
+          title: 'Respectful, meaningful travel',
+          description: 'We aim for visits that respect local culture and benefit the people who welcome you.',
+        },
+      ],
+      stepsTitle: 'A simple way to start',
+      tbcLabel: 'To be confirmed by Tourism\'Tour',
+      tbc: 'Languages spoken by the team, licences or certifications, and the number of years of operation will be added here once confirmed by the agency.',
+      ctaTitle: 'Let\'s talk about your trip',
+      ctaText: 'No commitment: tell us what you have in mind and we will reply with suggestions.',
+      ctaPrimary: 'Contact us',
+      ctaSecondary: 'Plan your trip',
+    },
+    planPage: {
+      title: 'Plan your trip to Benin',
+      subtitle: 'Practical information for international visitors. Entry rules, health requirements and prices can change: always check official sources before you travel.',
+      tbcLabel: 'To be confirmed by Tourism\'Tour',
+      sections: {
+        visa: {
+          title: 'Visa and entry',
+          paragraphs: [
+            'Entry requirements depend on your nationality and can change. Check the official Benin government visa information or your nearest Benin embassy or consulate well before departure.',
+            'Make sure your passport is valid for the period required by the authorities and keep digital and paper copies of your documents.',
+          ],
+          tbc: 'Whether the agency can provide an invitation or help with visa paperwork, and the official links to recommend.',
+        },
+        health: {
+          title: 'Health',
+          paragraphs: [
+            'See a doctor or travel-health clinic several weeks before you leave to review vaccinations and preventive treatment. Malaria is present in Benin, so ask about prevention.',
+            'Proof of yellow fever vaccination is commonly requested when travelling in this region. Check the current requirement for your itinerary with official sources.',
+            'Bring travel insurance that covers medical care and, ideally, repatriation.',
+          ],
+          tbc: 'Official vaccination requirements to quote, and the agency\'s recommendations (insurance, nearest clinics for each circuit).',
+        },
+        season: {
+          title: 'Best time to visit',
+          paragraphs: [
+            'The climate differs between the south and the north of the country, and the dry and rainy seasons affect comfort and road conditions. The best time depends on where you are going and what you want to do.',
+            'Tell us your possible dates and we will advise you on your chosen circuit.',
+          ],
+          tbc: 'The agency\'s recommended months per region and per circuit, and the dates of festivals or events worth planning around.',
+        },
+        arrival: {
+          title: 'Arriving in Cotonou',
+          paragraphs: [
+            'Most international visitors arrive in Cotonou, the economic capital, where most of our circuits begin.',
+            'Share your flight details with us so we can plan your first day.',
+          ],
+          tbc: 'Airport pick-up: is it offered, at what conditions, how will the driver be identified? Meeting points and hotel suggestions in Cotonou.',
+        },
+        money: {
+          title: 'Money and payment',
+          paragraphs: [
+            'The local currency is the West African CFA franc (XOF). Check the current exchange rate with your bank or a reliable converter before you travel.',
+            'Card acceptance and cash machines can be limited outside the main cities, so plan to carry some cash.',
+          ],
+          tbc: 'How travellers pay the agency (methods, deposit, currency), cancellation and refund conditions, and the tips custom for guides and drivers.',
+        },
+        safety: {
+          title: 'Safety',
+          paragraphs: [
+            'Check the official travel advice of your own government for Benin, and for the specific regions you plan to visit, as advisories can differ by region and change over time.',
+            'On our circuits you are accompanied by a local team. Follow your guide\'s advice, protect your belongings as in any destination, and respect local customs and sacred sites.',
+          ],
+          tbc: 'The agency\'s safety procedures (emergency contact, assistance, vehicles and drivers) and any region-specific recommendations.',
+        },
+        included: {
+          title: 'What is included',
+          paragraphs: [
+            'What is included differs from one circuit to another. Each circuit page lists what is included and what is not. For tailor-made trips, we confirm this in writing before you book.',
+          ],
+          tbc: 'Standard inclusions (transport, accommodation, meals, guide, entrance fees) and prices or price ranges, if the agency wishes to publish them.',
+        },
+      },
+      ctaTitle: 'Still have questions?',
+      ctaText: 'Ask our team: we will help you prepare your trip.',
+      ctaPrimary: 'Contact us',
+      ctaSecondary: 'Read the FAQ',
+    },
     footer: {
       quickLinks: 'Quick links',
       contact: 'Contact',
@@ -730,7 +1014,7 @@ export const dictionaries = {
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
       copyright: '© 2026 Tourism\'Tour. All rights reserved.',
-      tagline: 'Your passport to authentic Benin',
+      tagline: 'Your local partner for travelling in Benin',
     },
     // Common
     common: {
@@ -753,5 +1037,5 @@ export type Locale = keyof typeof dictionaries;
 export type Dictionary = typeof dictionaries.fr;
 
 export function getDictionary(locale: Locale): Dictionary {
-  return dictionaries[locale] || dictionaries.fr;
+  return dictionaries[locale] || dictionaries.en;
 }

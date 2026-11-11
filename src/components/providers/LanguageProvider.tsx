@@ -12,8 +12,8 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>('fr');
-  const [t, setT] = useState<Dictionary>(getDictionary('fr'));
+  const [locale, setLocaleState] = useState<Locale>('en');
+  const [t, setT] = useState<Dictionary>(getDictionary('en'));
 
   useEffect(() => {
     // Check localStorage for saved preference
