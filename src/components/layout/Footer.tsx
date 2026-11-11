@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin, Mail, Phone, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { siteConfig, emailLink, phoneLink } from '@/lib/site';
@@ -35,7 +36,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
-              <MapPin className="h-8 w-8 text-primary-300" />
+              <Image src="/images/logo.png" alt="" width={56} height={56} className="h-14 w-14 rounded-full" />
               <span className="text-xl font-heading font-bold">Tourism&apos;Tour</span>
             </Link>
             <p className="text-primary-200 text-sm">

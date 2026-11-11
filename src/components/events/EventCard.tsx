@@ -22,7 +22,7 @@ export function EventCard({ event, onInterested }: EventCardProps) {
   const location = locale === 'en' && event.locationEn ? event.locationEn : event.location;
 
   const typeColors = {
-    festival: 'bg-purple-100 text-purple-800',
+    festival: 'bg-primary-100 text-primary-800',
     trip: 'bg-blue-100 text-blue-800',
     workshop: 'bg-green-100 text-green-800',
     special: 'bg-orange-100 text-orange-800',

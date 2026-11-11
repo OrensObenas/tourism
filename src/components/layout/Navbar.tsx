@@ -62,16 +62,19 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <Image
-              src="/images/Tourism_logo.png"
-              alt="Tourism'Tour Bénin"
-              width={160}
-              height={50}
-              className={cn(
-                'h-12 w-auto object-contain transition-all duration-300',
-                isTransparent ? 'brightness-0 invert' : ''
-              )}
+              src="/images/logo.png"
+              alt="Tourism'Tour"
+              width={512}
+              height={512}
+              className="h-14 w-14 lg:h-16 lg:w-16 object-contain rounded-full shadow-md"
               priority
             />
+            <span className={cn(
+              'ml-3 hidden sm:block font-heading font-bold text-lg transition-colors duration-300',
+              isTransparent ? 'text-white' : 'text-primary-900'
+            )}>
+              Tourism&apos;Tour
+            </span>
           </Link>
 
           {/* Desktop Navigation — center */}
@@ -121,15 +124,7 @@ export function Navbar() {
               <Globe className="h-4 w-4" />
               <span>{locale === 'fr' ? 'EN' : 'FR'}</span>
             </button>
-            <Button
-              asChild
-              className={cn(
-                'rounded-full px-6 transition-all duration-300',
-                isTransparent
-                  ? 'bg-white text-primary-900 hover:bg-white/90 shadow-lg shadow-black/10'
-                  : ''
-              )}
-            >
+            <Button asChild variant="accent" className="rounded-full px-6">
               <Link href="/contact">
                 {t.nav.planTrip}
                 <ChevronRight className="ml-1 h-4 w-4" />
@@ -181,7 +176,7 @@ export function Navbar() {
                 <Globe className="h-4 w-4" />
                 <span>{locale === 'fr' ? 'English' : 'Français'}</span>
               </button>
-              <Button asChild size="sm" className="rounded-full px-5">
+              <Button asChild size="sm" variant="accent" className="rounded-full px-5">
                 <Link href="/contact" onClick={() => setIsOpen(false)}>
                   {t.nav.planTrip}
                   <ChevronRight className="ml-1 h-3.5 w-3.5" />

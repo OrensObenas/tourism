@@ -59,7 +59,7 @@ export default function CircuitDetailPage({ params }: CircuitDetailPageProps) {
     cultural: 'from-primary-600 to-primary-800',
     dayTrip: 'from-sage-400 to-sage-600',
     organized: 'from-sand-400 to-sand-600',
-    adventure: 'from-amber-500 to-amber-700',
+    adventure: 'from-gold-500 to-gold-700',
   };
 
   return (

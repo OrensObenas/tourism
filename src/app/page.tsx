@@ -112,8 +112,8 @@ export default function HomePage() {
               {/* Badge 2 - Rating */}
               <div className="animate-float-delayed absolute top-28 -left-8 bg-white/95 backdrop-blur-md rounded-2xl px-5 py-4 shadow-soft-lg">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center">
-                    <Star className="h-5 w-5 text-amber-600 fill-amber-500" />
+                  <div className="w-10 h-10 rounded-xl bg-gold-100 flex items-center justify-center">
+                    <Star className="h-5 w-5 text-gold-600 fill-gold-500" />
                   </div>
                   <div>
                     <div className="text-2xl font-heading font-bold text-gray-900">4.9/5</div>
@@ -174,7 +174,7 @@ export default function HomePage() {
                 icon: Star,
                 title: t.whyUs.features.culturalExpertise.title,
                 description: t.whyUs.features.culturalExpertise.description,
-                color: 'bg-amber-100 text-amber-700',
+                color: 'bg-gold-100 text-gold-700',
               },
               {
                 icon: Shield,

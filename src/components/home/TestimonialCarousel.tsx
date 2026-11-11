@@ -22,7 +22,7 @@ function TestimonialBubble({ testimonial }: { testimonial: Testimonial }) {
         {/* Stars */}
         <div className="flex gap-0.5 mb-3">
           {Array.from({ length: testimonial.rating }).map((_, i) => (
-            <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+            <Star key={i} className="h-4 w-4 fill-gold-400 text-gold-400" />
           ))}
         </div>
 

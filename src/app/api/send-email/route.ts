@@ -121,7 +121,7 @@ function buildContactEmail(data: ContactPayload): { subject: string; html: strin
       <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background: #f9f5f0; }
         .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
-        .header { background: linear-gradient(135deg, #6d28d9, #4c1d95); padding: 30px; text-align: center; }
+        .header { background: linear-gradient(135deg, #402090, #2a0f6b); padding: 30px; text-align: center; }
         .header h1 { color: white; margin: 0; font-size: 22px; }
         .header p { color: rgba(255,255,255,0.8); margin: 8px 0 0; font-size: 14px; }
         .body { padding: 30px; }
@@ -198,7 +198,7 @@ function buildEventInterestEmail(data: EventInterestPayload): { subject: string;
       <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background: #f9f5f0; }
         .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
-        .header { background: linear-gradient(135deg, #7c3aed, #6d28d9); padding: 30px; text-align: center; }
+        .header { background: linear-gradient(135deg, #402090, #2a0f6b); padding: 30px; text-align: center; }
         .header h1 { color: white; margin: 0; font-size: 22px; }
         .header p { color: rgba(255,255,255,0.8); margin: 8px 0 0; font-size: 14px; }
         .body { padding: 30px; }
@@ -206,7 +206,7 @@ function buildEventInterestEmail(data: EventInterestPayload): { subject: string;
         .field:last-child { border-bottom: none; }
         .label { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
         .value { font-size: 15px; color: #333; }
-        .event-badge { display: inline-block; background: #ede9fe; color: #6d28d9; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+        .event-badge { display: inline-block; background: #e8e2f8; color: #402090; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; }
         .footer { background: #f9f5f0; padding: 20px 30px; text-align: center; font-size: 12px; color: #888; }
       </style>
     </head>
@@ -263,10 +263,10 @@ function buildNewsletterEmail(data: NewsletterPayload): { subject: string; html:
       <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background: #f9f5f0; }
         .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
-        .header { background: linear-gradient(135deg, #a78bfa, #7c3aed); padding: 30px; text-align: center; }
+        .header { background: linear-gradient(135deg, #402090, #2a0f6b); padding: 30px; text-align: center; }
         .header h1 { color: white; margin: 0; font-size: 22px; }
         .body { padding: 30px; text-align: center; }
-        .email-badge { display: inline-block; background: #ede9fe; color: #6d28d9; padding: 10px 24px; border-radius: 25px; font-size: 16px; font-weight: 600; }
+        .email-badge { display: inline-block; background: #e8e2f8; color: #402090; padding: 10px 24px; border-radius: 25px; font-size: 16px; font-weight: 600; }
         .footer { background: #f9f5f0; padding: 20px 30px; text-align: center; font-size: 12px; color: #888; }
       </style>
     </head>

@@ -141,7 +141,7 @@ export default function FAQPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 section-amber-tint">
+      <section className="py-16 section-gold-tint">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <MessageCircle className="h-12 w-12 text-primary-600 mx-auto mb-4" />
