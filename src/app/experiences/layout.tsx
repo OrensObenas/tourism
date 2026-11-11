@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Immersive experiences in Benin",
-  description: "Voodoo ceremonies, local food, crafts and meetings with local communities: experience Benin from the inside.",
+  title: "Our experiences: Escale Urbaine in Grand-Popo, Benin",
+  description: "Discover Tourism'Tour's experiences around culture and heritage in Benin, starting with Escale Urbaine in Grand-Popo.",
   alternates: { canonical: '/experiences' },
 };
 

@@ -25,9 +25,8 @@ const jsonLd = {
   image: `${siteConfig.url}/images/og-image.png`,
   email: siteConfig.email,
   telephone: `+${siteConfig.phoneE164}`,
-  address: { "@type": "PostalAddress", addressLocality: "Cotonou", addressCountry: "BJ" },
+  address: { "@type": "PostalAddress", streetAddress: "Zogbadjè", addressLocality: "Abomey-Calavi", addressCountry: "BJ" },
   areaServed: { "@type": "Country", name: "Benin" },
-  foundingDate: String(siteConfig.foundedYear),
   sameAs: Object.values(siteConfig.socials).filter(Boolean),
 };
 
@@ -35,11 +34,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: "Tourism'Tour",
   title: {
-    default: "Tourism'Tour | Benin travel agency: local guides & tailor-made trips",
+    default: "Tourism'Tour | Benin-based tourism and culture: Escale Urbaine, Grand-Popo",
     template: "%s | Tourism'Tour",
   },
-  description: "Plan your trip to Benin with a local agency based in Cotonou. Cultural circuits, Ouidah, Ganvié, Abomey, Pendjari safari, local guides and tailor-made itineraries for international travellers.",
-  keywords: ["Benin travel", "travel to Benin", "Benin tours", "Benin travel agency", "Benin tour guide", "Cotonou", "Ouidah", "Ganvié", "Abomey", "Pendjari safari", "voodoo festival Benin", "voyage Bénin", "Tourism Tour"],
+  description: "Tourism'Tour is a structure based in Abomey-Calavi, Benin, working for tourism development and the promotion of culture. Discover Escale Urbaine in Grand-Popo and our past editions.",
+  keywords: ["Benin travel", "travel to Benin", "Tourism'Tour", "Escale Urbaine", "Grand-Popo", "Abomey-Calavi", "Benin culture", "voyage Bénin"],
   authors: [{ name: "Tourism'Tour" }],
   creator: "Tourism'Tour",
   openGraph: {
@@ -48,8 +47,8 @@ export const metadata: Metadata = {
     alternateLocale: "fr_FR",
     url: "/",
     siteName: "Tourism'Tour",
-    title: "Tourism'Tour | Benin travel agency: local guides & tailor-made trips",
-    description: "Plan your trip to Benin with local guides and a team that supports you before and during your journey.",
+    title: "Tourism'Tour | Benin-based tourism and culture: Escale Urbaine, Grand-Popo",
+    description: "A Benin-based structure for tourism development and the promotion of culture. Escale Urbaine, Grand-Popo.",
     images: [
       {
         url: "/images/og-image.png",
@@ -62,7 +61,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Tourism'Tour | Benin travel agency",
-    description: "Plan your trip to Benin with local guides and tailor-made itineraries.",
+    description: "A Benin-based structure for tourism development and the promotion of culture.",
     images: ["/images/og-image.png"],
   },
   alternates: { canonical: "/" },

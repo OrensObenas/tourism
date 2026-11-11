@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { siteConfig } from '@/lib/site';
 import { circuits, getCircuitBySlug } from '@/lib/data/circuits';
 
 export const dynamicParams = false;
@@ -30,6 +31,8 @@ export default function Layout({
   children: React.ReactNode;
   params: { slug: string };
 }) {
+  // Contenu de démonstration non vérifié : masqué (voir siteConfig.showLegacyContent)
+  if (!siteConfig.showLegacyContent) notFound();
   if (!getCircuitBySlug(params.slug)) notFound();
   return children;
 }

@@ -8,22 +8,30 @@ import {
   Heart, 
   Star,
   ArrowRight,
-  MessageCircle,
   Sparkles,
   CheckCircle2
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
-import { CircuitCard } from '@/components/circuits/CircuitCard';
-import { ImmersiveExperiences } from '@/components/home/ImmersiveExperiences';
 import { useLanguage } from '@/components/providers/LanguageProvider';
-import { getFeaturedCircuits } from '@/lib/data/circuits';
-import { whatsappLink } from '@/lib/site';
+import { copy } from '@/lib/content';
+import { siteConfig } from '@/lib/site';
+import { Facebook } from 'lucide-react';
+
+// Aperçu des éditions passées (photos réelles du dépôt)
+const previewPhotos = [
+  '/images/editions/2025/image_10.jpeg',
+  '/images/editions/2024/image_20.jpeg',
+  '/images/editions/2023/image_8.jpeg',
+  '/images/editions/2025/image_50.jpeg',
+  '/images/editions/2024/image_30.jpeg',
+  '/images/editions/2023/image_4.jpeg',
+];
 
 export default function HomePage() {
-  const { t } = useLanguage();
-  const featuredCircuits = getFeaturedCircuits().slice(0, 3);
+  const { t, locale } = useLanguage();
+  const h = copy[locale].home;
 
   return (
     <>
@@ -71,7 +79,7 @@ export default function HomePage() {
             <AnimatedSection delay={0.3}>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild variant="accent" size="xl" className="shadow-lg shadow-primary-950/30">
-                  <Link href="/circuits">
+                  <Link href="/experiences/escale-urbaine">
                     {t.hero.discoverCircuits}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
@@ -95,8 +103,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== 2. SECTION EXPÉRIENCES IMMERSIVES ========== */}
-      <ImmersiveExperiences />
+      {/* ========== 2. QUI EST TOURISM'TOUR ========== */}
+      <section className="py-14 lg:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedSection>
+            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider">{h.aboutLabel}</span>
+            <h2 className="text-3xl lg:text-4xl font-heading font-bold text-gray-900 mt-2 mb-5">{h.aboutTitle}</h2>
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">{h.aboutText}</p>
+            <Button asChild variant="outline" size="lg">
+              <Link href="/about">{h.aboutLink}<ArrowRight className="ml-2 h-5 w-5" /></Link>
+            </Button>
+          </AnimatedSection>
+        </div>
+      </section>
 
       {/* ========== WHY US ========== */}
       <section className="py-14 lg:py-20 section-brand-mix pattern-dots">
@@ -181,34 +200,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== FEATURED CIRCUITS ========== */}
+      {/* ========== ESCALE URBAINE (réalisation phare) ========== */}
+      <section className="py-14 lg:py-20 bg-gradient-to-br from-primary-800 to-primary-950 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedSection>
+            <span className="text-gold-300 font-semibold text-sm uppercase tracking-wider">{h.flagshipLabel}</span>
+            <h2 className="text-3xl lg:text-5xl font-heading font-bold mt-2 mb-5">{h.flagshipTitle}</h2>
+            <p className="text-lg text-primary-100 leading-relaxed mb-8">{h.flagshipText}</p>
+            <Button asChild variant="accent" size="xl">
+              <Link href="/experiences/escale-urbaine">{h.flagshipButton}<ArrowRight className="ml-2 h-5 w-5" /></Link>
+            </Button>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ========== APERÇU DES ÉDITIONS ========== */}
       <section className="py-14 lg:py-20 section-purple-tint">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <SectionHeader 
-              title={t.featuredCircuits.title}
-              subtitle={t.featuredCircuits.subtitle}
-            />
+            <SectionHeader title={h.editionsTitle} subtitle={h.editionsSubtitle} />
           </AnimatedSection>
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {featuredCircuits.map((circuit, index) => (
-              <AnimatedSection key={circuit.id} delay={index * 0.1}>
-                <CircuitCard circuit={circuit} />
-              </AnimatedSection>
+          <ul className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">
+            {previewPhotos.map((src, i) => (
+              <li key={src} className="relative aspect-[4/3] overflow-hidden rounded-xl bg-sand-100">
+                <Image
+                  src={src}
+                  alt={`${locale === 'en' ? 'Edition photo' : "Photo d'édition"} ${i + 1}`}
+                  fill
+                  loading="lazy"
+                  sizes="(min-width:768px) 33vw, 50vw"
+                  className="object-cover"
+                />
+              </li>
             ))}
+          </ul>
+          <div className="text-center">
+            <Button asChild size="lg">
+              <Link href="/editions">{h.editionsButton}<ArrowRight className="ml-2 h-5 w-5" /></Link>
+            </Button>
           </div>
-          
-          <AnimatedSection>
-            <div className="text-center">
-              <Button asChild size="lg">
-                <Link href="/circuits">
-                  {t.featuredCircuits.viewAll}
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-          </AnimatedSection>
         </div>
       </section>
 
@@ -265,9 +295,9 @@ export default function HomePage() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild variant="whatsapp" size="xl" className="shadow-lg shadow-black/20">
-                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-5 w-5" />
+              <Button asChild variant="outline" size="xl" className="bg-white/10 border-white/40 text-white hover:bg-white hover:text-primary-900 backdrop-blur-sm">
+                <a href={siteConfig.socials.facebook} target="_blank" rel="noopener noreferrer">
+                  <Facebook className="mr-2 h-5 w-5" />
                   {t.cta.whatsapp}
                 </a>
               </Button>

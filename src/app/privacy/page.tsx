@@ -67,7 +67,7 @@ To exercise these rights, please contact us at ${siteConfig.email}.`
         content: `If you have any questions about this privacy policy, please contact us at:
 
 Email: ${siteConfig.email}
-WhatsApp: ${siteConfig.phoneDisplay}
+Phone: ${siteConfig.phoneDisplay}
 Address: ${siteConfig.address}`
       },
     ],
@@ -131,7 +131,7 @@ Pour exercer ces droits, veuillez nous contacter à ${siteConfig.email}.`
         content: `Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter à :
 
 Email : ${siteConfig.email}
-WhatsApp : ${siteConfig.phoneDisplay}
+Téléphone : ${siteConfig.phoneDisplay}
 Adresse : ${siteConfig.address}`
       },
     ],

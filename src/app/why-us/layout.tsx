@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Why Tourism'Tour | Local guides & tailor-made trips in Benin",
-  description: "Why travel to Benin with Tourism'Tour: local guides, support before and during your trip, tailor-made circuits and organised logistics for international travellers.",
-  keywords: ['Benin travel agency', 'Benin local guides', 'tailor-made trip Benin', 'Benin tour operator', 'travel to Benin'],
+  title: "Why Tourism'Tour | A Benin-based team for tourism and culture",
+  description: "Why choose Tourism'Tour: a team based in Abomey-Calavi, culture at the centre, and a direct line to the team.",
+  keywords: ['Tourism\'Tour', 'Benin culture', 'Abomey-Calavi', 'Escale Urbaine', 'travel to Benin'],
   alternates: { canonical: '/why-us' },
 };
 

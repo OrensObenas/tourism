@@ -4,7 +4,8 @@ export const dictionaries = {
     nav: {
       home: 'Accueil',
       circuits: 'Circuits',
-      experiences: 'Expériences',
+      experiences: 'Nos expériences',
+      editions: 'Nos éditions',
       events: 'Événements',
       testimonials: 'Témoignages',
       blog: 'Découvrir le Bénin',
@@ -18,15 +19,15 @@ export const dictionaries = {
     },
     // Hero
     hero: {
-      title: 'Découvrez le Bénin avec des experts locaux à vos côtés',
-      subtitle: 'Tourism\'Tour est une agence de voyage basée au Bénin. Nous aidons les voyageurs internationaux à préparer et vivre un voyage ancré dans la culture, l\'histoire et la nature locales, de la première question au dernier jour.',
-      discoverCircuits: 'Découvrir nos circuits',
+      title: 'Découvrez le Bénin avec Tourism\'Tour',
+      subtitle: 'Tourism\'Tour est une structure basée à Abomey-Calavi, au Bénin, qui œuvre pour le développement touristique et la promotion de la culture. Faites connaissance, découvrez ce que nous faisons et notre expérience phare : Escale Urbaine.',
+      discoverCircuits: 'Découvrir Escale Urbaine',
       contactUs: 'Parler à notre équipe',
       planTrip: 'Préparer son voyage',
       badges: {
-        fieldExperience: 'Guides locaux',
-        culturalTourism: 'Culture & histoire',
-        adventure: 'Voyages sur mesure',
+        fieldExperience: 'Basés au Bénin',
+        culturalTourism: 'Culture & tourisme',
+        adventure: 'Escale Urbaine',
       },
     },
     // Trip Types
@@ -49,25 +50,25 @@ export const dictionaries = {
     },
     // Why Us
     whyUs: {
-      title: 'Pourquoi voyager avec Tourism\'Tour ?',
-      subtitle: 'Une équipe locale qui s\'occupe des détails pour que vous profitiez du Bénin',
-      learnMore: 'Découvrir notre approche',
+      title: 'Pourquoi Tourism\'Tour ?',
+      subtitle: 'Une équipe basée au Bénin qui place la culture au cœur du voyage',
+      learnMore: 'En savoir plus sur nous',
       features: {
         fieldKnowledge: {
-          title: 'Guides locaux',
-          description: 'Des guides qui connaissent les lieux, l\'histoire et les habitants, et qui les partagent avec vous.',
+          title: 'Basés au Bénin',
+          description: 'Notre base est à Abomey-Calavi : nous travaillons depuis le lieu que vous voulez découvrir.',
         },
         culturalExpertise: {
-          title: 'Circuits sur mesure',
-          description: 'Dites-nous ce que vous voulez voir et votre façon de voyager. Nous construisons l\'itinéraire autour de vous.',
+          title: 'La culture d\'abord',
+          description: 'Nous œuvrons pour le développement touristique et la promotion de la culture, du Zangbéto à l\'artisanat local.',
         },
         humanSupport: {
-          title: 'Accompagnement avant et pendant le voyage',
-          description: 'Des réponses avant la réservation, un interlocuteur pendant le séjour.',
+          title: 'Une équipe à qui parler',
+          description: 'Contactez-nous par e-mail, téléphone ou Facebook avant de vous décider.',
         },
         authentic: {
-          title: 'Rencontres authentiques',
-          description: 'Culture, patrimoine et vie quotidienne, loin des cartes postales habituelles.',
+          title: 'À voir en photos',
+          description: 'Nos éditions passées sont documentées dans une galerie photo à parcourir.',
         },
       },
     },
@@ -156,10 +157,10 @@ export const dictionaries = {
     },
     // CTA
     cta: {
-      title: 'Prêt à préparer votre voyage au Bénin ?',
-      subtitle: 'Indiquez-nous vos dates, vos centres d\'intérêt et votre style de voyage. Notre équipe vous répond avec des idées.',
-      contact: 'Nous contacter',
-      whatsapp: 'WhatsApp',
+      title: 'Prêt à parler de votre voyage ?',
+      subtitle: 'Demandez un devis ou posez-nous vos questions. Nous reviendrons vers vous.',
+      contact: 'Demander un devis',
+      whatsapp: 'Nous écrire sur Facebook',
     },
     // Circuits Page
     circuitsPage: {
@@ -308,7 +309,7 @@ export const dictionaries = {
         email: 'Email',
         emailPlaceholder: 'votre@email.com',
         phone: 'Téléphone',
-        phonePlaceholder: '+229 XX XX XX XX',
+        phonePlaceholder: '+229 ...',
         preferredLanguage: 'Langue préférée',
         topic: 'Sujet',
         selectTopic: 'Sélectionnez un sujet',
@@ -335,7 +336,7 @@ export const dictionaries = {
       followUs: 'Suivez-nous',
       responseTime: {
         title: 'Temps de réponse',
-        description: 'Nous répondons généralement sous 24 heures en semaine. Pour les demandes urgentes, privilégiez WhatsApp.',
+        description: 'Nous vous répondrons dès que possible (délai de réponse à confirmer). Vous pouvez aussi nous écrire sur Facebook.',
       },
     },
     // FAQ
@@ -351,24 +352,24 @@ export const dictionaries = {
     },
     // Footer
     howItWorks: {
-      title: 'Comment ça marche',
-      subtitle: 'De votre premier message à votre retour',
+      title: 'Pour commencer',
+      subtitle: 'Nous contacter est la première étape',
       steps: [
         {
-          title: 'Parlez-nous de votre voyage',
-          description: 'Indiquez vos dates, centres d\'intérêt et style de voyage par formulaire ou WhatsApp.',
+          title: 'Prenez contact',
+          description: 'Écrivez-nous par formulaire, e-mail ou Facebook et dites-nous ce que vous cherchez.',
         },
         {
-          title: 'Nous concevons votre itinéraire',
-          description: 'Nous proposons un circuit ou en construisons un sur mesure, et répondons à vos questions.',
+          title: 'Renseignez-vous sur Escale Urbaine',
+          description: 'Posez vos questions sur la prochaine édition, les dates et les conditions : elles restent à confirmer.',
         },
         {
-          title: 'Nous vous aidons à vous préparer',
-          description: 'Conseils pratiques : formalités d\'entrée, santé, bagages, arrivée à Cotonou.',
+          title: 'Préparez votre voyage',
+          description: 'Lisez notre guide pratique : visa, santé, saison, arrivée au Bénin.',
         },
         {
-          title: 'Vous voyagez avec une équipe locale',
-          description: 'Votre guide et notre équipe sont vos interlocuteurs pendant le séjour.',
+          title: 'Demandez un devis',
+          description: 'Parlez-nous de votre projet et nous reviendrons vers vous avec un devis.',
         },
       ],
     },
@@ -386,40 +387,32 @@ export const dictionaries = {
       button: 'Lire le guide pratique',
     },
     whyPage: {
-      title: 'Pourquoi voyager au Bénin avec Tourism\'Tour',
-      subtitle: 'Vous apportez la curiosité. Nous apportons la connaissance locale, l\'organisation et une équipe à qui parler.',
-      benefitsTitle: 'Ce que nous faisons pour les voyageurs internationaux',
+      title: 'Pourquoi Tourism\'Tour',
+      subtitle: 'Une structure basée au Bénin qui œuvre pour le développement touristique et la promotion de la culture.',
+      benefitsTitle: 'Ce que vous pouvez attendre de nous',
       benefits: [
         {
-          title: 'Guides locaux',
-          description: 'Votre voyage est conduit par des guides béninois qui connaissent les sites, l\'histoire et les communautés que vous rencontrerez. Ils vous expliquent le contexte de ce que vous voyez.',
+          title: 'Une équipe basée au Bénin',
+          description: 'Tourism\'Tour est installée à Zogbadjè, Abomey-Calavi. Vous avez affaire à des gens qui travaillent là où vous allez.',
         },
         {
-          title: 'Accompagnement avant le départ',
-          description: 'Visa, santé, bagages, période idéale : nous vous aidons à vous préparer pour que rien ne reste dans le flou.',
+          title: 'La culture au centre',
+          description: 'Notre mission : développer le tourisme et promouvoir la culture. Notre expérience phare, Escale Urbaine, mêle patrimoine, artisanat, musique et nature.',
         },
         {
-          title: 'Accompagnement pendant le voyage',
-          description: 'Vous n\'êtes pas seul(e). Notre équipe est votre interlocuteur au Bénin si vous avez besoin d\'un conseil ou d\'aide.',
+          title: 'Un lien direct avec l\'équipe',
+          description: 'Posez vos questions par e-mail, téléphone ou Facebook avant de vous décider.',
         },
         {
-          title: 'Circuits sur mesure',
-          description: 'Choisissez un de nos circuits ou demandez-nous de l\'adapter : durée, rythme, centres d\'intérêt, taille du groupe.',
-        },
-        {
-          title: 'Logistique prise en charge',
-          description: 'Selon le circuit, nous organisons transport, visites et dispositions locales pour que vous exploriez plutôt que d\'organiser. Chaque fiche circuit indique ce qui est inclus.',
-        },
-        {
-          title: 'Un voyage respectueux et porteur de sens',
-          description: 'Nous cherchons des visites qui respectent la culture locale et profitent à ceux qui vous accueillent.',
+          title: 'Une expérience visible',
+          description: 'Les photos de nos éditions 2023, 2024 et 2025 sont dans la galerie : vous voyez à quoi ressemblent nos sorties.',
         },
       ],
       stepsTitle: 'Une façon simple de commencer',
       tbcLabel: 'À confirmer par Tourism\'Tour',
-      tbc: 'Les langues parlées par l\'équipe, les licences ou certifications et les années d\'activité seront ajoutées ici une fois confirmées par l\'agence.',
+      tbc: 'Les langues parlées par l\'équipe, les licences ou certifications et les membres de l\'équipe seront ajoutés ici une fois confirmés par l\'agence.',
       ctaTitle: 'Parlons de votre voyage',
-      ctaText: 'Sans engagement : dites-nous ce que vous avez en tête, nous vous répondrons avec des suggestions.',
+      ctaText: 'Sans engagement : dites-nous ce que vous avez en tête et nous vous répondrons.',
       ctaPrimary: 'Nous contacter',
       ctaSecondary: 'Préparer son voyage',
     },
@@ -443,23 +436,23 @@ export const dictionaries = {
             'Un justificatif de vaccination contre la fièvre jaune est couramment demandé dans cette région. Vérifiez l\'exigence en vigueur pour votre itinéraire auprès des sources officielles.',
             'Souscrivez une assurance voyage couvrant les soins médicaux et, idéalement, le rapatriement.',
           ],
-          tbc: 'Exigences vaccinales officielles à citer, et recommandations de l\'agence (assurance, centres de santé proches de chaque circuit).',
+          tbc: 'Exigences vaccinales officielles à citer, et recommandations de l\'agence (assurance, centres de santé proches).',
         },
         season: {
           title: 'Meilleure période pour voyager',
           paragraphs: [
             'Le climat diffère entre le sud et le nord du pays, et les saisons sèches et pluvieuses influencent le confort et l\'état des routes. La meilleure période dépend de votre destination et de vos envies.',
-            'Indiquez-nous vos dates possibles : nous vous conseillerons pour le circuit choisi.',
+            'Indiquez-nous vos dates possibles : nous en discuterons avec vous.',
           ],
-          tbc: 'Mois recommandés par l\'agence selon la région et le circuit, et dates des festivals ou événements autour desquels planifier.',
+          tbc: 'Mois recommandés par l\'agence selon la région, et dates des festivals ou événements autour desquels planifier.',
         },
         arrival: {
           title: 'Arriver à Cotonou',
           paragraphs: [
-            'La plupart des visiteurs internationaux arrivent à Cotonou, capitale économique, où commencent la plupart de nos circuits.',
-            'Communiquez-nous les détails de votre vol pour que nous préparions votre première journée.',
+            'La plupart des visiteurs internationaux arrivent à Cotonou, capitale économique du Bénin.',
+            'Contactez-nous pour parler de votre arrivée et de vos premiers jours.',
           ],
-          tbc: 'Accueil à l\'aéroport : proposé ou non, à quelles conditions, comment reconnaître le chauffeur ? Points de rendez-vous et suggestions d\'hôtels à Cotonou.',
+          tbc: 'Accueil à l\'aéroport : proposé ou non, et à quelles conditions ? Points de rendez-vous et suggestions d\'hôtels à Cotonou.',
         },
         money: {
           title: 'Argent et paiement',
@@ -473,22 +466,22 @@ export const dictionaries = {
           title: 'Sécurité',
           paragraphs: [
             'Consultez les conseils aux voyageurs de votre propre gouvernement pour le Bénin et pour les régions que vous comptez visiter : ils peuvent différer selon les régions et évoluer.',
-            'Sur nos circuits, vous êtes accompagné(e) par une équipe locale. Suivez les conseils de votre guide, protégez vos affaires comme partout, et respectez les coutumes et les lieux sacrés.',
+            'Comme partout, protégez vos affaires, suivez les conseils locaux et respectez les coutumes et les lieux sacrés.',
           ],
           tbc: 'Procédures de sécurité de l\'agence (contact d\'urgence, assistance, véhicules et chauffeurs) et recommandations propres à chaque région.',
         },
         included: {
           title: 'Ce qui est inclus',
           paragraphs: [
-            'Ce qui est inclus varie d\'un circuit à l\'autre. Chaque fiche circuit précise ce qui est compris ou non. Pour un voyage sur mesure, nous le confirmons par écrit avant la réservation.',
+            'Les prix, prestations incluses et conditions de nos expériences, dont la prochaine édition d\'Escale Urbaine, sont encore à confirmer. Contactez-nous pour demander un devis.',
           ],
-          tbc: 'Prestations standard (transport, hébergement, repas, guide, entrées) et prix ou fourchettes de prix, si l\'agence souhaite les publier.',
+          tbc: 'Prestations standard (transport, hébergement, repas, guide, entrées) et prix ou fourchettes de prix.',
         },
       },
       ctaTitle: 'Encore des questions ?',
       ctaText: 'Posez-les à notre équipe : nous vous aidons à préparer votre voyage.',
       ctaPrimary: 'Nous contacter',
-      ctaSecondary: 'Lire la FAQ',
+      ctaSecondary: 'Nos expériences',
     },
     footer: {
       quickLinks: 'Liens rapides',
@@ -498,7 +491,7 @@ export const dictionaries = {
       privacy: 'Politique de confidentialité',
       terms: 'Conditions générales',
       copyright: '© 2026 Tourism\'Tour. Tous droits réservés.',
-      tagline: 'Votre partenaire local pour voyager au Bénin',
+      tagline: 'Pour le développement touristique et la promotion de la culture',
     },
     // Common
     common: {
@@ -520,7 +513,8 @@ export const dictionaries = {
     nav: {
       home: 'Home',
       circuits: 'Circuits',
-      experiences: 'Experiences',
+      experiences: 'Our experiences',
+      editions: 'Our editions',
       events: 'Events',
       testimonials: 'Testimonials',
       blog: 'Discover Benin',
@@ -534,15 +528,15 @@ export const dictionaries = {
     },
     // Hero
     hero: {
-      title: 'Discover Benin with local experts by your side',
-      subtitle: 'Tourism\'Tour is a Benin-based travel agency. We help international travellers plan and enjoy a trip rooted in local culture, history and nature, from the first question to the last day.',
-      discoverCircuits: 'Explore our circuits',
+      title: 'Discover Benin with Tourism\'Tour',
+      subtitle: 'Tourism\'Tour is a structure based in Abomey-Calavi, Benin, working for tourism development and the promotion of culture. Meet us, see what we do, and discover our flagship experience: Escale Urbaine.',
+      discoverCircuits: 'Discover Escale Urbaine',
       contactUs: 'Talk to our team',
       planTrip: 'Plan your trip',
       badges: {
-        fieldExperience: 'Local guides',
-        culturalTourism: 'Culture & history',
-        adventure: 'Tailor-made trips',
+        fieldExperience: 'Based in Benin',
+        culturalTourism: 'Culture & tourism',
+        adventure: 'Escale Urbaine',
       },
     },
     // Trip Types
@@ -565,25 +559,25 @@ export const dictionaries = {
     },
     // Why Us
     whyUs: {
-      title: 'Why travel with Tourism\'Tour?',
-      subtitle: 'A local team that takes care of the details, so you can enjoy Benin',
-      learnMore: 'See what we offer',
+      title: 'Why Tourism\'Tour?',
+      subtitle: 'A Benin-based team that puts culture at the heart of travel',
+      learnMore: 'Read more about us',
       features: {
         fieldKnowledge: {
-          title: 'Local guides',
-          description: 'Guides who know the places, the history and the people, and who share them with you.',
+          title: 'Based in Benin',
+          description: 'Our base is in Abomey-Calavi: we work from the place you want to discover.',
         },
         culturalExpertise: {
-          title: 'Tailor-made circuits',
-          description: 'Tell us what you want to see and how you like to travel. We shape the itinerary around you.',
+          title: 'Culture first',
+          description: 'We work for tourism development and the promotion of culture, from Zangbéto to local crafts.',
         },
         humanSupport: {
-          title: 'Support before and during your trip',
-          description: 'Questions before you book, a point of contact while you travel.',
+          title: 'A team to talk to',
+          description: 'Reach us by email, phone or Facebook before you decide.',
         },
         authentic: {
-          title: 'Authentic encounters',
-          description: 'Culture, heritage and daily life, beyond the usual tourist postcards.',
+          title: 'Seen in photos',
+          description: 'Our past editions are documented in a photo gallery you can browse.',
         },
       },
     },
@@ -672,10 +666,10 @@ export const dictionaries = {
     },
     // CTA
     cta: {
-      title: 'Ready to plan your trip to Benin?',
-      subtitle: 'Tell us your dates, interests and travel style. Our team will get back to you with ideas.',
-      contact: 'Contact us',
-      whatsapp: 'WhatsApp',
+      title: 'Ready to talk about your trip?',
+      subtitle: 'Ask for a quote or ask us anything. We will get back to you.',
+      contact: 'Request a quote',
+      whatsapp: 'Message us on Facebook',
     },
     // Circuits Page
     circuitsPage: {
@@ -824,7 +818,7 @@ export const dictionaries = {
         email: 'Email',
         emailPlaceholder: 'your@email.com',
         phone: 'Phone',
-        phonePlaceholder: '+229 XX XX XX XX',
+        phonePlaceholder: '+229 ...',
         preferredLanguage: 'Preferred language',
         topic: 'Topic',
         selectTopic: 'Select a topic',
@@ -851,7 +845,7 @@ export const dictionaries = {
       followUs: 'Follow us',
       responseTime: {
         title: 'Response time',
-        description: 'We usually respond within 24 hours on weekdays. For urgent requests, prefer WhatsApp.',
+        description: 'We will reply as soon as possible (response time to be confirmed). You can also write to us on Facebook.',
       },
     },
     // FAQ
@@ -867,24 +861,24 @@ export const dictionaries = {
     },
     // Footer
     howItWorks: {
-      title: 'How it works',
-      subtitle: 'From your first message to your return home',
+      title: 'How to get started',
+      subtitle: 'Contacting us is the first step',
       steps: [
         {
-          title: 'Tell us about your trip',
-          description: 'Share your dates, interests and travel style by form or WhatsApp.',
+          title: 'Get in touch',
+          description: 'Write to us by form, email or Facebook and tell us what you are looking for.',
         },
         {
-          title: 'We design your itinerary',
-          description: 'We suggest a circuit or build a tailor-made one, and answer your questions.',
+          title: 'Ask about Escale Urbaine',
+          description: 'Ask about the next edition, dates and conditions: these are still to be confirmed.',
         },
         {
-          title: 'We help you prepare',
-          description: 'Practical guidance on entry formalities, health, packing and arrival in Cotonou.',
+          title: 'Plan your trip',
+          description: 'Read our practical guide on visa, health, season and arrival in Benin.',
         },
         {
-          title: 'You travel with a local team',
-          description: 'Your guide and our team are your points of contact during the trip.',
+          title: 'Request a quote',
+          description: 'Tell us your plans and we will come back to you with a quote.',
         },
       ],
     },
@@ -902,40 +896,32 @@ export const dictionaries = {
       button: 'Read the practical guide',
     },
     whyPage: {
-      title: 'Why travel to Benin with Tourism\'Tour',
-      subtitle: 'You bring the curiosity. We bring local knowledge, organisation and a team you can talk to.',
-      benefitsTitle: 'What we do for international travellers',
+      title: 'Why Tourism\'Tour',
+      subtitle: 'A Benin-based structure working for tourism development and the promotion of culture.',
+      benefitsTitle: 'What you can expect from us',
       benefits: [
         {
-          title: 'Local guides',
-          description: 'Your trip is led by guides from Benin who know the sites, the history and the communities you will meet. They explain the context behind what you see.',
+          title: 'A team based in Benin',
+          description: 'Tourism\'Tour is based in Zogbadjè, Abomey-Calavi. You deal with people who work where you are going.',
         },
         {
-          title: 'Support before you travel',
-          description: 'Visa questions, health, what to pack, when to go: we help you prepare so that nothing about the trip feels uncertain.',
+          title: 'Culture at the centre',
+          description: 'Our mission is to develop tourism and promote culture. Our flagship experience, Escale Urbaine, mixes heritage, craft, music and nature.',
         },
         {
-          title: 'Support during your trip',
-          description: 'You are not on your own. Our team is your point of contact in Benin if you need advice or help along the way.',
+          title: 'A direct line to the team',
+          description: 'Ask your questions by email, phone or Facebook before you decide anything.',
         },
         {
-          title: 'Tailor-made circuits',
-          description: 'Choose one of our circuits or ask us to adapt it: duration, pace, interests, group size. We build the trip around you.',
-        },
-        {
-          title: 'Logistics handled',
-          description: 'Depending on the circuit, we organise transport, visits and local arrangements, so you spend your time exploring rather than planning. Each circuit page lists what is included.',
-        },
-        {
-          title: 'Respectful, meaningful travel',
-          description: 'We aim for visits that respect local culture and benefit the people who welcome you.',
+          title: 'Experience you can see',
+          description: 'Photos of our 2023, 2024 and 2025 editions are in the gallery, so you can see what our outings look like.',
         },
       ],
       stepsTitle: 'A simple way to start',
       tbcLabel: 'To be confirmed by Tourism\'Tour',
-      tbc: 'Languages spoken by the team, licences or certifications, and the number of years of operation will be added here once confirmed by the agency.',
+      tbc: 'Languages spoken by the team, licences or certifications, and the team members will be added here once confirmed by the agency.',
       ctaTitle: 'Let\'s talk about your trip',
-      ctaText: 'No commitment: tell us what you have in mind and we will reply with suggestions.',
+      ctaText: 'No commitment: tell us what you have in mind and we will reply.',
       ctaPrimary: 'Contact us',
       ctaSecondary: 'Plan your trip',
     },
@@ -959,23 +945,23 @@ export const dictionaries = {
             'Proof of yellow fever vaccination is commonly requested when travelling in this region. Check the current requirement for your itinerary with official sources.',
             'Bring travel insurance that covers medical care and, ideally, repatriation.',
           ],
-          tbc: 'Official vaccination requirements to quote, and the agency\'s recommendations (insurance, nearest clinics for each circuit).',
+          tbc: 'Official vaccination requirements to quote, and the agency\'s recommendations (insurance, nearest clinics).',
         },
         season: {
           title: 'Best time to visit',
           paragraphs: [
             'The climate differs between the south and the north of the country, and the dry and rainy seasons affect comfort and road conditions. The best time depends on where you are going and what you want to do.',
-            'Tell us your possible dates and we will advise you on your chosen circuit.',
+            'Tell us your possible dates and we will discuss them with you.',
           ],
-          tbc: 'The agency\'s recommended months per region and per circuit, and the dates of festivals or events worth planning around.',
+          tbc: 'The agency\'s recommended months per region, and the dates of festivals or events worth planning around.',
         },
         arrival: {
           title: 'Arriving in Cotonou',
           paragraphs: [
-            'Most international visitors arrive in Cotonou, the economic capital, where most of our circuits begin.',
-            'Share your flight details with us so we can plan your first day.',
+            'Most international visitors arrive in Cotonou, the economic capital of Benin.',
+            'Contact us to talk about your arrival and your first days.',
           ],
-          tbc: 'Airport pick-up: is it offered, at what conditions, how will the driver be identified? Meeting points and hotel suggestions in Cotonou.',
+          tbc: 'Whether airport pick-up is offered and on what conditions, meeting points and hotel suggestions in Cotonou.',
         },
         money: {
           title: 'Money and payment',
@@ -983,28 +969,28 @@ export const dictionaries = {
             'The local currency is the West African CFA franc (XOF). Check the current exchange rate with your bank or a reliable converter before you travel.',
             'Card acceptance and cash machines can be limited outside the main cities, so plan to carry some cash.',
           ],
-          tbc: 'How travellers pay the agency (methods, deposit, currency), cancellation and refund conditions, and the tips custom for guides and drivers.',
+          tbc: 'How travellers pay the agency (methods, deposit, currency), cancellation and refund conditions, and the tips customary for guides and drivers.',
         },
         safety: {
           title: 'Safety',
           paragraphs: [
             'Check the official travel advice of your own government for Benin, and for the specific regions you plan to visit, as advisories can differ by region and change over time.',
-            'On our circuits you are accompanied by a local team. Follow your guide\'s advice, protect your belongings as in any destination, and respect local customs and sacred sites.',
+            'As in any destination, protect your belongings, follow local advice, and respect local customs and sacred sites.',
           ],
           tbc: 'The agency\'s safety procedures (emergency contact, assistance, vehicles and drivers) and any region-specific recommendations.',
         },
         included: {
           title: 'What is included',
           paragraphs: [
-            'What is included differs from one circuit to another. Each circuit page lists what is included and what is not. For tailor-made trips, we confirm this in writing before you book.',
+            'Prices, inclusions and conditions for our experiences, including the next edition of Escale Urbaine, are still to be confirmed. Contact us to ask for a quote.',
           ],
-          tbc: 'Standard inclusions (transport, accommodation, meals, guide, entrance fees) and prices or price ranges, if the agency wishes to publish them.',
+          tbc: 'Standard inclusions (transport, accommodation, meals, guide, entrance fees) and prices or price ranges.',
         },
       },
       ctaTitle: 'Still have questions?',
       ctaText: 'Ask our team: we will help you prepare your trip.',
       ctaPrimary: 'Contact us',
-      ctaSecondary: 'Read the FAQ',
+      ctaSecondary: 'Our experiences',
     },
     footer: {
       quickLinks: 'Quick links',
@@ -1014,7 +1000,7 @@ export const dictionaries = {
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
       copyright: '© 2026 Tourism\'Tour. All rights reserved.',
-      tagline: 'Your local partner for travelling in Benin',
+      tagline: 'For tourism development and the promotion of culture',
     },
     // Common
     common: {

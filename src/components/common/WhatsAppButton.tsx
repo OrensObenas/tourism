@@ -2,10 +2,12 @@
 
 import { MessageCircle } from 'lucide-react';
 import { useLanguage } from '@/components/providers/LanguageProvider';
-import { whatsappLink } from '@/lib/site';
+import { hasWhatsapp, whatsappLink } from '@/lib/site';
 
 export function WhatsAppButton() {
   const { locale } = useLanguage();
+  // Aucun numéro WhatsApp confirmé : bouton masqué (voir src/lib/site.ts)
+  if (!hasWhatsapp) return null;
   const label = locale === 'en' ? 'Chat with us on WhatsApp' : 'Discuter avec nous sur WhatsApp';
   const message =
     locale === 'en'

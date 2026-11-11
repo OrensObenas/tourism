@@ -94,7 +94,7 @@ Tourism'Tour is not responsible for denied entry due to insufficient documentati
         content: `For any questions about these terms, please contact us:
 
 Email: ${siteConfig.email}
-WhatsApp: ${siteConfig.phoneDisplay}
+Phone: ${siteConfig.phoneDisplay}
 Address: ${siteConfig.address}`
       },
     ],
@@ -185,7 +185,7 @@ Tourism'Tour n'est pas responsable des refus d'entrée dus à une documentation 
         content: `Pour toute question concernant ces conditions, veuillez nous contacter :
 
 Email : ${siteConfig.email}
-WhatsApp : ${siteConfig.phoneDisplay}
+Téléphone : ${siteConfig.phoneDisplay}
 Adresse : ${siteConfig.address}`
       },
     ],

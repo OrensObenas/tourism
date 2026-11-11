@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: "Benin tours & circuits",
@@ -7,5 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  // Contenu de démonstration non vérifié : masqué (voir siteConfig.showLegacyContent)
+  if (!siteConfig.showLegacyContent) notFound();
   return children;
 }

@@ -37,11 +37,11 @@ export function Navbar() {
 
   const navLinks = [
     { href: '/', label: t.nav.home },
-    { href: '/circuits', label: t.nav.circuits },
-    { href: '/why-us', label: t.nav.whyUs },
-    { href: '/plan-your-trip', label: t.nav.planYourTrip },
-    { href: '/experiences', label: t.nav.experiences },
     { href: '/about', label: t.nav.about },
+    { href: '/experiences', label: t.nav.experiences },
+    { href: '/editions', label: t.nav.editions },
+    { href: '/plan-your-trip', label: t.nav.planYourTrip },
+    { href: '/why-us', label: t.nav.whyUs },
     { href: '/contact', label: t.nav.contact },
   ];
 

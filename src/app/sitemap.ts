@@ -5,8 +5,10 @@ import { siteConfig } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
-    '', '/why-us', '/plan-your-trip', '/circuits', '/experiences', '/events', '/about', '/contact',
-    '/blog', '/faq', '/testimonials', '/privacy', '/terms',
+    '', '/about', '/experiences', '/experiences/escale-urbaine', '/editions', '/plan-your-trip', '/why-us',
+    '/contact', '/privacy', '/terms',
+    // Contenus de démonstration non vérifiés : hors sitemap tant que showLegacyContent = false
+    ...(siteConfig.showLegacyContent ? ['/circuits', '/events', '/blog', '/faq', '/testimonials'] : []),
   ];
 
   return [
@@ -15,12 +17,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: path === '' ? 1 : 0.7,
     })),
-    ...circuits.map((circuit) => ({
+    ...(siteConfig.showLegacyContent ? circuits : []).map((circuit) => ({
       url: `${siteConfig.url}/circuits/${circuit.slug}`,
       changeFrequency: 'monthly' as const,
       priority: 0.9,
     })),
-    ...blogPosts.map((post) => ({
+    ...(siteConfig.showLegacyContent ? blogPosts : []).map((post) => ({
       url: `${siteConfig.url}/blog/${post.slug}`,
       changeFrequency: 'yearly' as const,
       priority: 0.6,

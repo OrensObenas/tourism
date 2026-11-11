@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "About us",
-  description: "Meet Tourism'Tour, a travel agency based in Cotonou, and our approach to authentic, responsible travel in Benin.",
+  description: "Meet Tourism'Tour, a structure based in Abomey-Calavi, Benin, working for tourism development and the promotion of culture.",
   alternates: { canonical: '/about' },
 };
 

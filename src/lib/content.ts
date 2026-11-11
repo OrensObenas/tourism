@@ -1,0 +1,181 @@
+// Textes des pages « entreprise » (accueil, À propos, expériences, éditions).
+// Faits : uniquement ceux de faits_verifies_tourismtour.md. Les éléments inconnus sont marqués « à confirmer ».
+import type { Locale } from '@/lib/i18n';
+
+const fr = {
+  home: {
+    aboutLabel: 'Qui sommes-nous',
+    aboutTitle: "Tourism'Tour, c'est quoi ?",
+    aboutText:
+      "Tourism'Tour est une structure qui œuvre pour le développement touristique et la promotion de la culture. Nous sommes basés à Zogbadjè, Abomey-Calavi, au Bénin.",
+    aboutLink: 'En savoir plus sur nous',
+    flagshipLabel: 'Notre réalisation phare',
+    flagshipTitle: 'Escale Urbaine à Grand-Popo',
+    flagshipText:
+      "Escale Urbaine est notre expérience phare. L'Acte IV a eu lieu à Grand-Popo les 27 et 28 juin 2026. Parmi les activités proposées lors de cette édition : démonstration de Zangbéto, traversée du fleuve en barque motorisée, découverte de la production de sel, refuge des tortues marines, atelier de tressage de nattes et soirée artistique.",
+    flagshipButton: "Découvrir l'expérience",
+    editionsTitle: 'Nos éditions en photos',
+    editionsSubtitle: 'Un aperçu des éditions 2023, 2024 et 2025.',
+    editionsButton: 'Voir toutes les photos',
+  },
+  about: {
+    title: 'À propos de Tourism\'Tour',
+    subtitle: 'Une structure béninoise pour le tourisme et la culture',
+    missionLabel: 'Notre mission',
+    missionTitle: 'Développer le tourisme, promouvoir la culture',
+    missionText:
+      "Tourism'Tour est une structure qui œuvre pour le développement touristique et la promotion de la culture.",
+    whereLabel: 'Où nous trouver',
+    whereTitle: 'Basés à Abomey-Calavi',
+    whereText: 'Notre implantation : Zogbadjè, Abomey-Calavi, Bénin.',
+    teamLabel: "L'équipe",
+    teamTitle: "Notre équipe",
+    teamTbc: "Les membres de l'équipe (noms, rôles, photos) seront présentés ici une fois confirmés par l'agence.",
+    tbcLabel: "À confirmer par Tourism'Tour",
+    ctaTitle: 'Une question ? Un projet ?',
+    ctaText: 'Écrivez-nous pour demander un devis ou en savoir plus.',
+    ctaButton: 'Nous contacter',
+    ctaSecondary: 'Nos expériences',
+  },
+  experiences: {
+    title: 'Nos expériences',
+    subtitle: 'Des expériences autour de la culture, du patrimoine et de la découverte du Bénin.',
+    cardText:
+      "Notre expérience phare : plusieurs jours de découvertes à Grand-Popo, entre traditions, artisanat, nature, musique et détente. Édition la plus récente : Acte IV, 27–28 juin 2026.",
+    cardButton: "Découvrir Escale Urbaine",
+    moreTitle: "D'autres expériences à venir",
+    moreText: "Nous complèterons cette page lorsque de nouvelles expériences seront confirmées. Contactez-nous pour discuter de vos envies.",
+  },
+  escale: {
+    title: 'Escale Urbaine',
+    subtitle: 'Acte IV · Grand-Popo · 27–28 juin 2026',
+    intro:
+      "Escale Urbaine est l'expérience phare de Tourism'Tour. L'Acte IV s'est déroulé à Grand-Popo les 27 et 28 juin 2026, avec des activités autour de la culture, de l'artisanat, de la nature et de la détente.",
+    activitiesTitle: "Les activités de l'édition 2026",
+    activitiesSub: "Parmi les activités proposées lors de l'édition 2026 :",
+    programmeTitle: 'Un programme-type sur 2 jours',
+    programmeNote:
+      "Exemple de programme construit à partir des activités de l'édition 2026. Il est donné à titre indicatif : l'ordre et les horaires peuvent différer d'une édition à l'autre et sont à confirmer.",
+    partnersTitle: 'Partenaires cités',
+    nextTitle: 'Prochaine édition, tarifs et conditions',
+    nextTbc: "Les dates de la prochaine édition, les tarifs, les prestations incluses et les conditions de participation ne sont pas encore confirmés. Contactez-nous pour vous renseigner.",
+    tbcLabel: "À confirmer par Tourism'Tour",
+    ctaTitle: 'Intéressé(e) par Escale Urbaine ?',
+    ctaText: 'Demandez un devis ou posez-nous vos questions.',
+    ctaButton: 'Demander un devis',
+    ctaSecondary: 'Voir nos éditions',
+  },
+  editions: {
+    title: 'Nos éditions',
+    subtitle: 'Les éditions de Tourism\'Tour en images.',
+    latest: 'Édition la plus récente',
+    noPhotos: "Les photos de cette édition ne sont pas encore disponibles.",
+    e2026: 'Édition 2026 · Escale Urbaine, Acte IV',
+    e2026Sub: 'Grand-Popo · 27–28 juin 2026',
+    showMore: 'Voir plus de photos',
+    shown: 'affichées',
+    photoOf: 'Photo de l\'édition',
+    close: 'Fermer',
+    prev: 'Photo précédente',
+    next: 'Photo suivante',
+    ctaTitle: 'Rejoignez la prochaine édition',
+    ctaText: 'Les dates de la prochaine édition sont à confirmer. Écrivez-nous pour être informé(e).',
+    ctaButton: 'Nous contacter',
+  },
+  contact: {
+    facebook: 'Facebook',
+    facebookDesc: 'Écrivez-nous sur notre page',
+    tbc: 'à confirmer',
+    address: 'Adresse',
+  },
+};
+
+const en: typeof fr = {
+  home: {
+    aboutLabel: 'Who we are',
+    aboutTitle: "What is Tourism'Tour?",
+    aboutText:
+      "Tourism'Tour is a structure working for tourism development and the promotion of culture. We are based in Zogbadjè, Abomey-Calavi, Benin.",
+    aboutLink: 'More about us',
+    flagshipLabel: 'Our flagship experience',
+    flagshipTitle: 'Escale Urbaine in Grand-Popo',
+    flagshipText:
+      'Escale Urbaine is our flagship experience. Act IV took place in Grand-Popo on 27–28 June 2026. Among the activities offered at the 2026 edition: a Zangbéto demonstration, a river crossing by motorised boat, discovering salt production, the sea turtle refuge, a mat-weaving workshop and an artistic evening.',
+    flagshipButton: 'Discover the experience',
+    editionsTitle: 'Our editions in photos',
+    editionsSubtitle: 'A glimpse of the 2023, 2024 and 2025 editions.',
+    editionsButton: 'See all photos',
+  },
+  about: {
+    title: "About Tourism'Tour",
+    subtitle: 'A Benin-based structure for tourism and culture',
+    missionLabel: 'Our mission',
+    missionTitle: 'Developing tourism, promoting culture',
+    missionText:
+      "Tourism'Tour is a structure working for tourism development and the promotion of culture.",
+    whereLabel: 'Where to find us',
+    whereTitle: 'Based in Abomey-Calavi',
+    whereText: 'Our base: Zogbadjè, Abomey-Calavi, Benin.',
+    teamLabel: 'The team',
+    teamTitle: 'Our team',
+    teamTbc: 'Team members (names, roles, photos) will be introduced here once confirmed by the agency.',
+    tbcLabel: "To be confirmed by Tourism'Tour",
+    ctaTitle: 'A question? A project?',
+    ctaText: 'Write to us to ask for a quote or to find out more.',
+    ctaButton: 'Contact us',
+    ctaSecondary: 'Our experiences',
+  },
+  experiences: {
+    title: 'Our experiences',
+    subtitle: 'Experiences around culture, heritage and discovering Benin.',
+    cardText:
+      'Our flagship experience: days of discovery in Grand-Popo, mixing traditions, crafts, nature, music and relaxation. Most recent edition: Act IV, 27–28 June 2026.',
+    cardButton: 'Discover Escale Urbaine',
+    moreTitle: 'More experiences to come',
+    moreText: 'We will complete this page when new experiences are confirmed. Contact us to talk about what you have in mind.',
+  },
+  escale: {
+    title: 'Escale Urbaine',
+    subtitle: 'Act IV · Grand-Popo · 27–28 June 2026',
+    intro:
+      "Escale Urbaine is Tourism'Tour's flagship experience. Act IV took place in Grand-Popo on 27 and 28 June 2026, with activities around culture, crafts, nature and relaxation.",
+    activitiesTitle: 'Activities of the 2026 edition',
+    activitiesSub: 'Among the activities offered at the 2026 edition:',
+    programmeTitle: 'A sample 2-day programme',
+    programmeNote:
+      'A sample programme built from the activities of the 2026 edition. It is indicative only: the order and timing may differ from one edition to another and are to be confirmed.',
+    partnersTitle: 'Partners mentioned',
+    nextTitle: 'Next edition, prices and conditions',
+    nextTbc: 'The dates of the next edition, prices, what is included and participation conditions are not yet confirmed. Contact us to find out more.',
+    tbcLabel: "To be confirmed by Tourism'Tour",
+    ctaTitle: 'Interested in Escale Urbaine?',
+    ctaText: 'Ask for a quote or ask us anything.',
+    ctaButton: 'Request a quote',
+    ctaSecondary: 'See our editions',
+  },
+  editions: {
+    title: 'Our editions',
+    subtitle: "Tourism'Tour editions in pictures.",
+    latest: 'Most recent edition',
+    noPhotos: 'Photos of this edition are not available yet.',
+    e2026: '2026 Edition · Escale Urbaine, Act IV',
+    e2026Sub: 'Grand-Popo · 27–28 June 2026',
+    showMore: 'Show more photos',
+    shown: 'shown',
+    photoOf: 'Photo from the edition',
+    close: 'Close',
+    prev: 'Previous photo',
+    next: 'Next photo',
+    ctaTitle: 'Join the next edition',
+    ctaText: 'The dates of the next edition are to be confirmed. Write to us to be kept informed.',
+    ctaButton: 'Contact us',
+  },
+  contact: {
+    facebook: 'Facebook',
+    facebookDesc: 'Write to us on our page',
+    tbc: 'to be confirmed',
+    address: 'Address',
+  },
+};
+
+export const copy: Record<Locale, typeof fr> = { fr, en };

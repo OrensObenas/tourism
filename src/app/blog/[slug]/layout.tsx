@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { siteConfig } from '@/lib/site';
 import { blogPosts, getBlogPostBySlug } from '@/lib/data/blogPosts';
 
 export const dynamicParams = false;
@@ -31,6 +32,8 @@ export default function Layout({
   children: React.ReactNode;
   params: { slug: string };
 }) {
+  // Contenu de démonstration non vérifié : masqué (voir siteConfig.showLegacyContent)
+  if (!siteConfig.showLegacyContent) notFound();
   if (!getBlogPostBySlug(params.slug)) notFound();
   return children;
 }

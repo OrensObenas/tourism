@@ -2,21 +2,28 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { MapPin, Mail, Phone, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { MapPin, Mail, Phone, Facebook } from 'lucide-react';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { siteConfig, emailLink, phoneLink } from '@/lib/site';
 
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M19.6 6.7a4.8 4.8 0 0 1-3.8-4.2h-3.3v13.3a2.7 2.7 0 1 1-2.7-2.7c.3 0 .5 0 .8.1V9.8a6 6 0 1 0 5.2 6V9.4a8 8 0 0 0 4.6 1.5V7.6a4.8 4.8 0 0 1-.8-.9z" />
+    </svg>
+  );
+}
+
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   const quickLinks = [
-    { href: '/circuits', label: t.nav.circuits },
-    { href: '/why-us', label: t.nav.whyUs },
-    { href: '/plan-your-trip', label: t.nav.planYourTrip },
-    { href: '/experiences', label: t.nav.experiences },
-    { href: '/events', label: t.nav.events },
     { href: '/about', label: t.nav.about },
-    { href: '/faq', label: t.nav.faq },
+    { href: '/experiences', label: t.nav.experiences },
+    { href: '/editions', label: t.nav.editions },
+    { href: '/plan-your-trip', label: t.nav.planYourTrip },
+    { href: '/why-us', label: t.nav.whyUs },
+    { href: '/contact', label: t.nav.contact },
   ];
 
   const legalLinks = [
@@ -26,9 +33,7 @@ export function Footer() {
 
   const socialLinks = [
     { href: siteConfig.socials.facebook, icon: Facebook, label: 'Facebook' },
-    { href: siteConfig.socials.instagram, icon: Instagram, label: 'Instagram' },
-    { href: siteConfig.socials.twitter, icon: Twitter, label: 'Twitter' },
-    { href: siteConfig.socials.youtube, icon: Youtube, label: 'YouTube' },
+    { href: siteConfig.socials.tiktok, icon: TikTokIcon, label: 'TikTok' },
   ].filter((social) => social.href);
 
   return (
@@ -99,7 +104,7 @@ export function Footer() {
               </li>
               <li className="flex items-start space-x-3 text-sm text-primary-200">
                 <MapPin className="h-5 w-5 text-primary-400 mt-0.5" />
-                <span>{siteConfig.address}</span>
+                <span>{locale === 'en' ? siteConfig.addressEn : siteConfig.address}</span>
               </li>
             </ul>
           </div>

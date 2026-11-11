@@ -1,53 +1,36 @@
-# Informations à collecter auprès de Gilbert / de l'agence
+# Informations à collecter auprès de Gilbert / de l'agence (mis à jour v2)
 
-Chaque point ci-dessous correspond à un contenu générique ou à un emplacement « À confirmer » (encadré jaune pointillé) dans le site. Aucune de ces informations n'a été inventée.
+Source des faits : `/workspace/faits_verifies_tourismtour.md`. Les emplacements « À confirmer » (encadré jaune pointillé) du site correspondent aux points ci-dessous. Rien n'a été inventé.
 
-## Global (`src/lib/site.ts`)
-- Quel est le vrai numéro de téléphone / WhatsApp (actuellement `+229 XX XX XX XX` / `22900000000`) ?
-- Quelle est l'adresse email définitive (actuellement `contact@tourismtour.com`) ?
-- Quelle est l'adresse physique du bureau à Cotonou (actuellement « Cotonou, Bénin ») ?
-- Quels sont les liens réels des réseaux sociaux (actuellement des URL génériques facebook.com, etc.) ?
-- Quel est le nom de domaine définitif (variable `NEXT_PUBLIC_SITE_URL`, par défaut `https://tourismtour.com`) ?
-- Année de création : 2023 est-elle exacte ?
+## Résolu en v2
+- Adresse : Zogbadjè, Abomey-Calavi, Bénin (Facebook).
+- Réseaux : Facebook et TikTok réels (faux liens Instagram/Twitter/YouTube retirés).
+- Mission : bio Facebook utilisée sur À propos / accueil.
+- Photos des éditions 2023–2025 : confirmées, galerie paginée en ligne.
+- Escale Urbaine Acte IV (27–28 juin 2026) : page dédiée, liste d'activités issue des posts.
+- Chiffres, témoignages, « Somba », YouTube, événements fictifs : retirés de l'affichage (code conservé).
 
-## Page « Why us » (`/why-us`)
-- Quelles langues l'équipe et les guides parlent-ils réellement (anglais, français, autres) ?
-- L'agence a-t-elle une licence / un agrément officiel du Bénin ? Lequel (à citer) ?
-- Depuis combien d'années exactement l'agence organise-t-elle des voyages ?
-- Les guides sont-ils certifiés ? Peut-on citer des noms / photos de guides (avec leur accord) ?
-- Quel dispositif d'accompagnement pendant le voyage existe-t-il réellement (contact joignable 24h/24, WhatsApp, accompagnateur sur place) ?
-- Quelles actions concrètes pour les communautés locales (pour étayer « respectueux et porteur de sens ») ?
+## À confirmer : contact (`src/lib/site.ts`)
+- Contact officiel : Facebook (+229 62 69 86 24, tourismtour100624@gmail.com, affiché) OU affiche (tourismtour2023@gmail.com, +229 01 62 69 86 24 / 01 57 56 25 46) ? Faut-il utiliser le format à 10 chiffres « 01 … » pour les appels ?
+- Numéro WhatsApp réel ? (bouton WhatsApp masqué en attendant).
+- Nom de domaine définitif (`NEXT_PUBLIC_SITE_URL`, défaut https://tourismtour.com).
+- Année de création (l'ancien « 2023 » a été retiré du JSON-LD).
+- Délai de réponse et horaires (retirés : « 24 h », « lun-ven 9h-18h »).
 
-## Page « Plan your trip » (`/plan-your-trip`)
-- **Visa et entrée** : l'agence peut-elle fournir une lettre d'invitation ou aider pour le visa ? Quels liens officiels recommander (e-visa, ambassades) ?
-- **Santé** : quelles exigences vaccinales officielles citer (fièvre jaune, etc.) ? Quelles recommandations de l'agence (assurance, cliniques proches de chaque circuit) ? (Le texte actuel dit que la fièvre jaune est « couramment demandée » : à vérifier.)
-- **Meilleure période** : quels mois recommandez-vous par région (Sud / Nord) et par circuit ? Dates des festivals à mettre en avant ?
-- **Arrivée à Cotonou** : accueil à l'aéroport proposé ? tarif / conditions ? Comment le voyageur reconnaît-il le chauffeur ? Hôtels conseillés à Cotonou ?
-- **Argent et paiement** : moyens de paiement acceptés par l'agence (virement international, carte, Mobile Money, espèces) ? Acompte ? Devise de facturation ? Conditions d'annulation et de remboursement ? Pourboires d'usage ? (Le texte actuel indique seulement que la monnaie locale est le franc CFA XOF : à vérifier, aucun taux de change n'est donné.)
-- **Sécurité** : procédures d'urgence (numéro, assistance médicale, rapatriement) ? Recommandations par région ? Type de véhicules / chauffeurs ?
-- **Ce qui est inclus** : prestations standard (transport, hébergement, repas, guide, entrées) ? Souhaitez-vous publier des prix ou fourchettes de prix ?
+## À confirmer : Escale Urbaine
+- Dates, lieu et tarifs de la prochaine édition ; ce qui est inclus ; conditions de participation.
+- Programme réel par jour et horaires (le programme-type du site est une répartition indicative des activités).
+- Photos de l'Acte IV (aucune dans le dépôt) ; partenaires à citer (le « Centre de recherche » tronqué n'est pas cité).
+- Les éditions 2023–2025 sont-elles les Actes I à III d'Escale Urbaine ? Quels lieux/titres ? (Les photos 2025 portent un filigrane « Abomey ».) Le site ne les relie pas à Escale Urbaine et n'indique aucun lieu.
+- Crédits photo (« MIA PICTURES » visible sur des images 2025) : autorisation de publication / mention.
 
-## Page d'accueil
-- Photo de hero : `Amazone.jpg` convient-elle à un public étranger ? D'autres photos réelles à fournir ?
-- La section « Comment ça marche » (4 étapes) correspond-elle au vrai processus de l'agence ?
-- Retirés car non vérifiés : « 962+ voyageurs », « 4,9/5 », compteurs, citation de « Marie Dupont », carrousel de témoignages, éditions précédentes avec nombre de participants, événements à venir. Quels vrais chiffres / avis / événements (avec accord des personnes) peut-on republier ?
+## À confirmer : À propos / Why us
+- Équipe (noms, rôles, photos, accord). Langues parlées. Licence / agrément. Années d'activité.
+- Photos `Guide_1…4` : qui sont-ils ? (plus utilisées sur À propos.) Photo hero `Amazone.jpg` (statue) : OK ?
 
-## Page À propos
-- Retirés car non vérifiés : « 8+ ans », « 2 500+ voyageurs », « 50+ circuits », « 15 communautés », équipe (Koffi Mensah, Aminata Diallo, Jean-Pierre Ahouandjinou, Mariame Bello). Quelle est la vraie équipe (noms, rôles, photos, bios) ?
-- Les textes de mission et de valeurs (Authenticité, Communauté, Durabilité, Excellence) reflètent-ils vraiment l'agence ?
-- Les 4 photos « Guide_1…4 » : qui sont les personnes, ont-elles donné leur accord ?
+## À confirmer : Plan your trip
+- Visa (aide, lettre d'invitation, liens officiels) ; santé (fièvre jaune : « couramment demandée » à vérifier) ; meilleure période ; accueil à l'aéroport ; paiement, acompte, annulation ; urgence ; prestations incluses et prix.
 
-## Circuits (`src/lib/data/circuits.ts`) — contenu placeholder existant, NON revu
-- Les 6 circuits sont-ils réellement proposés ? Itinéraires, durées, tailles de groupe (min/max), point de départ, ce qui est inclus / non inclus, meilleure période, point de rencontre : tout est à valider.
-- Vraies photos de chaque circuit (dossiers `public/images/circuits/*` vides, galeries = Unsplash).
-- Prix : « sur demande » actuellement. Souhaitez-vous afficher des tarifs ?
-
-## Événements, témoignages, éditions, blog, FAQ — contenu placeholder existant, NON revu
-- `events.ts` : dates, lieux, « places restantes » (`spotsLeft`) sont fictifs. Les événements 2026 sont-ils réels ?
-- `testimonials.ts` et témoignages des éditions : noms et avis fictifs ; remplacer par de vrais avis avec accord.
-- `editions.ts` : « plus de 500 voyageurs », participants, faits marquants (« Partenariat avec les communautés Somba », etc.) à valider ; 2023 et 2024 ont des photos dans le dépôt.
-- `faq.ts` : réponses sur paiement (Mobile Money MTN/Moov, virement, espèces au bureau), délai de réponse « 24h », sécurité, etc. à valider. Idem pour le temps de réponse de la page Contact.
-- `blogPosts.ts` : articles à relire (faits historiques, conseils pratiques).
-
-## Pages légales
-- Politique de confidentialité et conditions générales : textes génériques. Conditions d'annulation, de paiement, responsabilité, droit applicable : à faire valider par l'agence (idéalement un juriste).
+## Masqué (404, hors sitemap) tant que non validé : `siteConfig.showLegacyContent`
+- 6 circuits (itinéraires, durées, prix), événements, témoignages, blog, FAQ : à proposer réellement ? Contenus à fournir.
+- Pages légales (confidentialité, conditions) : génériques, à faire valider.

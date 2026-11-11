@@ -11,12 +11,14 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Card } from '@/components/ui/card';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { circuits } from '@/lib/data/circuits';
-import { siteConfig, whatsappLink, emailLink, phoneLink } from '@/lib/site';
+import { siteConfig, whatsappLink, hasWhatsapp, emailLink, phoneLink } from '@/lib/site';
+import { copy } from '@/lib/content';
 import { 
   Mail, 
   Phone, 
   MapPin, 
-  MessageCircle, 
+  MessageCircle,
+  Facebook,
   Send, 
   Clock,
   CheckCircle,
@@ -141,21 +143,14 @@ export default function ContactPage() {
     }
   };
 
+  const tbc = copy[locale].contact.tbc;
   const contactMethods = [
-    {
-      icon: MessageCircle,
-      title: 'WhatsApp',
-      value: siteConfig.phoneDisplay,
-      link: whatsappLink(),
-      description: locale === 'en' ? 'Quick response – preferred' : 'Réponse rapide – privilégié',
-      primary: true,
-    },
     {
       icon: Mail,
       title: 'Email',
       value: siteConfig.email,
       link: emailLink,
-      description: locale === 'en' ? 'Within 24h' : 'Sous 24h',
+      description: tbc.charAt(0).toUpperCase() + tbc.slice(1),
       primary: false,
     },
     {
@@ -163,7 +158,15 @@ export default function ContactPage() {
       title: locale === 'en' ? 'Phone' : 'Téléphone',
       value: siteConfig.phoneDisplay,
       link: phoneLink,
-      description: locale === 'en' ? 'Mon-Fri, 9am-6pm' : 'Lun-Ven, 9h-18h',
+      description: tbc.charAt(0).toUpperCase() + tbc.slice(1),
+      primary: false,
+    },
+    {
+      icon: Facebook,
+      title: 'Facebook',
+      value: "Tourism'tour",
+      link: siteConfig.socials.facebook,
+      description: copy[locale].contact.facebookDesc,
       primary: false,
     },
   ];
@@ -301,7 +304,7 @@ export default function ContactPage() {
                         </Select>
                       </div>
                       
-                      {(formData.topic === 'reservation' || formData.circuit) && (
+                      {siteConfig.showLegacyContent && (formData.topic === 'reservation' || formData.circuit) && (
                         <div>
                           <label className="block text-sm font-medium text-gray-700 mb-1">
                             {t.contactPage.form.circuit}
@@ -394,7 +397,8 @@ export default function ContactPage() {
 
             {/* Contact Info Sidebar */}
             <div className="space-y-6">
-              {/* WhatsApp CTA - Primary */}
+              {/* WhatsApp CTA : affiché seulement si un numéro WhatsApp est confirmé */}
+              {hasWhatsapp && (
               <AnimatedSection delay={0.1}>
                 <a
                   href={whatsappLink()}
@@ -418,6 +422,7 @@ export default function ContactPage() {
                   </Card>
                 </a>
               </AnimatedSection>
+              )}
 
               <AnimatedSection delay={0.2}>
                 <h3 className="text-lg font-heading font-semibold text-gray-900 mb-4">
@@ -456,9 +461,9 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h4 className="font-medium text-gray-900">
-                          {locale === 'en' ? 'Office' : 'Bureau'}
+                          {locale === 'en' ? 'Address' : 'Adresse'}
                         </h4>
-                        <p className="text-sm text-gray-600">Cotonou, Bénin</p>
+                        <p className="text-sm text-gray-600">{locale === 'en' ? siteConfig.addressEn : siteConfig.address}</p>
                       </div>
                     </div>
                   </Card>
