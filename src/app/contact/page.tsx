@@ -143,14 +143,13 @@ export default function ContactPage() {
     }
   };
 
-  const tbc = copy[locale].contact.tbc;
   const contactMethods = [
     {
       icon: Mail,
       title: 'Email',
       value: siteConfig.email,
       link: emailLink,
-      description: tbc.charAt(0).toUpperCase() + tbc.slice(1),
+      description: copy[locale].contact.emailDesc,
       primary: false,
     },
     {
@@ -158,7 +157,7 @@ export default function ContactPage() {
       title: locale === 'en' ? 'Phone' : 'Téléphone',
       value: siteConfig.phoneDisplay,
       link: phoneLink,
-      description: tbc.charAt(0).toUpperCase() + tbc.slice(1),
+      description: copy[locale].contact.phoneDesc,
       primary: false,
     },
     {

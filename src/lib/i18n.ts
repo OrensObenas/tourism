@@ -342,11 +342,11 @@ export const dictionaries = {
     // FAQ
     faqPage: {
       title: 'Questions Fréquentes',
-      subtitle: 'Trouvez rapidement les réponses à vos questions sur nos circuits et services',
+      subtitle: 'Des réponses prudentes sur Tourism\'Tour, Escale Urbaine et la préparation d\'un voyage au Bénin. Pour les tarifs et les dates, contactez-nous.',
       searchPlaceholder: 'Rechercher une question...',
       cta: {
         title: 'Vous n\'avez pas trouvé votre réponse ?',
-        description: 'Notre équipe est disponible pour répondre à toutes vos questions.',
+        description: 'Écrivez-nous : nous reviendrons vers vous. Les points encore à confirmer (tarifs, prochaine édition) seront précisés à ce moment-là.',
         button: 'Nous contacter',
       },
     },
@@ -405,7 +405,7 @@ export const dictionaries = {
         },
         {
           title: 'Une expérience visible',
-          description: 'Les photos de nos éditions 2023, 2024 et 2025 sont dans la galerie : vous voyez à quoi ressemblent nos sorties.',
+          description: 'Les photos d\'Escale Urbaine I (2023), II (2024) et III (2025) sont dans la galerie : vous voyez à quoi ressemblent nos sorties.',
         },
       ],
       stepsTitle: 'Une façon simple de commencer',
@@ -481,7 +481,7 @@ export const dictionaries = {
       ctaTitle: 'Encore des questions ?',
       ctaText: 'Posez-les à notre équipe : nous vous aidons à préparer votre voyage.',
       ctaPrimary: 'Nous contacter',
-      ctaSecondary: 'Nos expériences',
+      ctaSecondary: 'Consulter la FAQ',
     },
     footer: {
       quickLinks: 'Liens rapides',
@@ -851,11 +851,11 @@ export const dictionaries = {
     // FAQ
     faqPage: {
       title: 'Frequently Asked Questions',
-      subtitle: 'Quickly find answers to your questions about our circuits and services',
+      subtitle: 'Careful answers about Tourism\'Tour, Escale Urbaine and preparing a trip to Benin. For prices and dates, please contact us.',
       searchPlaceholder: 'Search for a question...',
       cta: {
         title: 'Didn\'t find your answer?',
-        description: 'Our team is available to answer all your questions.',
+        description: 'Write to us and we will get back to you. Points still to be confirmed (prices, next edition) will be clarified then.',
         button: 'Contact us',
       },
     },
@@ -914,7 +914,7 @@ export const dictionaries = {
         },
         {
           title: 'Experience you can see',
-          description: 'Photos of our 2023, 2024 and 2025 editions are in the gallery, so you can see what our outings look like.',
+          description: 'Photos of Escale Urbaine I (2023), II (2024) and III (2025) are in the gallery, so you can see what our outings look like.',
         },
       ],
       stepsTitle: 'A simple way to start',
@@ -990,7 +990,7 @@ export const dictionaries = {
       ctaTitle: 'Still have questions?',
       ctaText: 'Ask our team: we will help you prepare your trip.',
       ctaPrimary: 'Contact us',
-      ctaSecondary: 'Our experiences',
+      ctaSecondary: 'Read the FAQ',
     },
     footer: {
       quickLinks: 'Quick links',

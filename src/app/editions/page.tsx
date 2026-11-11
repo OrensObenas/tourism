@@ -29,7 +29,7 @@ export default function EditionsPage() {
 
       <section className="py-12 lg:py-16 section-purple-tint">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          {/* Édition la plus récente : Escale Urbaine Acte IV (aucune photo dans le dépôt) */}
+          {/* Édition la plus récente : Escale Urbaine IV (aucune photo dans le dépôt) */}
           <div id="2026">
             <span className="inline-block rounded-full bg-gold-400 px-3 py-1 text-xs font-semibold text-primary-950 mb-3">
               {c.latest}
@@ -44,18 +44,22 @@ export default function EditionsPage() {
             </p>
           </div>
 
-          {years.map((year) => (
-            <div key={year} id={year}>
-              <h2 className="text-2xl lg:text-3xl font-heading font-bold text-gray-900 mb-6">
-                {locale === 'en' ? `${year} Edition` : `Édition ${year}`}
-              </h2>
-              <PhotoGrid
-                photos={photosByYear[year].map((f) => `/images/editions/${year}/${f}`)}
-                altPrefix={locale === 'en' ? `${year} edition photo` : `Photo de l'édition ${year}`}
-                labels={labels}
-              />
-            </div>
-          ))}
+          {years.map((year) => {
+            const titleKey = `e${year}` as 'e2025' | 'e2024' | 'e2023';
+            const title = c[titleKey];
+            return (
+              <div key={year} id={year}>
+                <h2 className="text-2xl lg:text-3xl font-heading font-bold text-gray-900 mb-6">
+                  {title}
+                </h2>
+                <PhotoGrid
+                  photos={photosByYear[year].map((f) => `/images/editions/${year}/${f}`)}
+                  altPrefix={locale === 'en' ? `${title} photo` : `Photo de ${title}`}
+                  labels={labels}
+                />
+              </div>
+            );
+          })}
         </div>
       </section>
 

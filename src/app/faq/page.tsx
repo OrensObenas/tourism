@@ -32,10 +32,9 @@ export default function FAQPage() {
   const getCategoryLabel = (cat: string) => {
     const labels: Record<string, { fr: string; en: string }> = {
       general: { fr: 'Général', en: 'General' },
-      booking: { fr: 'Réservation', en: 'Booking' },
-      payment: { fr: 'Paiement', en: 'Payment' },
-      travel: { fr: 'Voyage', en: 'Travel' },
-      safety: { fr: 'Sécurité', en: 'Safety' },
+      experiences: { fr: 'Nos expériences', en: 'Our experiences' },
+      booking: { fr: 'Participer et devis', en: 'Joining and quotes' },
+      practical: { fr: 'Préparer son voyage', en: 'Planning your trip' },
     };
     return labels[cat]?.[locale] || cat;
   };

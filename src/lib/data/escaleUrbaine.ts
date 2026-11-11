@@ -3,7 +3,7 @@
 
 export const escaleUrbaine = {
   name: 'Escale Urbaine',
-  act: 'Acte IV',
+  act: 'Escale Urbaine IV',
   place: 'Grand-Popo',
   dates: { fr: '27–28 juin 2026', en: '27–28 June 2026' },
   // Activités vues dans les posts de l'édition 2026 (liste exhaustive des faits connus).

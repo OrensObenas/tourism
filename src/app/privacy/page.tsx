@@ -13,7 +13,7 @@ export default function PrivacyPage() {
     sections: [
       {
         title: '1. Information We Collect',
-        content: `We collect information you provide directly to us, such as when you fill out a contact form, request information about our circuits, or communicate with us via email or WhatsApp. This information may include:
+        content: `We collect information you provide directly to us, such as when you fill out a contact form, request information about our experiences, or communicate with us via email or phone. This information may include:
         
 - Your name and contact information (email, phone number)
 - Your preferred language
@@ -77,7 +77,7 @@ Address: ${siteConfig.address}`
     sections: [
       {
         title: '1. Informations que Nous Collectons',
-        content: `Nous collectons les informations que vous nous fournissez directement, comme lorsque vous remplissez un formulaire de contact, demandez des informations sur nos circuits, ou communiquez avec nous par email ou WhatsApp. Ces informations peuvent inclure :
+        content: `Nous collectons les informations que vous nous fournissez directement, comme lorsque vous remplissez un formulaire de contact, demandez des informations sur nos expériences, ou communiquez avec nous par e-mail ou téléphone. Ces informations peuvent inclure :
         
 - Votre nom et vos coordonnées (email, numéro de téléphone)
 - Votre langue préférée

@@ -6,9 +6,9 @@ import { siteConfig } from '@/lib/site';
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     '', '/about', '/experiences', '/experiences/escale-urbaine', '/editions', '/plan-your-trip', '/why-us',
-    '/contact', '/privacy', '/terms',
-    // Contenus de démonstration non vérifiés : hors sitemap tant que showLegacyContent = false
-    ...(siteConfig.showLegacyContent ? ['/circuits', '/events', '/blog', '/faq', '/testimonials'] : []),
+    '/faq', '/contact', '/privacy', '/terms',
+    // Circuits, événements, témoignages et blog : hors sitemap tant que non validés
+    ...(siteConfig.showLegacyContent ? ['/circuits', '/events', '/blog', '/testimonials'] : []),
   ];
 
   return [

@@ -4,129 +4,137 @@ export interface FAQItem {
   questionEn: string;
   answer: string;
   answerEn: string;
-  category: 'general' | 'booking' | 'safety' | 'practical';
+  category: 'general' | 'experiences' | 'booking' | 'practical';
 }
 
 export const faqItems: FAQItem[] = [
   {
-    id: '1',
-    question: 'Comment réserver un circuit avec Tourism\'Tour ?',
-    questionEn: 'How do I book a circuit with Tourism\'Tour?',
-    answer: 'Pour réserver, remplissez simplement notre formulaire de contact en indiquant le circuit qui vous intéresse. Notre équipe vous recontactera sous 24h pour discuter des détails et finaliser votre réservation.',
-    answerEn: 'To book, simply fill out our contact form indicating the circuit you\'re interested in. Our team will get back to you within 24 hours to discuss details and finalize your reservation.',
-    category: 'booking',
-  },
-  {
-    id: '2',
-    question: 'Quels sont les moyens de paiement acceptés ?',
-    questionEn: 'What payment methods are accepted?',
-    answer: 'Nous acceptons les virements bancaires, Mobile Money (MTN, Moov), et le paiement en espèces à notre bureau. Les détails de paiement vous seront communiqués lors de la confirmation de réservation.',
-    answerEn: 'We accept bank transfers, Mobile Money (MTN, Moov), and cash payment at our office. Payment details will be provided upon booking confirmation.',
-    category: 'booking',
-  },
-  {
-    id: '3',
-    question: 'Le Bénin est-il un pays sûr pour les touristes ?',
-    questionEn: 'Is Benin a safe country for tourists?',
-    answer: 'Oui, le Bénin est considéré comme l\'un des pays les plus sûrs d\'Afrique de l\'Ouest. Nos guides connaissent parfaitement le terrain et assurent votre sécurité tout au long du voyage.',
-    answerEn: 'Yes, Benin is considered one of the safest countries in West Africa. Our guides know the terrain perfectly and ensure your safety throughout the trip.',
-    category: 'safety',
-  },
-  {
-    id: '4',
-    question: 'Quels vaccins sont nécessaires pour voyager au Bénin ?',
-    questionEn: 'What vaccinations are required to travel to Benin?',
-    answer: 'Le vaccin contre la fièvre jaune est obligatoire. Nous recommandons également les vaccins contre l\'hépatite A et B, la typhoïde et un traitement antipaludéen. Consultez votre médecin avant le départ.',
-    answerEn: 'Yellow fever vaccination is mandatory. We also recommend vaccinations against hepatitis A and B, typhoid, and antimalarial treatment. Consult your doctor before departure.',
-    category: 'safety',
-  },
-  {
-    id: '5',
-    question: 'Quelle est la meilleure période pour visiter le Bénin ?',
-    questionEn: 'What is the best time to visit Benin?',
-    answer: 'La saison sèche (novembre à mars) est idéale pour visiter le Bénin. Pour le safari à la Pendjari, privilégiez décembre à mai. Le festival vaudou a lieu chaque 10 janvier.',
-    answerEn: 'The dry season (November to March) is ideal for visiting Benin. For Pendjari safari, prefer December to May. The voodoo festival takes place every January 10th.',
-    category: 'practical',
-  },
-  {
-    id: '6',
-    question: 'Les circuits sont-ils adaptés aux enfants ?',
-    questionEn: 'Are the circuits suitable for children?',
-    answer: 'Oui, nous proposons des circuits famille adaptés aux enfants. Certains circuits comme le safari peuvent avoir des restrictions d\'âge. Contactez-nous pour des conseils personnalisés.',
-    answerEn: 'Yes, we offer family circuits suitable for children. Some circuits like the safari may have age restrictions. Contact us for personalized advice.',
+    id: 'who',
+    question: 'Qui est Tourism\'Tour ?',
+    questionEn: 'Who is Tourism\'Tour?',
+    answer:
+      "Tourism'Tour est une structure basée à Zogbadjè, Abomey-Calavi, au Bénin. Elle œuvre pour le développement touristique et la promotion de la culture.",
+    answerEn:
+      "Tourism'Tour is a structure based in Zogbadjè, Abomey-Calavi, Benin. It works for tourism development and the promotion of culture.",
     category: 'general',
   },
   {
-    id: '7',
-    question: 'Que comprend le prix des circuits ?',
-    questionEn: 'What is included in the circuit price?',
-    answer: 'Chaque circuit détaille précisément ce qui est inclus (transport, hébergement, repas, guide, entrées aux sites). Les prix sont sur demande car ils varient selon la taille du groupe et les dates.',
-    answerEn: 'Each circuit details exactly what is included (transport, accommodation, meals, guide, site entries). Prices are on request as they vary depending on group size and dates.',
-    category: 'booking',
-  },
-  {
-    id: '8',
-    question: 'Quelle est la politique d\'annulation ?',
-    questionEn: 'What is the cancellation policy?',
-    answer: 'Annulation gratuite jusqu\'à 14 jours avant le départ. Entre 14 et 7 jours : 50% de frais. Moins de 7 jours : aucun remboursement. Une assurance voyage est recommandée.',
-    answerEn: 'Free cancellation up to 14 days before departure. Between 14 and 7 days: 50% fee. Less than 7 days: no refund. Travel insurance is recommended.',
-    category: 'booking',
-  },
-  {
-    id: '9',
-    question: 'Les guides parlent-ils anglais ?',
-    questionEn: 'Do the guides speak English?',
-    answer: 'Oui, nous avons des guides francophones et anglophones. Précisez votre préférence linguistique lors de la réservation et nous assignerons le guide approprié.',
-    answerEn: 'Yes, we have French and English speaking guides. Specify your language preference when booking and we will assign the appropriate guide.',
+    id: 'where',
+    question: 'Où êtes-vous basés ?',
+    questionEn: 'Where are you based?',
+    answer: 'À Zogbadjè, Abomey-Calavi, au Bénin.',
+    answerEn: 'In Zogbadjè, Abomey-Calavi, Benin.',
     category: 'general',
   },
   {
-    id: '10',
-    question: 'Puis-je personnaliser un circuit existant ?',
-    questionEn: 'Can I customize an existing circuit?',
-    answer: 'Absolument ! Nous adorons créer des expériences sur-mesure. Contactez-nous avec vos souhaits et nous adapterons l\'itinéraire selon vos centres d\'intérêt, durée et budget.',
-    answerEn: 'Absolutely! We love creating bespoke experiences. Contact us with your wishes and we will adapt the itinerary according to your interests, duration and budget.',
+    id: 'contact',
+    question: 'Comment vous contacter ?',
+    questionEn: 'How can I contact you?',
+    answer:
+      "Par téléphone au +229 62 69 86 24, par e-mail à tourismtour100624@gmail.com, via le formulaire de contact de ce site, ou sur notre page Facebook « Tourism'tour ». Nous sommes aussi présents sur TikTok (@tourismtour4).",
+    answerEn:
+      "By phone at +229 62 69 86 24, by email at tourismtour100624@gmail.com, through the contact form on this site, or on our Facebook page “Tourism'tour”. We are also on TikTok (@tourismtour4).",
+    category: 'general',
+  },
+  {
+    id: 'other-offers',
+    question: 'Proposez-vous d\'autres circuits ou des voyages sur mesure ?',
+    questionEn: 'Do you offer other tours or tailor-made trips?',
+    answer:
+      "Escale Urbaine est aujourd'hui notre expérience mise en avant. Pour tout autre projet, écrivez-nous : nous en discuterons avec vous. Les autres offres éventuelles restent à confirmer.",
+    answerEn:
+      'Escale Urbaine is currently our featured experience. For any other project, write to us and we will discuss it with you. Any other offers remain to be confirmed.',
+    category: 'general',
+  },
+  {
+    id: 'what-is-escale',
+    question: 'Qu\'est-ce qu\'Escale Urbaine ?',
+    questionEn: 'What is Escale Urbaine?',
+    answer:
+      "Escale Urbaine est l'expérience phare de Tourism'Tour. Les éditions I (2023), II (2024), III (2025) et IV (Grand-Popo, 27–28 juin 2026) ont déjà eu lieu. Lors de l'édition IV, les activités proposées ont notamment compris une démonstration de Zangbéto, une traversée du fleuve en barque motorisée, la découverte de la production de sel, une halte à la Bouche du Roy, le refuge des tortues marines, un atelier de tressage de nattes et une soirée artistique. La page dédiée en détaille davantage.",
+    answerEn:
+      "Escale Urbaine is Tourism'Tour's flagship experience. Editions I (2023), II (2024), III (2025) and IV (Grand-Popo, 27–28 June 2026) have already taken place. At edition IV, the activities offered included a Zangbéto demonstration, a river crossing by motorised boat, discovering salt production, a stop at the Bouche du Roy, the sea turtle refuge, a mat-weaving workshop and an artistic evening. The dedicated page gives more detail.",
+    category: 'experiences',
+  },
+  {
+    id: 'past-editions',
+    question: 'Où voir les éditions précédentes ?',
+    questionEn: 'Where can I see previous editions?',
+    answer:
+      "Les photos d'Escale Urbaine I (2023), II (2024) et III (2025) sont réunies sur la page Nos éditions. Les photos de l'édition IV seront ajoutées dès qu'elles seront disponibles.",
+    answerEn:
+      'Photos of Escale Urbaine I (2023), II (2024) and III (2025) are gathered on the Our editions page. Photos of edition IV will be added once they are available.',
+    category: 'experiences',
+  },
+  {
+    id: 'next-edition',
+    question: 'Quand aura lieu la prochaine édition ?',
+    questionEn: 'When is the next edition?',
+    answer:
+      "Les dates de la prochaine édition sont à confirmer. Contactez-nous pour être informé(e) ou pour poser vos questions.",
+    answerEn:
+      'The dates of the next edition are to be confirmed. Contact us to be kept informed or to ask any questions.',
+    category: 'experiences',
+  },
+  {
+    id: 'how-to-join',
+    question: 'Comment participer ou demander un devis ?',
+    questionEn: 'How do I take part or request a quote?',
+    answer:
+      "Remplissez le formulaire de contact, écrivez-nous à tourismtour100624@gmail.com ou appelez le +229 62 69 86 24. Indiquez-nous votre projet : nous reviendrons vers vous. Le délai de réponse exact est à confirmer.",
+    answerEn:
+      'Fill in the contact form, email us at tourismtour100624@gmail.com or call +229 62 69 86 24. Tell us about your plans and we will get back to you. The exact response time is to be confirmed.',
     category: 'booking',
   },
   {
-    id: '11',
-    question: 'Comment se passe le transport pendant les circuits ?',
-    questionEn: 'How is transportation handled during circuits?',
-    answer: 'Nous utilisons des véhicules climatisés confortables avec chauffeurs expérimentés. Pour Ganvié, des pirogues motorisées sécurisées. Pour le safari, des 4x4 adaptés.',
-    answerEn: 'We use comfortable air-conditioned vehicles with experienced drivers. For Ganvié, secure motorized pirogues. For safari, suitable 4x4 vehicles.',
-    category: 'practical',
+    id: 'prices',
+    question: 'Quels sont les tarifs, et que comprennent-ils ?',
+    questionEn: 'What are the prices, and what is included?',
+    answer:
+      "Les tarifs, les prestations incluses et les conditions de participation (y compris d'annulation) sont à confirmer. Contactez-nous pour demander un devis.",
+    answerEn:
+      'Prices, what is included and participation conditions (including cancellation) are to be confirmed. Contact us to request a quote.',
+    category: 'booking',
   },
   {
-    id: '12',
+    id: 'payment',
+    question: 'Quels moyens de paiement acceptez-vous ?',
+    questionEn: 'What payment methods do you accept?',
+    answer:
+      "Les modalités de paiement (moyens acceptés, acompte, devise) sont à confirmer. Nous vous les indiquerons lorsque vous nous contacterez au sujet d'un devis.",
+    answerEn:
+      'Payment arrangements (accepted methods, deposit, currency) are to be confirmed. We will share them with you when you contact us about a quote.',
+    category: 'booking',
+  },
+  {
+    id: 'visa',
     question: 'Ai-je besoin d\'un visa pour le Bénin ?',
     questionEn: 'Do I need a visa for Benin?',
-    answer: 'La plupart des nationalités nécessitent un e-visa, facilement obtenu en ligne sur evisa.gouv.bj. Nous pouvons vous guider dans les démarches si nécessaire.',
-    answerEn: 'Most nationalities require an e-visa, easily obtained online at evisa.gouv.bj. We can guide you through the process if needed.',
+    answer:
+      "Les conditions d'entrée dépendent de votre nationalité et peuvent évoluer. Consultez les informations officielles du gouvernement béninois, ou l'ambassade ou le consulat du Bénin le plus proche, bien avant le départ. Une éventuelle aide de notre part (par exemple une lettre d'invitation) est à confirmer : contactez-nous.",
+    answerEn:
+      "Entry requirements depend on your nationality and can change. Check official information from the Beninese government, or the nearest embassy or consulate of Benin, well before departure. Any help we might provide (for example an invitation letter) is to be confirmed: contact us.",
     category: 'practical',
   },
   {
-    id: '13',
-    question: 'Proposez-vous des voyages pour les groupes scolaires ?',
-    questionEn: 'Do you offer trips for school groups?',
-    answer: 'Oui ! Nous avons une offre spéciale pour les étudiants et groupes scolaires avec des tarifs adaptés et des contenus pédagogiques. Contactez-nous pour un devis groupe.',
-    answerEn: 'Yes! We have a special offer for students and school groups with adapted rates and educational content. Contact us for a group quote.',
-    category: 'general',
-  },
-  {
-    id: '14',
-    question: 'Que dois-je mettre dans ma valise ?',
-    questionEn: 'What should I pack?',
-    answer: 'Vêtements légers et confortables, chaussures de marche, chapeau, crème solaire, anti-moustiques, appareil photo. Pour les sites sacrés, prévoyez des tenues couvrantes.',
-    answerEn: 'Light and comfortable clothing, walking shoes, hat, sunscreen, mosquito repellent, camera. For sacred sites, plan covering outfits.',
+    id: 'health',
+    question: 'Quels vaccins ou précautions santé sont nécessaires ?',
+    questionEn: 'What vaccinations or health precautions are needed?',
+    answer:
+      "Consultez un médecin ou un centre de médecine des voyages plusieurs semaines avant le départ. Le paludisme est présent au Bénin : renseignez-vous sur la prévention. Un justificatif de vaccination contre la fièvre jaune est couramment demandé dans cette région, mais l'exigence officielle est à vérifier pour votre itinéraire. Tourism'Tour ne remplace pas un avis médical.",
+    answerEn:
+      "Consult a doctor or a travel clinic several weeks before departure. Malaria is present in Benin: ask about prevention. Proof of yellow fever vaccination is commonly requested in this region, but you should confirm the official requirement for your itinerary. Tourism'Tour does not replace medical advice.",
     category: 'practical',
   },
   {
-    id: '15',
-    question: 'Tourism\'Tour est-elle une agence responsable ?',
-    questionEn: 'Is Tourism\'Tour a responsible agency?',
-    answer: 'Oui, nous privilégions le tourisme responsable : guides locaux, hébergements familiaux, soutien aux communautés visitées, respect de l\'environnement et des traditions.',
-    answerEn: 'Yes, we prioritize responsible tourism: local guides, family accommodations, support for visited communities, respect for the environment and traditions.',
-    category: 'general',
+    id: 'best-time',
+    question: 'Quelle est la meilleure période pour venir ?',
+    questionEn: 'What is the best time to visit?',
+    answer:
+      "Le climat diffère entre le sud et le nord du pays, et les saisons influencent le confort et l'état des routes. La meilleure période dépend de votre destination et de vos envies. Les dates de nos prochaines expériences sont à confirmer : indiquez-nous vos disponibilités, nous en discuterons avec vous.",
+    answerEn:
+      'The climate differs between the south and the north of the country, and the seasons affect comfort and road conditions. The best period depends on your destination and what you want to do. The dates of our next experiences are to be confirmed: tell us your availability and we will discuss it with you.',
+    category: 'practical',
   },
 ];
 
@@ -135,5 +143,5 @@ export function getFAQItems(): FAQItem[] {
 }
 
 export function getFAQByCategory(category: FAQItem['category']): FAQItem[] {
-  return faqItems.filter(item => item.category === category);
+  return faqItems.filter((item) => item.category === category);
 }

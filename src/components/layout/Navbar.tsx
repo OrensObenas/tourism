@@ -42,6 +42,7 @@ export function Navbar() {
     { href: '/editions', label: t.nav.editions },
     { href: '/plan-your-trip', label: t.nav.planYourTrip },
     { href: '/why-us', label: t.nav.whyUs },
+    { href: '/faq', label: t.nav.faq },
     { href: '/contact', label: t.nav.contact },
   ];
 
