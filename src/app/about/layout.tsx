@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "À propos",
-  description: "Découvrez l'équipe de Tourism'Tour, agence de tourisme culturel basée à Cotonou, et notre vision d'un voyage authentique et responsable au Bénin.",
+  title: "About us",
+  description: "Meet Tourism'Tour, a travel agency based in Cotonou, and our approach to authentic, responsible travel in Benin.",
   alternates: { canonical: '/about' },
 };
 

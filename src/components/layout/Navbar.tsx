@@ -38,8 +38,9 @@ export function Navbar() {
   const navLinks = [
     { href: '/', label: t.nav.home },
     { href: '/circuits', label: t.nav.circuits },
+    { href: '/why-us', label: t.nav.whyUs },
+    { href: '/plan-your-trip', label: t.nav.planYourTrip },
     { href: '/experiences', label: t.nav.experiences },
-    { href: '/events', label: t.nav.events },
     { href: '/about', label: t.nav.about },
     { href: '/contact', label: t.nav.contact },
   ];
@@ -70,7 +71,7 @@ export function Navbar() {
               priority
             />
             <span className={cn(
-              'ml-3 hidden sm:block font-heading font-bold text-lg transition-colors duration-300',
+              'ml-3 hidden xl:block font-heading font-bold text-lg transition-colors duration-300',
               isTransparent ? 'text-white' : 'text-primary-900'
             )}>
               Tourism&apos;Tour

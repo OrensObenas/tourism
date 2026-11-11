@@ -11,6 +11,8 @@ export function Footer() {
 
   const quickLinks = [
     { href: '/circuits', label: t.nav.circuits },
+    { href: '/why-us', label: t.nav.whyUs },
+    { href: '/plan-your-trip', label: t.nav.planYourTrip },
     { href: '/experiences', label: t.nav.experiences },
     { href: '/events', label: t.nav.events },
     { href: '/about', label: t.nav.about },
