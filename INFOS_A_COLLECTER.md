@@ -33,5 +33,6 @@ Source des faits : `/workspace/faits_verifies_tourismtour.md`. Les emplacements 
 
 ## Photos de la page « À découvrir »
 - Ouidah, Ganvié, Abomey : photos de l'agence (`public/images/`). Celle d'Abomey porte « 3ème Édition ABOMEY » et « © MIA PICTURES » : confirmer le lieu d'Escale Urbaine III et le crédit.
-- Grand-Popo : photo Wikimedia Commons (Minyimin, CC BY-SA 4.0), créditée sur la page. À remplacer par une photo de l'agence si possible.
+- Grand-Popo, Cotonou, Porto-Novo, Dassa-Zoumè, Natitingou : photos Wikimedia Commons sous licence libre (CC BY / CC BY-SA 4.0), auteurs crédités sur la page (voir `src/lib/data/destinations.ts`). À remplacer par des photos de l'agence si possible.
+- Confirmer que l'agence fait bien découvrir ces 8 villes.
 - Ne pas reprendre les photos/textes de benintourisme.bj : « tous droits réservés », reproduction interdite sans autorisation.

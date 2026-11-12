@@ -87,7 +87,7 @@ const fr = {
   },
   destinations: {
     title: 'À découvrir',
-    subtitle: 'Des villes du Bénin que vous pouvez découvrir avec nous.',
+    subtitle: 'Du littoral à l\'Atacora, des villes du Bénin que vous pouvez découvrir avec nous.',
     intro:
       "Pas de circuit figé : dites-nous quelle ville vous attire, et nous construisons la découverte avec vous, selon vos envies et votre rythme.",
     highlightsTitle: 'À voir',
@@ -191,7 +191,7 @@ const en: typeof fr = {
   },
   destinations: {
     title: 'Places to discover',
-    subtitle: 'Towns and cities in Benin you can discover with us.',
+    subtitle: 'From the coast to the Atacora, towns and cities in Benin you can discover with us.',
     intro:
       'No fixed tour: tell us which place appeals to you, and we will shape the discovery with you, at your own pace.',
     highlightsTitle: 'Highlights',
