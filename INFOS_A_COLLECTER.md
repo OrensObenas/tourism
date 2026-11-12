@@ -30,3 +30,8 @@ Source des faits : `/workspace/faits_verifies_tourismtour.md`. Les emplacements 
 - Visa (aide, lettre d'invitation), santé (exigence officielle fièvre jaune), accueil à l'aéroport, paiement et annulation.
 - Pages légales (confidentialité, conditions) : génériques, à faire valider.
 - Circuits, événements, témoignages et blog : toujours masqués (`siteConfig.showLegacyContent`).
+
+## Photos de la page « À découvrir »
+- Ouidah, Ganvié, Abomey : photos de l'agence (`public/images/`). Celle d'Abomey porte « 3ème Édition ABOMEY » et « © MIA PICTURES » : confirmer le lieu d'Escale Urbaine III et le crédit.
+- Grand-Popo : photo Wikimedia Commons (Minyimin, CC BY-SA 4.0), créditée sur la page. À remplacer par une photo de l'agence si possible.
+- Ne pas reprendre les photos/textes de benintourisme.bj : « tous droits réservés », reproduction interdite sans autorisation.

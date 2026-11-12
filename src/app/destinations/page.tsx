@@ -47,6 +47,17 @@ export default function DestinationsPage() {
                       <span className="text-4xl lg:text-5xl font-heading font-bold text-gold-300">{d.name}</span>
                     </div>
                   )}
+                  {d.image && d.credit && (
+                    <p className="absolute bottom-0 right-0 rounded-tl-lg bg-black/55 px-2 py-1 text-[11px] text-white/90">
+                      <a href={d.credit.sourceUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                        Photo : {d.credit.author}
+                      </a>
+                      {' · '}
+                      <a href={d.credit.licenseUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                        {d.credit.license}
+                      </a>
+                    </p>
+                  )}
                 </div>
 
                 <div className="p-6 lg:p-10 flex flex-col">
