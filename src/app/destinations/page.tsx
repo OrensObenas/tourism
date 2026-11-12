@@ -34,6 +34,11 @@ export default function DestinationsPage() {
                 className="grid md:grid-cols-2 overflow-hidden rounded-3xl bg-white shadow-soft scroll-mt-28"
               >
                 <div className={`relative min-h-[260px] md:min-h-[380px] ${i % 2 === 1 ? 'md:order-2' : ''}`}>
+                  <Link
+                    href={`/destinations/${d.slug}`}
+                    aria-label={d.name}
+                    className="absolute inset-0 z-[1]"
+                  />
                   {d.image ? (
                     <Image
                       src={d.image}
@@ -48,7 +53,7 @@ export default function DestinationsPage() {
                     </div>
                   )}
                   {d.image && d.credit && (
-                    <p className="absolute bottom-0 right-0 rounded-tl-lg bg-black/55 px-2 py-1 text-[11px] text-white/90">
+                    <p className="absolute bottom-0 right-0 z-[2] rounded-tl-lg bg-black/55 px-2 py-1 text-[11px] text-white/90">
                       <a href={d.credit.sourceUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">
                         Photo : {d.credit.author}
                       </a>
@@ -65,7 +70,9 @@ export default function DestinationsPage() {
                     <MapPin className="h-4 w-4" />
                     {d.region[locale]}
                   </p>
-                  <h2 className="text-3xl font-heading font-bold text-gray-900 mb-4">{d.name}</h2>
+                  <h2 className="text-3xl font-heading font-bold text-gray-900 mb-4">
+                    <Link href={`/destinations/${d.slug}`} className="hover:text-primary-700">{d.name}</Link>
+                  </h2>
                   <p className="text-gray-600 leading-relaxed mb-6">{d.summary[locale]}</p>
 
                   <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-500 mb-3">
@@ -82,7 +89,7 @@ export default function DestinationsPage() {
 
                   <div className="mt-auto flex flex-col sm:flex-row gap-3">
                     <Button asChild size="lg">
-                      <Link href={`/contact?topic=general&destination=${d.slug}`}>
+                      <Link href={`/destinations/${d.slug}`}>
                         {c.cta}
                         <ArrowRight className="ml-2 h-5 w-5" />
                       </Link>
@@ -93,6 +100,12 @@ export default function DestinationsPage() {
                       </Button>
                     )}
                   </div>
+                  <Link
+                    href={`/contact?topic=general&destination=${d.slug}`}
+                    className="mt-4 text-sm text-gray-500 underline-offset-2 hover:text-primary-700 hover:underline"
+                  >
+                    {c.contactLink}
+                  </Link>
                 </div>
               </article>
             </AnimatedSection>
