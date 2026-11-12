@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { circuits } from '@/lib/data/circuits';
 import { blogPosts } from '@/lib/data/blogPosts';
+import { destinations } from '@/lib/data/destinations';
 import { siteConfig } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -16,6 +17,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${siteConfig.url}${path}`,
       changeFrequency: 'monthly' as const,
       priority: path === '' ? 1 : 0.7,
+    })),
+    ...destinations.map((d) => ({
+      url: `${siteConfig.url}/destinations/${d.slug}`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
     })),
     ...(siteConfig.showLegacyContent ? circuits : []).map((circuit) => ({
       url: `${siteConfig.url}/circuits/${circuit.slug}`,
