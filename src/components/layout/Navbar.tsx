@@ -35,8 +35,8 @@ export function Navbar() {
     setIsOpen(false);
   }, [pathname]);
 
+  // Desktop bar: no Accueil (logo) and no Contact (CTA), to avoid overflow.
   const navLinks = [
-    { href: '/', label: t.nav.home },
     { href: '/about', label: t.nav.about },
     { href: '/experiences', label: t.nav.experiences },
     { href: '/destinations', label: t.nav.destinations },
@@ -44,6 +44,11 @@ export function Navbar() {
     { href: '/plan-your-trip', label: t.nav.planYourTrip },
     { href: '/why-us', label: t.nav.whyUs },
     { href: '/faq', label: t.nav.faq },
+  ];
+
+  const mobileLinks = [
+    { href: '/', label: t.nav.home },
+    ...navLinks,
     { href: '/contact', label: t.nav.contact },
   ];
 
@@ -61,29 +66,29 @@ export function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20 lg:h-24">
-          {/* Logo */}
-          <Link href="/" className="flex items-center group">
+        <div className="flex justify-between items-center gap-3 h-20">
+          {/* Logo — wordmark on desktop (xl+), now that the bar is compact enough */}
+          <Link href="/" className="flex items-center shrink-0 group">
             <Image
               src="/images/logo.png"
               alt="Tourism'Tour"
               width={512}
               height={512}
-              className="h-14 w-14 lg:h-16 lg:w-16 object-contain rounded-full shadow-md"
+              className="h-12 w-12 lg:h-14 lg:w-14 object-contain rounded-full shadow-md"
               priority
             />
             <span className={cn(
-              'ml-3 hidden xl:block font-heading font-bold text-lg transition-colors duration-300',
+              'ml-3 hidden xl:block whitespace-nowrap font-heading font-bold text-lg transition-colors duration-300',
               isTransparent ? 'text-white' : 'text-primary-900'
             )}>
               Tourism&apos;Tour
             </span>
           </Link>
 
-          {/* Desktop Navigation — center */}
-          <div className="hidden lg:flex items-center">
+          {/* Desktop Navigation — from xl, shorter labels, no wrap */}
+          <div className="hidden xl:flex flex-1 min-w-0 items-center justify-center">
             <div className={cn(
-              'flex items-center space-x-1 px-2 py-1.5 rounded-full transition-all duration-300',
+              'flex items-center gap-0.5 px-1.5 py-1 rounded-full transition-all duration-300',
               isTransparent
                 ? 'bg-white/10 backdrop-blur-sm'
                 : 'bg-sand-100/80'
@@ -95,7 +100,7 @@ export function Navbar() {
                     key={link.href}
                     href={link.href}
                     className={cn(
-                      'relative px-2.5 xl:px-4 py-2 rounded-full text-sm font-medium transition-all duration-300',
+                      'relative whitespace-nowrap px-3 py-2 rounded-full text-[13px] font-medium transition-all duration-300',
                       isActive
                         ? isTransparent
                           ? 'bg-white/20 text-white'
@@ -113,7 +118,7 @@ export function Navbar() {
           </div>
 
           {/* Desktop Actions — right */}
-          <div className="hidden lg:flex items-center space-x-3">
+          <div className="hidden xl:flex items-center shrink-0 space-x-2">
             <button
               onClick={toggleLanguage}
               className={cn(
@@ -127,7 +132,7 @@ export function Navbar() {
               <Globe className="h-4 w-4" />
               <span>{locale === 'fr' ? 'EN' : 'FR'}</span>
             </button>
-            <Button asChild variant="accent" className="rounded-full px-6">
+            <Button asChild variant="accent" className="rounded-full px-5 text-[13px] whitespace-nowrap">
               <Link href="/contact">
                 {t.nav.planTrip}
                 <ChevronRight className="ml-1 h-4 w-4" />
@@ -139,7 +144,7 @@ export function Navbar() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={cn(
-              'lg:hidden p-2.5 rounded-full transition-all duration-300',
+              'xl:hidden p-2.5 rounded-full transition-all duration-300',
               isTransparent
                 ? 'text-white hover:bg-white/10'
                 : 'text-gray-700 hover:bg-sand-100'
@@ -152,11 +157,11 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         <div className={cn(
-          'lg:hidden overflow-hidden transition-all duration-300 ease-in-out',
+          'xl:hidden overflow-hidden transition-all duration-300 ease-in-out',
           isOpen ? 'max-h-[500px] opacity-100 pb-6' : 'max-h-0 opacity-0'
         )}>
           <div className="flex flex-col space-y-1 pt-2">
-            {navLinks.map((link) => (
+            {mobileLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

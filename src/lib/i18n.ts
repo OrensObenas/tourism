@@ -4,9 +4,9 @@ export const dictionaries = {
     nav: {
       home: 'Accueil',
       circuits: 'Circuits',
-      experiences: 'Nos expériences',
+      experiences: 'Expériences',
       destinations: 'À découvrir',
-      editions: 'Nos éditions',
+      editions: 'Éditions',
       events: 'Événements',
       testimonials: 'Témoignages',
       blog: 'Découvrir le Bénin',
@@ -16,7 +16,7 @@ export const dictionaries = {
       planTrip: 'Démarrer mon projet',
       requestInfo: 'Demander infos',
       whyUs: 'Pourquoi nous',
-      planYourTrip: 'Préparer son voyage',
+      planYourTrip: 'Votre voyage',
     },
     // Hero
     hero: {
@@ -514,9 +514,9 @@ export const dictionaries = {
     nav: {
       home: 'Home',
       circuits: 'Circuits',
-      experiences: 'Our experiences',
-      destinations: 'Places to discover',
-      editions: 'Our editions',
+      experiences: 'Experiences',
+      destinations: 'Destinations',
+      editions: 'Editions',
       events: 'Events',
       testimonials: 'Testimonials',
       blog: 'Discover Benin',
@@ -526,7 +526,7 @@ export const dictionaries = {
       planTrip: 'Start planning',
       requestInfo: 'Request info',
       whyUs: 'Why us',
-      planYourTrip: 'Plan your trip',
+      planYourTrip: 'Your trip',
     },
     // Hero
     hero: {
