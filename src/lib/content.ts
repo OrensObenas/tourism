@@ -85,6 +85,18 @@ const fr = {
     ctaText: 'Les dates de la prochaine édition sont à confirmer. Écrivez-nous pour être informé(e).',
     ctaButton: 'Nous contacter',
   },
+  destinations: {
+    title: 'À découvrir',
+    subtitle: 'Des villes du Bénin que vous pouvez découvrir avec nous.',
+    intro:
+      "Pas de circuit figé : dites-nous quelle ville vous attire, et nous construisons la découverte avec vous, selon vos envies et votre rythme.",
+    highlightsTitle: 'À voir',
+    cta: 'Découvrir cette ville avec nous',
+    message: (city: string) => `Bonjour, je souhaiterais découvrir ${city} avec Tourism'Tour.`,
+    finalTitle: 'Une autre ville en tête ?',
+    finalText: 'Écrivez-nous : nous vous dirons comment la découvrir avec nous.',
+    finalButton: 'Nous contacter',
+  },
   contact: {
     facebook: 'Facebook',
     facebookDesc: 'Écrivez-nous sur notre page',
@@ -176,6 +188,18 @@ const en: typeof fr = {
     ctaTitle: 'Join the next edition',
     ctaText: 'The dates of the next edition are to be confirmed. Write to us to be kept informed.',
     ctaButton: 'Contact us',
+  },
+  destinations: {
+    title: 'Places to discover',
+    subtitle: 'Towns and cities in Benin you can discover with us.',
+    intro:
+      'No fixed tour: tell us which place appeals to you, and we will shape the discovery with you, at your own pace.',
+    highlightsTitle: 'Highlights',
+    cta: 'Discover it with us',
+    message: (city: string) => `Hello, I would like to discover ${city} with Tourism'Tour.`,
+    finalTitle: 'Another place in mind?',
+    finalText: 'Write to us and we will tell you how to discover it with us.',
+    finalButton: 'Contact us',
   },
   contact: {
     facebook: 'Facebook',

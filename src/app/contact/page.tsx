@@ -13,6 +13,7 @@ import { useLanguage } from '@/components/providers/LanguageProvider';
 import { circuits } from '@/lib/data/circuits';
 import { siteConfig, whatsappLink, hasWhatsapp, emailLink, phoneLink } from '@/lib/site';
 import { copy } from '@/lib/content';
+import { getDestinationBySlug } from '@/lib/data/destinations';
 import { 
   Mail, 
   Phone, 
@@ -66,6 +67,20 @@ export default function ContactPage() {
       circuit: circuit && circuits.some((c) => c.slug === circuit) ? circuit : prev.circuit,
     }));
   }, []);
+
+  // Depuis la page « À découvrir » : /contact?destination=ouidah pré-remplit le message.
+  // Dépend de la langue, car la langue enregistrée est chargée juste après le montage.
+  useEffect(() => {
+    const slug = new URLSearchParams(window.location.search).get('destination');
+    const destination = slug ? getDestinationBySlug(slug) : undefined;
+    if (!destination) return;
+    const templates = [copy.fr, copy.en].map((c) => c.destinations.message(destination.name));
+    setFormData((prev) =>
+      !prev.message || templates.includes(prev.message)
+        ? { ...prev, message: copy[locale].destinations.message(destination.name) }
+        : prev
+    );
+  }, [locale]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

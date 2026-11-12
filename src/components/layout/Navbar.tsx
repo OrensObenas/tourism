@@ -39,6 +39,7 @@ export function Navbar() {
     { href: '/', label: t.nav.home },
     { href: '/about', label: t.nav.about },
     { href: '/experiences', label: t.nav.experiences },
+    { href: '/destinations', label: t.nav.destinations },
     { href: '/editions', label: t.nav.editions },
     { href: '/plan-your-trip', label: t.nav.planYourTrip },
     { href: '/why-us', label: t.nav.whyUs },
@@ -94,7 +95,7 @@ export function Navbar() {
                     key={link.href}
                     href={link.href}
                     className={cn(
-                      'relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300',
+                      'relative px-2.5 xl:px-4 py-2 rounded-full text-sm font-medium transition-all duration-300',
                       isActive
                         ? isTransparent
                           ? 'bg-white/20 text-white'

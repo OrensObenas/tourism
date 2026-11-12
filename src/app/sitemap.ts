@@ -5,7 +5,7 @@ import { siteConfig } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
-    '', '/about', '/experiences', '/experiences/escale-urbaine', '/editions', '/plan-your-trip', '/why-us',
+    '', '/about', '/experiences', '/experiences/escale-urbaine', '/destinations', '/editions', '/plan-your-trip', '/why-us',
     '/faq', '/contact', '/privacy', '/terms',
     // Circuits, événements, témoignages et blog : hors sitemap tant que non validés
     ...(siteConfig.showLegacyContent ? ['/circuits', '/events', '/blog', '/testimonials'] : []),

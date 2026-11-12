@@ -20,6 +20,7 @@ export function Footer() {
   const quickLinks = [
     { href: '/about', label: t.nav.about },
     { href: '/experiences', label: t.nav.experiences },
+    { href: '/destinations', label: t.nav.destinations },
     { href: '/editions', label: t.nav.editions },
     { href: '/plan-your-trip', label: t.nav.planYourTrip },
     { href: '/why-us', label: t.nav.whyUs },
