@@ -4,9 +4,11 @@ import { useState, useMemo } from 'react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
+import { PageHeader } from '@/components/common/PageHeader';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { blogPosts } from '@/lib/data/blogPosts';
+import { bannerFor } from '@/lib/data/banners';
 import { Search, CheckCircle } from 'lucide-react';
 
 export default function BlogPage() {
@@ -52,19 +54,7 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <section className="bg-primary-900 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-4">
-              {t.blogPage.title}
-            </h1>
-            <p className="text-xl text-primary-200 max-w-2xl">
-              {t.blogPage.subtitle}
-            </p>
-          </AnimatedSection>
-        </div>
-      </section>
+      <PageHeader title={t.blogPage.title} subtitle={t.blogPage.subtitle} image={bannerFor('blog', locale)} />
 
       {/* Filters */}
       <section className="py-6 bg-sand-50 border-b border-sand-200">

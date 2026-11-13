@@ -5,9 +5,11 @@ import { Search, SlidersHorizontal } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
+import { PageHeader } from '@/components/common/PageHeader';
 import { CircuitCard } from '@/components/circuits/CircuitCard';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { circuits } from '@/lib/data/circuits';
+import { bannerFor } from '@/lib/data/banners';
 
 export default function CircuitsPage() {
   const { locale, t } = useLanguage();
@@ -66,19 +68,7 @@ export default function CircuitsPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <section className="bg-primary-900 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-4">
-              {t.circuitsPage.title}
-            </h1>
-            <p className="text-xl text-primary-200 max-w-2xl">
-              {t.circuitsPage.subtitle}
-            </p>
-          </AnimatedSection>
-        </div>
-      </section>
+      <PageHeader title={t.circuitsPage.title} subtitle={t.circuitsPage.subtitle} image={bannerFor('circuits', locale)} />
 
       {/* Filters */}
       <section className="py-6 bg-white border-b border-sand-200 sticky top-16 lg:top-20 z-40">

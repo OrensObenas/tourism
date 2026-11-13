@@ -3,25 +3,28 @@
 import Link from 'next/link';
 import { ArrowRight, Compass, LifeBuoy, MapPin, Handshake, Route, Users } from 'lucide-react';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
+import { PageHeader } from '@/components/common/PageHeader';
 import { SectionHeader } from '@/components/common/SectionHeader';
 import { TbcNote } from '@/components/common/TbcNote';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/providers/LanguageProvider';
+import { bannerFor } from '@/lib/data/banners';
 
 const icons = [MapPin, LifeBuoy, Users, Compass, Route, Handshake];
 
 export default function WhyUsPage() {
-  const { t } = useLanguage();
+  const { locale, t } = useLanguage();
   const w = t.whyPage;
 
   return (
     <>
-      <section className="pt-36 pb-16 bg-primary-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-4">{w.title}</h1>
-          <p className="text-lg text-primary-100">{w.subtitle}</p>
-        </div>
-      </section>
+      <PageHeader
+        title={w.title}
+        subtitle={w.subtitle}
+        image={bannerFor('whyUs', locale)}
+        align="center"
+        subtitleClassName="text-lg text-primary-100"
+      />
 
       <section className="py-14 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

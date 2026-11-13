@@ -1,6 +1,7 @@
 'use client';
 
 import { AnimatedSection } from '@/components/common/AnimatedSection';
+import { PageHeader } from '@/components/common/PageHeader';
 import { siteConfig } from '@/lib/site';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 
@@ -193,19 +194,7 @@ Adresse : ${siteConfig.address}`
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <section className="bg-primary-900 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-4">
-              {content.title}
-            </h1>
-            <p className="text-primary-200">
-              {content.lastUpdated}
-            </p>
-          </AnimatedSection>
-        </div>
-      </section>
+      <PageHeader title={content.title} subtitle={content.lastUpdated} subtitleClassName="text-base lg:text-lg" />
 
       {/* Content */}
       <section className="py-12 lg:py-16 section-brand-mix">

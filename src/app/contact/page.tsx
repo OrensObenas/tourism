@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
+import { PageHeader } from '@/components/common/PageHeader';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -13,6 +14,7 @@ import { useLanguage } from '@/components/providers/LanguageProvider';
 import { circuits } from '@/lib/data/circuits';
 import { siteConfig, whatsappLink, hasWhatsapp, emailLink, phoneLink } from '@/lib/site';
 import { copy } from '@/lib/content';
+import { bannerFor } from '@/lib/data/banners';
 import { getDestinationBySlug } from '@/lib/data/destinations';
 import { 
   Mail, 
@@ -187,19 +189,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <section className="bg-primary-900 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-4">
-              {t.contactPage.title}
-            </h1>
-            <p className="text-xl text-primary-200 max-w-2xl">
-              {t.contactPage.subtitle}
-            </p>
-          </AnimatedSection>
-        </div>
-      </section>
+      <PageHeader title={t.contactPage.title} subtitle={t.contactPage.subtitle} image={bannerFor('contact', locale)} />
 
       <section className="py-12 lg:py-16 section-brand-mix pattern-dots">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

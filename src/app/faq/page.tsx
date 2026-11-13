@@ -3,11 +3,13 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
+import { PageHeader } from '@/components/common/PageHeader';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { faqItems } from '@/lib/data/faq';
+import { bannerFor } from '@/lib/data/banners';
 import { Search, HelpCircle, MessageCircle } from 'lucide-react';
 
 export default function FAQPage() {
@@ -41,22 +43,16 @@ export default function FAQPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <section className="bg-primary-900 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <div className="flex items-center gap-3 mb-4">
-              <HelpCircle className="h-8 w-8 text-primary-300" />
-              <h1 className="text-4xl lg:text-5xl font-heading font-bold">
-                {t.faqPage.title}
-              </h1>
-            </div>
-            <p className="text-xl text-primary-200 max-w-2xl">
-              {t.faqPage.subtitle}
-            </p>
-          </AnimatedSection>
-        </div>
-      </section>
+      <PageHeader
+        title={
+          <span className="inline-flex items-center gap-3">
+            <HelpCircle className="h-8 w-8 shrink-0 text-primary-300" aria-hidden="true" />
+            {t.faqPage.title}
+          </span>
+        }
+        subtitle={t.faqPage.subtitle}
+        image={bannerFor('faq', locale)}
+      />
 
       {/* Search */}
       <section className="py-8 bg-sand-50 border-b border-sand-200">

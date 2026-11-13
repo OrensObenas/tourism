@@ -3,11 +3,12 @@
 import Link from 'next/link';
 import { CalendarDays, MapPin, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { AnimatedSection } from '@/components/common/AnimatedSection';
+import { PageHeader } from '@/components/common/PageHeader';
 import { TbcNote } from '@/components/common/TbcNote';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { copy } from '@/lib/content';
 import { escaleUrbaine, sampleProgramme } from '@/lib/data/escaleUrbaine';
+import { bannerFor } from '@/lib/data/banners';
 
 export default function EscaleUrbainePage() {
   const { locale } = useLanguage();
@@ -16,18 +17,13 @@ export default function EscaleUrbainePage() {
 
   return (
     <div className="min-h-screen">
-      <section className="bg-gradient-to-br from-primary-800 to-primary-950 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <h1 className="text-4xl lg:text-6xl font-heading font-bold mb-4">{c.title}</h1>
-            <p className="flex flex-wrap gap-x-6 gap-y-1 text-gold-300 mb-5 font-medium">
-              <span className="inline-flex items-center gap-1.5"><MapPin className="h-5 w-5" />{escaleUrbaine.place}</span>
-              <span className="inline-flex items-center gap-1.5"><CalendarDays className="h-5 w-5" />{escaleUrbaine.act} · {escaleUrbaine.dates[locale]}</span>
-            </p>
-            <p className="text-lg text-primary-100 max-w-3xl leading-relaxed">{c.intro}</p>
-          </AnimatedSection>
-        </div>
-      </section>
+      <PageHeader title={c.title} image={bannerFor('escaleUrbaine', locale)} titleClassName="lg:text-6xl">
+        <p className="mb-5 flex flex-wrap gap-x-6 gap-y-1 font-medium text-gold-300">
+          <span className="inline-flex items-center gap-1.5"><MapPin className="h-5 w-5" />{escaleUrbaine.place}</span>
+          <span className="inline-flex items-center gap-1.5"><CalendarDays className="h-5 w-5" />{escaleUrbaine.act} · {escaleUrbaine.dates[locale]}</span>
+        </p>
+        <p className="max-w-3xl text-lg leading-relaxed text-primary-100">{c.intro}</p>
+      </PageHeader>
 
       <section className="py-12 lg:py-16 section-brand-mix">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

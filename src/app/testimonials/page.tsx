@@ -4,10 +4,12 @@ import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
+import { PageHeader } from '@/components/common/PageHeader';
 import { TestimonialCard } from '@/components/testimonials/TestimonialCard';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { testimonials } from '@/lib/data/testimonials';
+import { bannerFor } from '@/lib/data/banners';
 import { Star, Quote } from 'lucide-react';
 
 export default function TestimonialsPage() {
@@ -33,38 +35,30 @@ export default function TestimonialsPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <section className="bg-primary-900 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-4">
-              {t.testimonialsPage.title}
-            </h1>
-            <p className="text-xl text-primary-200 max-w-2xl mb-8">
-              {t.testimonialsPage.subtitle}
-            </p>
-
-            {/* Stats */}
-            <div className="flex flex-wrap gap-8">
-              <div className="flex items-center gap-3">
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`h-5 w-5 ${i < Math.round(avgRating) ? 'text-yellow-400 fill-yellow-400' : 'text-gray-400'}`}
-                    />
-                  ))}
-                </div>
-                <span className="text-lg font-semibold">{avgRating.toFixed(1)}/5</span>
-              </div>
-              <div className="text-primary-200">
-                <span className="text-white font-semibold">{testimonials.length}</span>{' '}
-                {locale === 'en' ? 'verified reviews' : 'avis vérifiés'}
-              </div>
+      <PageHeader
+        title={t.testimonialsPage.title}
+        subtitle={t.testimonialsPage.subtitle}
+        image={bannerFor('testimonials', locale)}
+        subtitleClassName="mb-8"
+      >
+        <div className="flex flex-wrap gap-8">
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className={`h-5 w-5 ${i < Math.round(avgRating) ? 'text-yellow-400 fill-yellow-400' : 'text-gray-400'}`}
+                />
+              ))}
             </div>
-          </AnimatedSection>
+            <span className="text-lg font-semibold">{avgRating.toFixed(1)}/5</span>
+          </div>
+          <div className="text-primary-200">
+            <span className="font-semibold text-white">{testimonials.length}</span>{' '}
+            {locale === 'en' ? 'verified reviews' : 'avis vérifiés'}
+          </div>
         </div>
-      </section>
+      </PageHeader>
 
       {/* Filters */}
       <section className="py-6 bg-sand-50 border-b border-sand-200">

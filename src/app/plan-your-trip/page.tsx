@@ -3,9 +3,11 @@
 import Link from 'next/link';
 import { ArrowRight, FileText, HeartPulse, CalendarDays, Plane, Wallet, ShieldCheck, ListChecks } from 'lucide-react';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
+import { PageHeader } from '@/components/common/PageHeader';
 import { TbcNote } from '@/components/common/TbcNote';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/providers/LanguageProvider';
+import { bannerFor } from '@/lib/data/banners';
 
 const sectionMeta = [
   { key: 'visa', icon: FileText },
@@ -18,17 +20,18 @@ const sectionMeta = [
 ] as const;
 
 export default function PlanYourTripPage() {
-  const { t } = useLanguage();
+  const { locale, t } = useLanguage();
   const p = t.planPage;
 
   return (
     <>
-      <section className="pt-36 pb-16 bg-primary-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-4">{p.title}</h1>
-          <p className="text-lg text-primary-100">{p.subtitle}</p>
-        </div>
-      </section>
+      <PageHeader
+        title={p.title}
+        subtitle={p.subtitle}
+        image={bannerFor('planYourTrip', locale)}
+        align="center"
+        subtitleClassName="text-lg text-primary-100"
+      />
 
       <section className="py-12 lg:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

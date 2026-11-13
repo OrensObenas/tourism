@@ -4,10 +4,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, MapPin, Check } from 'lucide-react';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
+import { PageHeader } from '@/components/common/PageHeader';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { copy } from '@/lib/content';
 import { destinations } from '@/lib/data/destinations';
+import { bannerFor } from '@/lib/data/banners';
 
 export default function DestinationsPage() {
   const { locale } = useLanguage();
@@ -15,15 +17,9 @@ export default function DestinationsPage() {
 
   return (
     <div className="min-h-screen">
-      <section className="bg-primary-900 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-4">{c.title}</h1>
-            <p className="text-xl text-primary-200 max-w-2xl mb-4">{c.subtitle}</p>
-            <p className="text-primary-100 max-w-2xl">{c.intro}</p>
-          </AnimatedSection>
-        </div>
-      </section>
+      <PageHeader title={c.title} subtitle={c.subtitle} image={bannerFor('destinations', locale)} subtitleClassName="mb-4">
+        <p className="text-primary-100 max-w-2xl">{c.intro}</p>
+      </PageHeader>
 
       <section className="py-12 lg:py-16 section-purple-tint">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">

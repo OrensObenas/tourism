@@ -3,11 +3,13 @@
 import Link from 'next/link';
 import { MapPin, Users } from 'lucide-react';
 import { AnimatedSection } from '@/components/common/AnimatedSection';
+import { PageHeader } from '@/components/common/PageHeader';
 import { TbcNote } from '@/components/common/TbcNote';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/providers/LanguageProvider';
 import { copy } from '@/lib/content';
 import { siteConfig } from '@/lib/site';
+import { bannerFor } from '@/lib/data/banners';
 
 export default function AboutPage() {
   const { locale } = useLanguage();
@@ -15,14 +17,7 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen">
-      <section className="bg-primary-900 text-white pt-28 lg:pt-36 pb-16 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <h1 className="text-4xl lg:text-5xl font-heading font-bold mb-4">{c.title}</h1>
-            <p className="text-xl text-primary-200 max-w-2xl">{c.subtitle}</p>
-          </AnimatedSection>
-        </div>
-      </section>
+      <PageHeader title={c.title} subtitle={c.subtitle} image={bannerFor('about', locale)} />
 
       <section className="py-14 lg:py-20 section-brand-mix">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
